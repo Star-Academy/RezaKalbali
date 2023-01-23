@@ -33,6 +33,8 @@
     align-items: center;
     gap: 0.4rem;
 
+    user-select: none;
+
     &__icon {
       color: var(--color-gray-98);
 

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  public avatarDisplay: 'none' | 'block' = 'block';
+  public avatarDisplay: 'none' | 'block' = 'none';
 
   public onClickAvatar(): void {
     this.avatarDisplay = this.avatarDisplay === 'none' ? 'block' : 'none';

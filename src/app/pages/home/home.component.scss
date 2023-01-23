@@ -1,0 +1,25 @@
+.banner {
+  width: 100%;
+
+  padding: 2rem;
+}
+
+.container {
+  overflow-y: auto;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  padding: 2rem 1rem;
+}
+
+.heading {
+  color: var(--color-gray-80);
+
+  padding: 1rem;
+}
+
+main {
+  padding: 1rem;
+}

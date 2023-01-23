@@ -1,1 +1,26 @@
 <app-header></app-header>
+<main>
+  <img class="banner" src="assets/images/csgo.jpg" alt="banner" />
+
+  <h1 class="heading">پر طرفدار ترین ها</h1>
+  <section class="container">
+    <app-card
+      *ngFor="let game of games"
+      [img]="game.img"
+      [name]="game.name"
+      [pay]="game.pay"
+    ></app-card>
+  </section>
+  <h1 class="heading">پرفروش ترین ها</h1>
+  <section class="container">
+    <ng-container *ngFor="let game of games">
+      <app-card
+        *ngIf="game.pay === 'pay'"
+        [img]="game.img"
+        [name]="game.name"
+        [pay]="game.pay"
+      ></app-card>
+    </ng-container>
+  </section>
+</main>
+<app-footer></app-footer>
