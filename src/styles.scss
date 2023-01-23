@@ -15,7 +15,7 @@ html {
 }
 
 :root {
-  --primary-hue: 220;
+  --primary-hue: 350;
   --secondary-hue: 260;
   --success-hue: 120;
   --warning-hue: 20;
@@ -33,10 +33,10 @@ html {
   --color--default-background: var(--color-gray-98);
   --color--default-foreground: var(--color-gray-10);
 
-  --color--primary: hsl(var(--primary-hue) 100% 56%);
+  --color--primary: hsl(var(--primary-hue) 100% 66%);
   --color--primary-fade: hsl(var(--primary-hue) 100% 96%);
-  --color--primary-lighter: hsl(var(--primary-hue) 100% 60%);
-  --color--primary-darker: hsl(var(--primary-hue) 100% 52%);
+  --color--primary-lighter: hsl(var(--primary-hue) 100% 77%);
+  --color--primary-darker: hsl(var(--primary-hue) 100% 44%);
   --color--primary-opposite: var(--color-gray-98);
 
   --color--secondary: hsl(var(--secondary-hue) 50% 50%);

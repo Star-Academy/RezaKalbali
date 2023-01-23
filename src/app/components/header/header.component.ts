@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  public avatarDisplay: 'none' | 'block' = 'block';
+
+  public onClickAvatar(): void {
+    this.avatarDisplay = this.avatarDisplay === 'none' ? 'block' : 'none';
+  }
+}

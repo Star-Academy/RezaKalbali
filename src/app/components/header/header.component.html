@@ -1,1 +1,20 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header__logo">
+    <img class="logo" src="assets/logos/logo.png" alt="لوگو" />
+    <app-nav></app-nav>
+  </div>
+  <div class="header__avatar">
+    <i
+      class="fa-regular fa-user header__avatar__icon"
+      [class.active-avatar]="avatarDisplay === 'block'"
+      (click)="onClickAvatar()"
+    ></i>
+    <div class="header__avatar__detail" [style.--display]="avatarDisplay">
+      <ul>
+        <li><a href="#">پروفایل</a></li>
+        <li><a href="#">سبد خرید</a></li>
+        <li><a href="#">کیف پول</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
