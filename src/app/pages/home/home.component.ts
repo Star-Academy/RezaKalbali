@@ -23,6 +23,20 @@ export class HomeComponent {
     },
     {
       id: 2,
+      name: 'Cyber Punk',
+      img: 'assets/images/games/cp.jpg',
+      pay: 'pay',
+      price: 65,
+    },
+    {
+      id: 2,
+      name: 'Cyber Punk',
+      img: 'assets/images/games/cp.jpg',
+      pay: 'pay',
+      price: 65,
+    },
+    {
+      id: 2,
       name: 'War Zone',
       img: 'assets/images/games/warzone.jpg',
       pay: 'free',
@@ -33,20 +47,7 @@ export class HomeComponent {
       img: 'assets/images/games/Dota2.jpg',
       pay: 'free',
     },
-    {
-      id: 2,
-      name: 'Cyber Punk',
-      img: 'assets/images/games/cp.jpg',
-      pay: 'pay',
-      price: 65,
-    },
-    {
-      id: 2,
-      name: 'Cyber Punk',
-      img: 'assets/images/games/cp.jpg',
-      pay: 'pay',
-      price: 65,
-    },
+
     {
       id: 2,
       name: 'Cyber Punk',
