@@ -1,0 +1,14 @@
+<div class="avatar">
+  <i
+    class="fa-regular fa-user avatar__icon"
+    [class.active-avatar]="avatarDisplay === 'block'"
+    (click)="onClickAvatar()"
+  ></i>
+  <div class="avatar__detail" [style.--display]="avatarDisplay">
+    <ul>
+      <li><a href="#">پروفایل</a></li>
+      <li><a href="#">سبد خرید</a></li>
+      <li><a href="#">کیف پول</a></li>
+    </ul>
+  </div>
+</div>

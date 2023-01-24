@@ -8,14 +8,16 @@ button {
   padding: 0.4em 0.6em;
 
   border: 0.1rem solid var(--color--primary);
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
 
   font-size: 1.4rem;
 
   cursor: pointer;
 
   &:hover {
-    box-shadow: -0.1rem 0.1rem 0.6rem hsl(0deg 0% 50%);
+    background-color: var(--color--primary);
+    color: var(--color-gray-98);
+    box-shadow: -0.1rem 0.1rem 0.4rem hsl(0deg 0% 50%);
   }
 }
 

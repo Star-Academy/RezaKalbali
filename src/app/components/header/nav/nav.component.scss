@@ -26,10 +26,10 @@ nav {
         padding-inline: 1.4rem;
 
         &:hover {
-          background-color: var(--color-gray-98);
-          color: var(--color--primary-darker);
+          background-color: var(--color--primary);
+          color: var(--color-gray-98) !important;
 
-          text-shadow: 0 0.5rem 1rem var(--color--primary-lighter);
+          text-shadow: 0 0.5rem 1rem var(--color-gray-10);
         }
       }
     }
@@ -37,6 +37,6 @@ nav {
 }
 
 .active {
-  background-color: var(--color-gray-98);
-  color: var(--color--primary-darker) !important;
+  background-color: var(--color--primary);
+  color: var(--color-gray-98) !important;
 }

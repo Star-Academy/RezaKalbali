@@ -1,0 +1,78 @@
+.avatar {
+  &__icon {
+    color: var(--color-gray-98);
+
+    width: 4rem;
+    height: 4rem;
+
+    padding: 1rem;
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-gray-98);
+      color: var(--color--primary);
+    }
+  }
+
+  &__detail {
+    --display: none;
+    position: absolute;
+    inset-block-start: 120%;
+    inset-inline-end: 0;
+
+    display: var(--display);
+
+    ul {
+      background-color: var(--color-gray-98);
+
+      isolation: isolate;
+
+      width: 20rem;
+
+      padding: 0.1rem;
+
+      border-radius: 0.5rem;
+
+      &::before {
+        content: "^";
+
+        color: var(--color-gray-98);
+
+        position: absolute;
+        inset-block-start: -1.5rem;
+        inset-inline-end: 1.2rem;
+        z-index: -1;
+
+        font-size: 3.5rem;
+      }
+
+      li {
+        padding: 0.6rem;
+
+        border-radius: 0.5rem;
+
+        &:hover {
+          background-color: var(--color--primary);
+          color: var(--color-gray-98);
+        }
+
+        a {
+          color: inherit;
+
+          display: block;
+        }
+      }
+    }
+  }
+}
+.active-avatar {
+  background-color: var(--color-gray-98);
+  color: var(--color--primary);
+}

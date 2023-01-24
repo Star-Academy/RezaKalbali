@@ -5,7 +5,9 @@ type Game = {
   name: string;
   img: string;
   pay: 'free' | 'pay';
+  price?: number;
 };
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -36,6 +38,21 @@ export class HomeComponent {
       name: 'Cyber Punk',
       img: 'assets/images/games/cp.jpg',
       pay: 'pay',
+      price: 65,
+    },
+    {
+      id: 2,
+      name: 'Cyber Punk',
+      img: 'assets/images/games/cp.jpg',
+      pay: 'pay',
+      price: 65,
+    },
+    {
+      id: 2,
+      name: 'Cyber Punk',
+      img: 'assets/images/games/cp.jpg',
+      pay: 'pay',
+      price: 65,
     },
   ];
 }

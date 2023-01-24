@@ -9,12 +9,13 @@ article {
   gap: 0.4rem;
 
   width: 20rem;
+  height: 100%;
 
   border: 1px solid var(--color-gray-98);
   border-radius: 0.5rem;
 
   &:hover {
-    box-shadow: 0 0.4rem 1rem var(--color-gray-98);
+    box-shadow: 0 0 0.5rem var(--color-gray-98);
   }
 
   img {
@@ -23,5 +24,11 @@ article {
 
   div {
     padding: 1rem;
+  }
+
+  h3 {
+    color: hsl(100deg 60 40);
+
+    height: 2rem;
   }
 }
