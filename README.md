@@ -4,7 +4,7 @@
 
 ![Squid Game](src/assets/logos/logo-black-bg.jpg)
 
-[مشاهده دموی پروژه](https://star-academy.github.io/RezaKalbali/)
+[دموی پروژه](https://star-academy.github.io/RezaKalbali/)
 
 این پروژه با [Angular CLI](https://github.com/angular/angular-cli) نسخه 12.2.17 تولید شده است
 
