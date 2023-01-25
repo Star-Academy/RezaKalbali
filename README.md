@@ -15,7 +15,7 @@
 قابلیت CI/CD برای پروژه فعال می باشد و با هر push آخرین نسخه build شده و روی branch مخصوص (gh-pages) قرار گرفته و در آدرس زیر قابل دسترسی است
 https://star-academy.github.io/RezaKalbali/
 
-برای مشارکت و همکاری در پروژه به فایل [CONTRIBUTING.md](<https://github.com/Star-Academy/RezaKalbali/blob/start-landing/(https://github.com/Star-Academy/RezaKalbali/blob/start-landing/README.md)>) مراجعه کنید.
+برای مشارکت و همکاری در پروژه به فایل [CONTRIBUTING.md](<(https://github.com/Star-Academy/RezaKalbali/blob/start-landing/README.md)>) مراجعه کنید.
 
 برای شروع توسعه می توانید از دستورات زیر استفاده کنید:
 
