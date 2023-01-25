@@ -4,13 +4,20 @@
 
 ![Squid Game](src/assets/logos/logo-black-bg.jpg)
 
+[مشاهده دموی پروژه](https://star-academy.github.io/RezaKalbali/)
+
 این پروژه با [Angular CLI](https://github.com/angular/angular-cli) نسخه 12.2.17 تولید شده است
 
 این وب سایت صرفا جهت آشنایی و فراگیری انگولار توسط
 [رضا کلبعلی](https://github.com/rezakalbaali) در دوره [Star Academy](https://github.com/Star-Academy)
 توسعه یافته است، در صورت نیاز می توانید از کد های موجود بهره ببریدیا در توسعه این پروژه سهیم باشید.
 
-برای ادامه توسعه نیز می توانید از دستورات زیر استفاده کنید:
+قابلیت CI/CD برای پروژه فعال می باشد و با هر push آخرین نسخه build شده و روی branch مخصوص (gh-pages) قرار گرفته و در آدرس زیر قابل دسترسی است
+https://star-academy.github.io/RezaKalbali/
+
+برای مشارکت و همکاری در پروژه به فایل [CONTRIBUTING.md](<https://github.com/Star-Academy/RezaKalbali/blob/start-landing/(https://github.com/Star-Academy/RezaKalbali/blob/start-landing/README.md)>) مراجعه کنید.
+
+برای شروع توسعه می توانید از دستورات زیر استفاده کنید:
 
 ## Development server
 
