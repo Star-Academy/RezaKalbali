@@ -1,0 +1,30 @@
+<div
+  class="container"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <ul class="slideshow">
+    <li
+      *ngFor="let slide of slides; index as i"
+      class="slide"
+      [style.--active-index]="activeSlide"
+      [class.active]="activeSlide === i"
+    >
+      <img [src]="slide.src" [alt]="slide.alt" />
+    </li>
+  </ul>
+  <ul class="overlay">
+    <li
+      *ngFor="let _ of slides; index as index"
+      (click)="activeSlideshowHandler(index)"
+    >
+      <i
+        class="fa-circle bullets"
+        [class]="index === activeSlide ? 'fa-solid' : 'fa-regular'"
+        [style.color]="
+          activeSlide === index ? 'var(--color--primary)' : 'white'
+        "
+      ></i>
+    </li>
+  </ul>
+</div>

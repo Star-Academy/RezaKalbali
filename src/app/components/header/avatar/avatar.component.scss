@@ -26,6 +26,7 @@
     position: absolute;
     inset-block-start: 120%;
     inset-inline-end: 0;
+    z-index: 1;
 
     display: var(--display);
 
@@ -72,6 +73,7 @@
     }
   }
 }
+
 .active-avatar {
   background-color: var(--color-gray-98);
   color: var(--color--primary);

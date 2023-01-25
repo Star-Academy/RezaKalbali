@@ -6,9 +6,15 @@ import { ButtonModule } from '../../components/button/button.module';
 import { FooterModule } from '../../components/footer/footer.module';
 import { HomeCardComponent } from './home-card/home-card.component';
 import { CardModule } from '../../components/card/card.module';
+import { SlideshowComponent } from './slideshow/slideshow.component';
 
 @NgModule({
-  declarations: [HomeComponent, HomeCardComponent, HomeCardComponent],
+  declarations: [
+    HomeComponent,
+    HomeCardComponent,
+    HomeCardComponent,
+    SlideshowComponent,
+  ],
   imports: [CommonModule, HeaderModule, ButtonModule, FooterModule, CardModule],
 })
 export class HomeModule {}
