@@ -26,14 +26,14 @@ export class HomeComponent {
       name: 'Cyber Punk',
       img: 'assets/images/games/cp.jpg',
       pay: 'pay',
-      price: 65,
+      price: 65000,
     },
     {
       id: 2,
       name: 'Cyber Punk',
       img: 'assets/images/games/cp.jpg',
       pay: 'pay',
-      price: 65,
+      price: 65000,
     },
     {
       id: 2,
@@ -53,7 +53,7 @@ export class HomeComponent {
       name: 'Cyber Punk',
       img: 'assets/images/games/cp.jpg',
       pay: 'pay',
-      price: 65,
+      price: 65000,
     },
   ];
 }
