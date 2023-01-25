@@ -11,6 +11,7 @@
       [class.active]="activeSlide === i"
     >
       <img [src]="slide.src" [alt]="slide.alt" />
+      <h2 class="name">{{ slide.alt }}</h2>
     </li>
   </ul>
   <ul class="overlay">
