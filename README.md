@@ -1,10 +1,10 @@
 # Squid Game
 
-![Squid Game](src/assets/logos/logo.svg)
+## وب سایت فروش بازی
+
+![Squid Game](src/assets/logos/logo-black-bg.jpg)
 
 این پروژه با [Angular CLI](https://github.com/angular/angular-cli) نسخه 12.2.17 تولید شده است
-
-##وب سایت مخصوص فروش بازی
 
 این وب سایت صرفا جهت آشنایی و فراگیری انگولار توسط [رضا کلبعلی](https://github.com/rezakalbaali) توسعه یافته است، در صورت نیاز میتوانید از کد های موجود بهره ببرید
 
