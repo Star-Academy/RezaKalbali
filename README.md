@@ -1,6 +1,14 @@
-# Game store
+# Squid Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.17.
+![Squid Game](src/assets/logos/logo.svg)
+
+این پروژه با [Angular CLI](https://github.com/angular/angular-cli) نسخه 12.2.17 تولید شده است
+
+##وب سایت مخصوص فروش بازی
+
+این وب سایت صرفا جهت آشنایی و فراگیری انگولار توسط [رضا کلبعلی](https://github.com/rezakalbaali) توسعه یافته است، در صورت نیاز میتوانید از کد های موجود بهره ببرید
+
+و برای ادامه توسعه نیز می توانید از دستورات زیر استفاده کنید:
 
 ## Development server
 
