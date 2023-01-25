@@ -7,8 +7,8 @@
 این پروژه با [Angular CLI](https://github.com/angular/angular-cli) نسخه 12.2.17 تولید شده است
 
 این وب سایت صرفا جهت آشنایی و فراگیری انگولار توسط
-[رضا کلبعلی](https://github.com/rezakalbaali) در دوره [Star Academy]
-https://github.com/Star-Academy) توسعه یافته است، در صورت نیاز می توانید از کد های موجود بهره ببرید
+[رضا کلبعلی](https://github.com/rezakalbaali) در دوره [Star Academy](https://github.com/Star-Academy)
+توسعه یافته است، در صورت نیاز می توانید از کد های موجود بهره ببریدیا در توسعه این پروژه سهیم باشید.
 
 و برای ادامه توسعه نیز می توانید از دستورات زیر استفاده کنید:
 
