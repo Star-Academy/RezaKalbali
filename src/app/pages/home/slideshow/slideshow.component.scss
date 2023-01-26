@@ -26,10 +26,10 @@
         color: var(--color-gray-98);
 
         position: absolute;
-        inset-block-end: 3rem;
-        inset-inline-end: 3rem;
+        inset-block-end: 1vw;
+        inset-inline-end: 2vw;
 
-        font-size: 5rem;
+        font-size: 4vw;
 
         text-shadow: 0 0 1rem var(--color-gray-10);
         text-transform: capitalize;
@@ -43,10 +43,12 @@
     inset-inline-start: 5rem;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: end;
+    gap: 0.4em;
 
     height: 100%;
+
+    padding-block-end: 5rem;
 
     font-size: 2rem;
 
