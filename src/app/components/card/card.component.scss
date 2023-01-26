@@ -1,3 +1,14 @@
+@mixin title-hover {
+  z-index: 1;
+
+  transform: translateY(2rem) !important;
+
+  font-size: 2.5rem;
+
+  text-shadow: 0.1rem 0 0.2rem hsl(0deg 0 0), -0.1rem 0 0.2rem hsl(0deg 0 0),
+    0 0.1rem 0.2rem hsl(0deg 0 0), 0 -0.1rem 0.2rem hsl(0deg 0 0);
+}
+
 article {
   width: 20rem;
 
@@ -31,6 +42,24 @@ article {
         height: 2ch;
 
         user-select: none;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .back {
+        opacity: 1;
+
+        justify-content: end;
+
+        padding-block-end: 2rem;
+      }
+
+      .title {
+        @include title-hover;
+      }
+
+      img {
+        filter: blur(0.1rem) brightness(0.4);
       }
     }
 
@@ -77,15 +106,7 @@ article {
 
       .front {
         .title {
-          z-index: 1;
-
-          transform: translateY(2rem);
-
-          font-size: 2.5rem;
-
-          text-shadow: 0.1rem 0 0.2rem hsl(0deg 0 0),
-            -0.1rem 0 0.2rem hsl(0deg 0 0), 0 0.1rem 0.2rem hsl(0deg 0 0),
-            0 -0.1rem 0.2rem hsl(0deg 0 0);
+          @include title-hover;
 
           transition-delay: 0.2s;
           transition-duration: 0.2s;
