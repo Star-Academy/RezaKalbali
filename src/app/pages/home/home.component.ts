@@ -9,7 +9,6 @@ import gameList from '../../demo-data/game-list';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  public free = GamePayEnum.FREE;
-  public pay = GamePayEnum.PAY;
+  public GamePayEnum = GamePayEnum;
   public games: GameModel[] = gameList;
 }
