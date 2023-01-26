@@ -11,4 +11,5 @@ export class CardComponent {
   @Input() public description?: string;
   @Input() public buttonIconClass: string = '';
   @Input() public buttonText: string = '';
+  @Input() public isFree: boolean = false;
 }

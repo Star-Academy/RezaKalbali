@@ -1,21 +1,14 @@
 import { Component } from '@angular/core';
+import { SlideModel } from '../../../models/slide.model';
+import slideList from '../../../demo-data/slide-list';
 
-type Slide = {
-  src: string;
-  alt: string;
-};
 @Component({
   selector: 'app-slideshow',
   templateUrl: './slideshow.component.html',
   styleUrls: ['./slideshow.component.scss'],
 })
 export class SlideshowComponent {
-  public slides: Array<Slide> = [
-    { src: 'assets/images/slideshow/cp.jpg', alt: 'cyber punk' },
-    { src: 'assets/images/slideshow/csgo.jpg', alt: 'counter strike GO' },
-    { src: 'assets/images/slideshow/dota2.jpg', alt: 'dota 2' },
-    { src: 'assets/images/slideshow/warzone.jpg', alt: 'war zone 2' },
-  ];
+  public slides: SlideModel[] = slideList;
   public activeSlide: number = 0;
   public interval!: number;
 
@@ -25,7 +18,6 @@ export class SlideshowComponent {
       else this.activeSlide++;
     }, 3500);
   }
-
   public activeSlideshowHandler(index: number): void {
     clearInterval(this.interval);
     this.activeSlide = index;
@@ -34,11 +26,9 @@ export class SlideshowComponent {
       else this.activeSlide++;
     }, 3500);
   }
-
   public onMouseEnter(): void {
     clearInterval(this.interval);
   }
-
   public onMouseLeave(): void {
     clearInterval(this.interval);
     this.interval = setInterval(() => {

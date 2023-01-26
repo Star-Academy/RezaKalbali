@@ -1,7 +1,10 @@
 <app-card
-  [img]="img"
-  [title]="name"
+  [img]="game.img"
+  [title]="game.name"
   [description]="customPrice"
-  [buttonText]="pay === 'pay' ? 'افزودن به سبد خرید' : 'دانلود رایگان'"
+  [buttonText]="
+    game.pay === GamePayEnum.PAY ? 'افزودن به سبد خرید' : 'دانلود رایگان'
+  "
   [buttonIconClass]="buttonIconClass"
+  [isFree]="game.pay === GamePayEnum.FREE"
 ></app-card>

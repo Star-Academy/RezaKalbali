@@ -2,7 +2,7 @@
 
 ## وب سایت فروش بازی
 
-![Squid Game](src/assets/logos/logo-black-bg.jpg)
+![Squid Game](src/assets/logos/logo-black-bg.svg)
 
 [دموی پروژه](https://star-academy.github.io/RezaKalbali/)
 
