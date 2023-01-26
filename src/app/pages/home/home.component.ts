@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-
-type Game = {
-  id: number;
-  name: string;
-  img: string;
-  pay: 'free' | 'pay';
-  price?: number;
-};
+import { GameModel } from '../../models/game.model';
+import { GamePayEnum } from '../../enums/game-pay.enum';
+import gameList from '../../demo-data/game-list';
 
 @Component({
   selector: 'app-home',
@@ -14,46 +9,7 @@ type Game = {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  public games: Array<Game> = [
-    {
-      id: 0,
-      name: 'Counter Strike',
-      img: 'assets/images/games/csgo.jpg',
-      pay: 'free',
-    },
-    {
-      id: 2,
-      name: 'Cyber Punk',
-      img: 'assets/images/games/cp.jpg',
-      pay: 'pay',
-      price: 65000,
-    },
-    {
-      id: 2,
-      name: 'Cyber Punk',
-      img: 'assets/images/games/cp.jpg',
-      pay: 'pay',
-      price: 65000,
-    },
-    {
-      id: 2,
-      name: 'War Zone',
-      img: 'assets/images/games/warzone.jpg',
-      pay: 'free',
-    },
-    {
-      id: 2,
-      name: 'Dota 2',
-      img: 'assets/images/games/Dota2.jpg',
-      pay: 'free',
-    },
-
-    {
-      id: 2,
-      name: 'Cyber Punk',
-      img: 'assets/images/games/cp.jpg',
-      pay: 'pay',
-      price: 65000,
-    },
-  ];
+  public free = GamePayEnum.FREE;
+  public pay = GamePayEnum.PAY;
+  public games: GameModel[] = gameList;
 }

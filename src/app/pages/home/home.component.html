@@ -30,7 +30,7 @@
       </ng-container>
       <ng-container *ngFor="let game of games">
         <app-home-card
-          *ngIf="game.pay === 'pay'"
+          *ngIf="game.pay === pay"
           [img]="game.img"
           [name]="game.name"
           [pay]="game.pay"
