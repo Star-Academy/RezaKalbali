@@ -1,13 +1,19 @@
 nav {
   color: var(--color-gray-98);
 
+  overflow-y: auto;
+
   height: 6.4rem;
 
   ul {
+    overflow-y: auto;
+
     display: flex;
     gap: 0.4rem;
 
     height: 100%;
+
+    white-space: nowrap;
 
     li {
       display: flex;
@@ -39,4 +45,8 @@ nav {
 .active {
   background-color: var(--color--primary);
   color: var(--color-gray-98) !important;
+}
+
+:host {
+  overflow-y: auto;
 }
