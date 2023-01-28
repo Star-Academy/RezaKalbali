@@ -16,17 +16,13 @@
   &:hover {
     box-shadow: 0 0.4rem 2rem hsla(0deg 0 100 / 25%);
 
-    transform: scale(1.1);
+    transform: scale(1.08);
 
     transition-duration: 0.2s;
   }
 
-  &.free {
-    border: 1px solid hsl(130deg 100 32);
-
-    &:hover {
-      box-shadow: 0 0.4rem 2rem hsla(130deg 100 32 / 25%);
-    }
+  &.free:hover {
+    box-shadow: 0 0.4rem 2rem hsla(130deg 100 32 / 25%);
   }
 
   .img {
