@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { GameModel } from '../../models/game.model';
-import { GamePayEnum } from '../../enums/game-pay.enum';
+import { Game } from '../../models/game';
+import { GamePay } from '../../enums/game-pay';
 import { gameList } from '../../demo-data/game-list';
 
 @Component({
@@ -9,6 +9,6 @@ import { gameList } from '../../demo-data/game-list';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  public GamePayEnum = GamePayEnum;
-  public games: GameModel[] = gameList;
+  public GamePayEnum = GamePay;
+  public games: Game[] = gameList;
 }

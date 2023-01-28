@@ -1,45 +1,45 @@
-import { GamePayEnum } from '../enums/game-pay.enum';
-import { GameModel } from '../models/game.model';
+import { GamePay } from '../enums/game-pay';
+import { Game } from '../models/game';
 
-export const gameList: GameModel[] = [
+export const gameList: Game[] = [
   {
     id: 0,
     name: 'Counter Strike',
     img: 'assets/images/games/csgo.webp',
-    pay: GamePayEnum.FREE,
+    pay: GamePay.FREE,
   },
   {
     id: 2,
     name: 'Cyber Punk',
     img: 'assets/images/games/cp.webp',
-    pay: GamePayEnum.PAY,
+    pay: GamePay.PAY,
     price: 65000,
   },
   {
     id: 2,
     name: 'Cyber Punk',
     img: 'assets/images/games/cp.webp',
-    pay: GamePayEnum.PAY,
+    pay: GamePay.PAY,
     price: 65000,
   },
   {
     id: 2,
     name: 'War Zone',
     img: 'assets/images/games/warzone.webp',
-    pay: GamePayEnum.FREE,
+    pay: GamePay.FREE,
   },
   {
     id: 2,
     name: 'Dota 2',
     img: 'assets/images/games/Dota2.webp',
-    pay: GamePayEnum.FREE,
+    pay: GamePay.FREE,
   },
 
   {
     id: 2,
     name: 'Cyber Punk',
     img: 'assets/images/games/cp.webp',
-    pay: GamePayEnum.PAY,
+    pay: GamePay.PAY,
     price: 65000,
   },
 ];

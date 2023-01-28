@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { slideList } from '../../../demo-data/slide-list';
-import { SlideModel } from '../../../models/slide.model';
+import { Slide } from '../../../models/slide';
 
 @Component({
   selector: 'app-slideshow',
@@ -8,7 +8,7 @@ import { SlideModel } from '../../../models/slide.model';
   styleUrls: ['./slideshow.component.scss'],
 })
 export class SlideshowComponent {
-  public slides: SlideModel[] = slideList;
+  public slides: Slide[] = slideList;
   public activeSlide: number = 0;
   public interval!: number;
 
