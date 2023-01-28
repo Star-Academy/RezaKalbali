@@ -16,14 +16,12 @@
         <app-home-card
           *ngIf="game.pay === GamePayEnum.PAY"
           [game]="game"
-          buttonIconClass="far fa-buy"
         ></app-home-card>
       </ng-container>
       <ng-container *ngFor="let game of games">
         <app-home-card
           *ngIf="game.pay === GamePayEnum.PAY"
           [game]="game"
-          buttonIconClass="far fa-buy"
         ></app-home-card>
       </ng-container>
     </div>

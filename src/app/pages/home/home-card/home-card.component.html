@@ -2,9 +2,7 @@
   [img]="game.img"
   [title]="game.name"
   [description]="customPrice"
-  [buttonText]="
-    game.pay === GamePayEnum.PAY ? 'افزودن به سبد خرید' : 'دانلود رایگان'
-  "
+  buttonText="مشاهده"
   [buttonIconClass]="buttonIconClass"
   [isFree]="game.pay === GamePayEnum.FREE"
 ></app-card>
