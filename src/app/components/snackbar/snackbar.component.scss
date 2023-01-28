@@ -1,0 +1,55 @@
+.snackbar {
+  background-color: var(--color-gray-98);
+  color: var(--color, var(--color--success));
+
+  position: fixed;
+  inset-block-end: 4rem;
+  inset-inline-start: 4rem;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  min-width: 20rem;
+  height: 4rem;
+
+  padding-inline-end: 1rem;
+
+  border: 0.1rem solid currentcolor;
+  border-radius: 0.5rem;
+
+  transform: translateX(50rem);
+
+  font-size: 1.6rem;
+
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+
+  &.active {
+    transform: translateX(0);
+
+    transition-delay: 0.1s;
+    transition-duration: 0.2s;
+  }
+
+  .message {
+    color: hsl(0deg 0 0);
+  }
+
+  i {
+    color: hsl(0deg 0 0);
+
+    margin-inline-start: auto;
+
+    cursor: pointer;
+  }
+
+  .line {
+    align-self: stretch;
+
+    background-color: currentcolor;
+    color: var(--color, var(--color--success));
+
+    width: 2rem;
+  }
+}
