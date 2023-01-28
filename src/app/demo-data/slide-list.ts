@@ -1,4 +1,6 @@
-export default [
+import { SlideModel } from '../models/slide.model';
+
+export const slideList: SlideModel[] = [
   { src: 'assets/images/slideshow/cp.webp', alt: 'cyber punk' },
   { src: 'assets/images/slideshow/csgo.webp', alt: 'counter strike GO' },
   { src: 'assets/images/slideshow/dota2.webp', alt: 'dota 2' },

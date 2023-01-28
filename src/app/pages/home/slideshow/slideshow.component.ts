@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { slideList } from '../../../demo-data/slide-list';
 import { SlideModel } from '../../../models/slide.model';
-import slideList from '../../../demo-data/slide-list';
 
 @Component({
   selector: 'app-slideshow',

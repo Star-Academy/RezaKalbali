@@ -1,6 +1,7 @@
 import { GamePayEnum } from '../enums/game-pay.enum';
+import { GameModel } from '../models/game.model';
 
-export default [
+export const gameList: GameModel[] = [
   {
     id: 0,
     name: 'Counter Strike',
