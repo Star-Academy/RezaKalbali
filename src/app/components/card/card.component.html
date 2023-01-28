@@ -1,0 +1,16 @@
+<article class="card" [class.free]="isFree">
+  <img class="img" [src]="img" [alt]="title" />
+  <div class="main">
+    <h2 class="title">{{ title }}</h2>
+    <div class="details">
+      <app-button
+        [text]="buttonText"
+        [iconClass]="buttonIconClass"
+        [isSmall]="true"
+      ></app-button>
+      <span class="description">{{
+        isFree ? "رایگان" : description + " تومان"
+      }}</span>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,18 @@
+input {
+  padding: 0.8rem;
+
+  border: 2px solid var(--color-gray-10);
+  border-radius: 2rem;
+
+  outline: none;
+
+  &:focus {
+    border-color: var(--color--primary-darker);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :host {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+<app-card
+  [img]="game.img"
+  [title]="game.name"
+  [description]="customPrice"
+  buttonText="مشاهده"
+  [buttonIconClass]="buttonIconClass"
+  [isFree]="game.pay === GamePayEnum.FREE"
+></app-card>

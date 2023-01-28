@@ -1,0 +1,52 @@
+nav {
+  color: var(--color-gray-98);
+
+  overflow-y: auto;
+
+  height: 6.4rem;
+
+  ul {
+    overflow-y: auto;
+
+    display: flex;
+    gap: 0.4rem;
+
+    height: 100%;
+
+    white-space: nowrap;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      height: 100%;
+
+      a {
+        color: var(--color-gray-98);
+
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+
+        padding-inline: 1.4rem;
+
+        &:hover {
+          background-color: var(--color--primary);
+          color: var(--color-gray-98) !important;
+
+          text-shadow: 0 0.5rem 1rem var(--color-gray-10);
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background-color: var(--color--primary);
+  color: var(--color-gray-98) !important;
+}
+
+:host {
+  overflow-y: auto;
+}
