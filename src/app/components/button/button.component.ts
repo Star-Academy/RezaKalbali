@@ -10,5 +10,7 @@ export class ButtonComponent {
   @Input() public text: string = "";
   @Input() public isSmall: boolean = false;
   @Input() public iconClass: string = "";
+  @Input() public isPrimary: boolean = false;
+
   @Output() public buttonClick: EventEmitter<void> = new EventEmitter();
 }

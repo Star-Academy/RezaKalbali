@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  padding-block-start: 10rem;
+
+  form {
+    background-color: hsl(0deg 0 38);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 40rem;
+
+    padding: 1rem;
+
+    img {
+      width: 28rem;
+    }
+
+    & > div {
+      flex-grow: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      width: 100%;
+
+      padding-block: 0.7rem;
+
+      label {
+        width: 100%;
+        max-width: 30rem;
+
+        input {
+          width: 100%;
+          height: 4.2rem;
+
+          padding: 1rem;
+
+          border: 0.3rem solid transparent;
+          border-radius: 0.5rem;
+
+          outline: none;
+
+          &:focus {
+            border-color: var(--color--primary);
+          }
+        }
+      }
+
+      app-button {
+        justify-content: center;
+
+        width: 100%;
+        max-width: 30rem;
+      }
+    }
+
+    .footer {
+      color: var(--color-gray-10);
+
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      gap: 0.6rem;
+
+      padding-block-start: 3rem;
+      padding-block-end: 0;
+
+      font-size: 1.4rem;
+
+      button {
+        background-color: transparent;
+        color: var(--color-gray-98);
+
+        padding: 0.2rem;
+
+        border: none;
+
+        font-size: 1.4rem;
+
+        cursor: pointer;
+
+        &:hover {
+          color: var(--color--primary);
+        }
+      }
+    }
+  }
+}

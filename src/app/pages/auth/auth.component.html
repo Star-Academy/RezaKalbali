@@ -1,0 +1,45 @@
+<div class="container">
+  <form (submit)="formSubmitHandler()">
+    <img src="assets/logos/logo.svg" alt="squid game logo" />
+    <div>
+      <label>
+        <input
+          type="text"
+          name="username"
+          placeholder="نام کاربری"
+          [(ngModel)]="user.username"
+        />
+      </label>
+      <label *ngIf="!isLoginMode">
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="user.email"
+          placeholder="ایمیل"
+        />
+      </label>
+      <label>
+        <input
+          type="password"
+          name="password"
+          placeholder="کلمه عبور"
+          [(ngModel)]="user.password"
+        />
+      </label>
+      <app-button
+        [isPrimary]="true"
+        [text]="isLoginMode ? 'ورود' : 'ثبت نام'"
+      ></app-button>
+    </div>
+    <div class="footer">
+      <ng-container *ngIf="isLoginMode; else signup">
+        <span>ثبت نام نکردید؟</span>
+      </ng-container>
+      <ng-template #signup><span>حساب کاربری دارید؟</span></ng-template>
+
+      <button (click)="isLoginMode = !isLoginMode" type="button">
+        {{ isLoginMode ? "ثبت نام" : "ورود" }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { HomeModule } from "./pages/home/home.module";
 import { NotFoundModule } from "./pages/not-found/not-found.module";
 import { SnackbarModule } from "./components/snackbar/snackbar.module";
+import { AuthModule } from "./pages/auth/auth.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { SnackbarModule } from "./components/snackbar/snackbar.module";
     HomeModule,
     NotFoundModule,
     SnackbarModule,
+    AuthModule,
   ],
   bootstrap: [AppComponent],
 })

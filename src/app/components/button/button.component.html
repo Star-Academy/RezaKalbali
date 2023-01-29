@@ -1,4 +1,8 @@
-<button [class.small]="isSmall" (click)="buttonClick.emit()">
+<button
+  [class.small]="isSmall"
+  (click)="buttonClick.emit()"
+  [class.primary]="isPrimary"
+>
   <i *ngIf="iconClass" [class]="iconClass"></i>
   <span>{{ text }}</span>
 </button>
