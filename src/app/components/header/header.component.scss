@@ -40,3 +40,18 @@
     user-select: none;
   }
 }
+
+.go-login-btn {
+  background-color: transparent;
+  color: var(--color-gray-98);
+
+  border: none;
+
+  font-weight: bold;
+
+  &:hover {
+    color: var(--color--primary-lighter);
+
+    cursor: pointer;
+  }
+}

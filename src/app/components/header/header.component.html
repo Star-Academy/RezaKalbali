@@ -6,6 +6,13 @@
   <div class="header__avatar">
     <app-search-box></app-search-box>
 
-    <app-avatar></app-avatar>
+    <ng-container *ngIf="isLoggedIn; else loginOrSignUp">
+      <app-avatar></app-avatar>
+    </ng-container>
+    <ng-template #loginOrSignUp>
+      <button class="go-login-btn" (click)="onClickLogInButton()">
+        ورود / ثبت نام
+      </button>
+    </ng-template>
   </div>
 </header>

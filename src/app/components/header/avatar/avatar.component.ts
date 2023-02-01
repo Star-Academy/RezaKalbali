@@ -20,4 +20,9 @@ export class AvatarComponent {
   public onClickAvatar(): void {
     this.avatarDisplay = this.avatarDisplay === "none" ? "block" : "none";
   }
+
+  public onClickLogout(): void {
+    localStorage.removeItem("token");
+    location.reload();
+  }
 }
