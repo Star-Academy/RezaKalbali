@@ -20,7 +20,15 @@ export class SlideshowComponent {
   }
   public activeSlideshowHandler(index: number): void {
     clearInterval(this.interval);
-    this.activeSlide = index;
+
+    if (index > this.slides.length - 1) {
+      this.activeSlide = 0;
+    } else if (index < 0) {
+      this.activeSlide = this.slides.length - 1;
+    } else {
+      this.activeSlide = index;
+    }
+
     this.interval = setInterval(() => {
       if (this.activeSlide === this.slides.length - 1) this.activeSlide = 0;
       else this.activeSlide++;

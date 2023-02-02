@@ -1,7 +1,7 @@
 .container {
   position: relative;
 
-  padding: 3rem 2rem;
+  aspect-ratio: 3/1;
 
   .slideshow {
     overflow: hidden;
@@ -23,11 +23,20 @@
       }
 
       .name {
-        color: var(--color-gray-98);
+        background-color: var(--color-gray-25);
+        color: var(--color-background);
 
         position: absolute;
-        inset-block-end: 1vw;
-        inset-inline-end: 2vw;
+        inset-block-end: 2vw;
+        inset-inline-end: 3vw;
+
+        display: flex;
+        align-items: center;
+
+        padding-block: 0.2rem;
+        padding-inline: 0.5rem;
+
+        border-radius: 0.4rem;
 
         font-size: 4vw;
 
@@ -39,33 +48,65 @@
 
   .overlay {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 5rem;
+    inset-block-end: 1rem;
+    inset-inline-start: 1rem;
 
     display: flex;
-    align-items: end;
-    gap: 0.4em;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
 
-    height: 100%;
+    font-size: 1.6rem;
 
-    padding-block-end: 5rem;
+    .arrows {
+      display: flex;
+      gap: 1rem;
 
-    font-size: 2rem;
+      i {
+        background-color: var(--color-gray-25);
+        color: var(--color-background);
 
-    li {
-      cursor: pointer;
-      user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 4rem;
+        aspect-ratio: 1 / 1;
+
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
     }
 
-    .bullets {
-      color: var(--color-gray-98);
+    .items {
+      background-color: var(--color-gray-25);
 
-      text-shadow: 0 0 0.2rem var(--color-gray-10);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
 
-      &:hover {
-        transform: scale(1.1);
+      padding: 0.5rem 1rem;
 
-        transition-duration: 0.1s;
+      border-radius: 3rem;
+
+      li {
+        cursor: pointer;
+        user-select: none;
+
+        .bullets {
+          text-shadow: 0 0 0.2rem var(--color-gray-10);
+
+          &:hover {
+            transform: scale(1.1);
+
+            transition-duration: 0.1s;
+          }
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 html {
-  background-color: var(--color-gray-10);
+  background-color: var(--color-background);
 
   font-family: Vazirmatn, sans-serif;
   font-size: 62.5%;
@@ -15,53 +15,15 @@ html {
 }
 
 :root {
-  --primary-hue: 350;
-  --secondary-hue: 260;
-  --success-hue: 120;
-  --warning-hue: 20;
-  --danger-hue: 0;
+  --color-primary: hsl(334deg 83% 51%);
+  --color-background: hsl(313deg 3% 3%);
+  --color-background-light: hsl(0deg 0% 16%);
+  --color-gray-text: hsl(0deg 0% 96%);
+  --color-gray-25: hsla(313deg 2% 50% /25%);
+  --color-green: hsl(140deg 86% 52%);
+  --color-border: hsl(0deg 0% 5%);
 
-  --color-gray-98: hsl(0deg 0% 98%);
-  --color-gray-90: hsl(0deg 0% 90%);
-  --color-gray-80: hsl(0deg 0% 80%);
-  --color-gray-70: hsl(0deg 0% 70%);
-  --color-gray-40: hsl(0deg 0% 40%);
-  --color-gray-30: hsl(0deg 0% 30%);
-  --color-gray-20: hsl(0deg 0% 20%);
-  --color-gray-10: hsl(0deg 0% 10%);
-
-  --color--default-background: var(--color-gray-98);
-  --color--default-foreground: var(--color-gray-10);
-
-  --color--primary: hsl(var(--primary-hue) 100% 66%);
-  --color--primary-fade: hsl(var(--primary-hue) 100% 96%);
-  --color--primary-lighter: hsl(var(--primary-hue) 100% 77%);
-  --color--primary-darker: hsl(var(--primary-hue) 100% 44%);
-  --color--primary-opposite: var(--color-gray-98);
-
-  --color--secondary: hsl(var(--secondary-hue) 50% 50%);
-  --color--secondary-fade: hsl(var(--secondary-hue) 100% 90%);
-  --color--secondary-lighter: hsl(var(--secondary-hue) 50% 56%);
-  --color--secondary-darker: hsl(var(--secondary-hue) 50% 44%);
-  --color--secondary-opposite: var(--color-gray-98);
-
-  --color--warning: hsl(var(--warning-hue) 100% 44%);
-  --color--warning-fade: hsl(var(--warning-hue) 100% 90%);
-  --color--warning-lighter: hsl(var(--warning-hue) 100% 50%);
-  --color--warning-darker: hsl(var(--warning-hue) 100% 40%);
-  --color--warning-opposite: var(--color-gray-98);
-
-  --color--success: hsl(var(--success-hue) 100% 40%);
-  --color--success-fade: hsl(var(--success-hue) 100% 92%);
-  --color--success-lighter: hsl(var(--success-hue) 100% 44%);
-  --color--success-darker: hsl(var(--success-hue) 100% 36%);
-  --color--success-opposite: var(--color-gray-98);
-
-  --color--danger: hsl(var(--danger-hue) 100% 36%);
-  --color--danger-fade: hsl(var(--danger-hue) 100% 90%);
-  --color--danger-lighter: hsl(var(--danger-hue) 100% 42%);
-  --color--danger-darker: hsl(var(--danger-hue) 100% 30%);
-  --color--danger-opposite: var(--color-gray-98);
+  --margin-main-sides: 4rem;
 }
 
 input,

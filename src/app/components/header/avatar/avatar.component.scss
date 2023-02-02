@@ -1,31 +1,56 @@
 .avatar {
-  &__icon {
-    color: var(--color-gray-98);
+  background-color: var(--color-gray-text);
 
-    width: 4rem;
-    height: 4rem;
+  position: relative;
 
-    padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 5rem;
+  height: 5rem;
+
+  border: 0.1rem solid var(--color-background-light);
+  border-radius: 50%;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
 
     border-radius: 50%;
-
-    font-size: 2rem;
-
-    text-align: center;
 
     cursor: pointer;
 
     &:hover {
-      background-color: var(--color-gray-98);
-      color: var(--color--primary);
+      background-color: var(--color-primary);
+
+      i {
+        color: var(--color-gray-text);
+      }
+    }
+
+    i {
+      color: var(--color-background-light);
+
+      border-radius: 50%;
+
+      font-size: 3rem;
+
+      text-align: center;
     }
   }
 
-  &__detail {
+  .popover {
     --display: none;
+    background-color: var(--color-gray-text);
+
     position: absolute;
-    inset-block-start: 120%;
-    inset-inline-end: 0;
+    inset-block-start: 110%;
+    inset-inline-end: 0.3rem;
     z-index: 1;
 
     display: var(--display);
@@ -41,18 +66,7 @@
 
       border-radius: 0.5rem;
 
-      &::before {
-        content: "^";
-
-        color: var(--color-gray-98);
-
-        position: absolute;
-        inset-block-start: -1.5rem;
-        inset-inline-end: 1.2rem;
-        z-index: -1;
-
-        font-size: 3.5rem;
-      }
+      font-size: 1.6rem;
 
       li {
         padding: 0.6rem;
@@ -60,8 +74,8 @@
         border-radius: 0.5rem;
 
         &:hover {
-          background-color: var(--color--primary);
-          color: var(--color-gray-98);
+          background-color: var(--color-primary);
+          color: var(--color-gray-text);
         }
 
         a {
@@ -76,9 +90,4 @@
       }
     }
   }
-}
-
-.active-avatar {
-  background-color: var(--color-gray-98);
-  color: var(--color--primary);
 }

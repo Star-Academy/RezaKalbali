@@ -1,10 +1,13 @@
 <div class="avatar" #avatar>
-  <i
-    class="fa-regular fa-user avatar__icon"
-    [class.active-avatar]="avatarDisplay === 'block'"
-    (click)="onClickAvatar()"
-  ></i>
-  <div class="avatar__detail" [style.--display]="avatarDisplay">
+  <div class="icon">
+    <i
+      class="fa-solid fa-user"
+      [class.active-avatar]="avatarDisplay === 'block'"
+      (click)="onClickAvatar()"
+    ></i>
+  </div>
+
+  <div class="popover" [style.--display]="avatarDisplay">
     <ul>
       <li><a href="#">پروفایل</a></li>
       <li><a href="#">سبد خرید</a></li>

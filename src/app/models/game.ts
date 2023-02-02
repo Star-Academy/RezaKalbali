@@ -6,4 +6,6 @@ export interface Game {
   img: string;
   pay: GamePay;
   price?: number;
+  description: string;
+  tags: string[];
 }

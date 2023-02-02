@@ -12,4 +12,6 @@ export class CardComponent {
   @Input() public buttonIconClass: string = "";
   @Input() public buttonText: string = "";
   @Input() public isFree: boolean = false;
+  @Input() public info: string = "";
+  @Input() public tags: string[] = [];
 }

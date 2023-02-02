@@ -2,15 +2,21 @@
 <main>
   <app-slideshow></app-slideshow>
 
-  <section class="container">
-    <h2 class="heading">پر طرفدار ترین ها</h2>
+  <div class="banner">
+    <h2>روز ترین وب سایت گیم در ایران</h2>
+    <img src="assets/images/top-banner.png" alt="games character" />
+  </div>
+
+  <section class="card-container">
+    <h2 class="heading">عناوین محبوب</h2>
     <div>
       <app-home-card *ngFor="let game of games" [game]="game"></app-home-card>
     </div>
+    <button class="more-button">مشاهده همه</button>
   </section>
 
-  <section class="container">
-    <h2 class="heading">پرفروش ترین ها</h2>
+  <section class="card-container">
+    <h2 class="heading">پیشنهاد ویژه</h2>
     <div>
       <ng-container *ngFor="let game of games">
         <app-home-card
@@ -25,6 +31,26 @@
         ></app-home-card>
       </ng-container>
     </div>
+    <button class="more-button">مشاهده همه</button>
+  </section>
+
+  <section class="card-container">
+    <h2 class="heading">آخرین عنوان ها</h2>
+    <div>
+      <ng-container *ngFor="let game of games">
+        <app-home-card
+          *ngIf="game.pay === GamePayEnum.FREE"
+          [game]="game"
+        ></app-home-card>
+      </ng-container>
+      <ng-container *ngFor="let game of games">
+        <app-home-card
+          *ngIf="game.pay === GamePayEnum.FREE"
+          [game]="game"
+        ></app-home-card>
+      </ng-container>
+    </div>
+    <button class="more-button">مشاهده همه</button>
   </section>
 </main>
 <app-footer></app-footer>
