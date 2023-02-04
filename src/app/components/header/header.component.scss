@@ -22,6 +22,8 @@ header {
     i {
       color: var(--color-gray-text);
 
+      display: none;
+
       font-size: 3rem;
     }
 
@@ -37,5 +39,19 @@ header {
     gap: 3rem;
 
     height: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-side {
+    display: block;
+  }
+
+  app-search-box {
+    display: none;
+  }
+
+  app-nav {
+    display: none;
   }
 }

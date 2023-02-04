@@ -7,12 +7,6 @@ input {
   outline: none;
 
   &:focus {
-    border-color: var(--color--primary-darker);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  :host {
-    display: none;
+    border-color: var(--color-primary);
   }
 }
