@@ -3,28 +3,16 @@
     <img src="assets/logos/logo.svg" alt="squid game logo" />
     <div>
       <label>
-        <input
-          type="text"
-          name="username"
-          placeholder="نام کاربری"
-          [(ngModel)]="user.username"
-        />
+        <span> نام کاربری: </span>
+        <input type="text" name="username" [(ngModel)]="user.username" />
       </label>
       <label *ngIf="!isLoginMode">
-        <input
-          type="email"
-          name="email"
-          [(ngModel)]="user.email"
-          placeholder="ایمیل"
-        />
+        <span> ایمیل: </span>
+        <input type="email" name="email" [(ngModel)]="user.email" />
       </label>
       <label>
-        <input
-          type="password"
-          name="password"
-          placeholder="کلمه عبور"
-          [(ngModel)]="user.password"
-        />
+        <span> کلمه عبور: </span>
+        <input type="password" name="password" [(ngModel)]="user.password" />
       </label>
       <app-button
         [isPrimary]="true"

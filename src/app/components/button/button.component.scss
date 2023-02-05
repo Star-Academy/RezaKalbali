@@ -1,5 +1,5 @@
 button {
-  background-color: var(--color-gray-98);
+  background-color: var(--color-gray-text);
 
   display: flex;
   align-items: baseline;
@@ -10,7 +10,7 @@ button {
 
   padding: 0.4em 0.6em;
 
-  border: 0.1rem solid var(--color--primary);
+  border: 0.1rem solid var(--color-primary);
   border-radius: 0.4rem;
 
   font-size: 1.4rem;
@@ -18,13 +18,13 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: var(--color--primary);
+    background-color: var(--color-primary);
     color: var(--color-gray-98);
     box-shadow: -0.1rem 0.1rem 0.4rem hsl(0deg 0% 50%);
   }
 
   &.primary {
-    background-color: var(--color--primary);
+    background-color: var(--color-primary);
     color: var(--color-gray-98);
   }
 }

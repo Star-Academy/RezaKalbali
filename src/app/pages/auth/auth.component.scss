@@ -9,7 +9,7 @@
   padding-block-start: 10rem;
 
   form {
-    background-color: hsl(0deg 0 38);
+    background-color: var(--color-background-light);
 
     display: flex;
     flex-direction: column;
@@ -19,6 +19,8 @@
     width: 40rem;
 
     padding: 1rem;
+
+    border-radius: 0.4rem;
 
     img {
       width: 28rem;
@@ -40,47 +42,54 @@
         width: 100%;
         max-width: 30rem;
 
+        span {
+          color: var(--color-gray-text);
+
+          font-size: 1.4rem;
+        }
+
         input {
           width: 100%;
           height: 4.2rem;
 
           padding: 1rem;
 
-          border: 0.3rem solid transparent;
-          border-radius: 0.5rem;
+          border: 0.2rem solid transparent;
+          border-radius: 0.4rem;
 
           outline: none;
 
           &:focus {
-            border-color: var(--color--primary);
+            border-color: var(--color-primary);
           }
         }
       }
 
       app-button {
+        color: var(--color-gray-text);
+
         justify-content: center;
 
         width: 100%;
         max-width: 30rem;
+
+        padding-block: 2rem;
       }
     }
 
     .footer {
-      color: var(--color-gray-10);
+      color: hsl(313deg 20% 60%);
 
       display: flex;
       flex-direction: row;
-      align-items: start;
+      align-items: center;
       gap: 0.6rem;
-
-      padding-block-start: 3rem;
-      padding-block-end: 0;
 
       font-size: 1.4rem;
 
       button {
         background-color: transparent;
-        color: var(--color-gray-98);
+        color: var(--color-gray-text);
 
         padding: 0.2rem;
 
@@ -91,7 +100,7 @@
         cursor: pointer;
 
         &:hover {
-          color: var(--color--primary);
+          color: var(--color-primary);
         }
       }
     }
