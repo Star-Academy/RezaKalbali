@@ -14,6 +14,11 @@
         <span> کلمه عبور: </span>
         <input type="password" name="password" [(ngModel)]="user.password" />
       </label>
+      <label *ngIf="!isLoginMode">
+        <span> تکرار کلمه عبور: </span>
+        <input type="password" name="password" [(ngModel)]="user.password" />
+      </label>
+
       <app-button
         [isPrimary]="true"
         [text]="isLoginMode ? 'ورود' : 'ثبت نام'"

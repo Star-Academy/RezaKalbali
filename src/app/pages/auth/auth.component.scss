@@ -1,4 +1,6 @@
 .container {
+  overflow-y: auto;
+
   display: flex;
   align-items: start;
   justify-content: center;
@@ -7,6 +9,7 @@
   height: 100vh;
 
   padding-block-start: 10rem;
+  padding-block-end: 3rem;
 
   form {
     background-color: var(--color-background-light);
@@ -78,7 +81,7 @@
     }
 
     .footer {
-      color: hsl(313deg 20% 60%);
+      color: var(--color-gray-text);
 
       display: flex;
       flex-direction: row;
@@ -89,7 +92,7 @@
 
       button {
         background-color: transparent;
-        color: var(--color-gray-text);
+        color: var(--color-primary);
 
         padding: 0.2rem;
 
@@ -98,10 +101,6 @@
         font-size: 1.4rem;
 
         cursor: pointer;
-
-        &:hover {
-          color: var(--color-primary);
-        }
       }
     }
   }
