@@ -6,8 +6,6 @@ article {
   align-items: center;
   gap: 1rem;
 
-  width: 20rem;
-
   padding: 1rem;
 
   border: 0.1rem solid var(--color-border);
@@ -106,5 +104,12 @@ article {
 
     width: 18rem;
     aspect-ratio: 1 / 1;
+  }
+}
+
+
+@media only screen and (min-width:430px) {
+  article{
+    width: 20rem;
   }
 }
