@@ -1,39 +1,39 @@
 nav {
-  color: var(--color-gray-98);
+  color: var(--color-gray-text);
 
   overflow-y: auto;
 
-  height: 6.4rem;
+  display: flex;
+  align-items: center;
 
   ul {
-    overflow-y: auto;
-
+    --direction: row;
     display: flex;
-    gap: 0.4rem;
+    flex-direction: var(--direction);
+    align-items: center;
 
-    height: 100%;
-
-    white-space: nowrap;
+    width: 100%;
 
     li {
       display: flex;
       align-items: center;
+      justify-content: center;
 
-      height: 100%;
+      padding: 1rem;
+
+      font-size: 1.4rem;
+      font-weight: bold;
 
       a {
-        color: var(--color-gray-98);
+        color: var(--color-gray-text);
 
         display: flex;
         align-items: center;
 
         height: 100%;
 
-        padding-inline: 1.4rem;
-
         &:hover {
-          background-color: var(--color--primary);
-          color: var(--color-gray-98) !important;
+          color: var(--color-primary) !important;
 
           text-shadow: 0 0.5rem 1rem var(--color-gray-10);
         }
@@ -43,10 +43,5 @@ nav {
 }
 
 .active {
-  background-color: var(--color--primary);
-  color: var(--color-gray-98) !important;
-}
-
-:host {
-  overflow-y: auto;
+  color: var(--color-primary) !important;
 }

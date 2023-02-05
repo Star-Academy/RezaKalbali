@@ -22,9 +22,11 @@ header {
     i {
       color: var(--color-gray-text);
 
-      display: none;
+      display: block;
 
       font-size: 3rem;
+
+      cursor: pointer;
     }
 
     img {
@@ -40,12 +42,6 @@ header {
 
     height: 100%;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .logo-side {
-    display: block;
-  }
 
   app-search-box {
     display: none;
@@ -53,5 +49,25 @@ header {
 
   app-nav {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    padding-inline: var(--margin-main-sides);
+  }
+
+  .logo-side {
+    i {
+      display: none !important;
+    }
+  }
+
+  app-search-box {
+    display: block !important;
+  }
+
+  app-nav {
+    display: block !important;
   }
 }

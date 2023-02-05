@@ -1,0 +1,5 @@
+<div class="side-menu" [style.--display]="isOpen ? 'flex' : 'none'">
+  <i class="fa-solid fa-bars" (click)="toggleOpen.emit(!isOpen)"></i>
+
+  <app-nav [vertical]="true"></app-nav>
+</div>

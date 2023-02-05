@@ -1,6 +1,6 @@
 <header>
   <div class="logo-side">
-    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-bars" (click)="isOpenSideMenu = !isOpenSideMenu"></i>
     <img src="assets/logos/logo.svg" alt="logo" />
     <app-nav></app-nav>
   </div>
@@ -9,3 +9,7 @@
     <app-avatar></app-avatar>
   </div>
 </header>
+<app-side-menu
+  [isOpen]="isOpenSideMenu"
+  (toggleOpen)="handleToggleOpen($event)"
+></app-side-menu>

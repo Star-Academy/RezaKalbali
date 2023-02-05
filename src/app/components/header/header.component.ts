@@ -9,6 +9,7 @@ import { AuthService } from "../../services/auth.service";
 })
 export class HeaderComponent {
   public isLoggedIn: boolean = false;
+  public isOpenSideMenu: boolean = false;
 
   public constructor(private router: Router, private authService: AuthService) {
     this.initializeVariables().then();
@@ -16,6 +17,10 @@ export class HeaderComponent {
 
   public async onClickLogInButton(): Promise<void> {
     await this.router.navigateByUrl("/auth");
+  }
+
+  public handleToggleOpen(state: boolean): void {
+    this.isOpenSideMenu = state;
   }
 
   private async initializeVariables(): Promise<void> {
