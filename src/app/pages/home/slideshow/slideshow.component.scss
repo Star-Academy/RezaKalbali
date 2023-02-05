@@ -23,8 +23,8 @@
       }
 
       .name {
-        background-color: var(--color-gray-25);
-        color: var(--color-background);
+        background-color: var(--color-dark-25);
+        color: var(--color-gray-text);
 
         position: absolute;
         inset-block-end: 2vw;
@@ -63,8 +63,8 @@
       gap: 1rem;
 
       i {
-        background-color: var(--color-gray-25);
-        color: var(--color-background);
+        background-color: var(--color-dark-25);
+        color: var(--color-gray-text);
 
         display: flex;
         align-items: center;
@@ -84,7 +84,7 @@
     }
 
     .items {
-      background-color: var(--color-gray-25);
+      background-color: var(--color-dark-25);
 
       display: flex;
       align-items: center;
