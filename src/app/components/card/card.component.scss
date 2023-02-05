@@ -18,9 +18,7 @@ article {
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0.4rem 1rem hsla(0deg 100% 100% /50%);
-
-    border-color: transparent;
+    box-shadow: 0 0.4rem 1.5rem hsla(0deg 100% 100% /20%);
 
     transform: translateY(-0.2rem);
 

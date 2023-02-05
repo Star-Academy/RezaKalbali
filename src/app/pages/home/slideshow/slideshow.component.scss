@@ -115,3 +115,12 @@
 .active {
   transform: translate(0);
 }
+
+@media only screen and (min-width: 600px) {
+  .container {
+    .overlay {
+      inset-block-end: 3rem;
+      inset-inline-start: 3rem;
+    }
+  }
+}
