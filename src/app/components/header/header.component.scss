@@ -41,6 +41,19 @@ header {
     gap: 3rem;
 
     height: 100%;
+
+    .login-or-register-btn {
+      background-color: transparent;
+      color: var(--color-gray-text);
+
+      font-size: 1.4rem;
+
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
   }
 
   app-search-box {

@@ -6,7 +6,17 @@
   </div>
   <div class="avatar-side">
     <app-search-box></app-search-box>
-    <app-avatar></app-avatar>
+    <ng-container *ngIf="authService.cachedIsLoggedIn; else loginButton">
+      <app-avatar></app-avatar>
+    </ng-container>
+    <ng-template #loginButton>
+      <button
+        class="login-or-register-btn"
+        (click)="router.navigateByUrl('/auth')"
+      >
+        ورود / ثبت نام
+      </button>
+    </ng-template>
   </div>
 </header>
 <app-side-menu

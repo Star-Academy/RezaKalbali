@@ -3,7 +3,7 @@ import { UserRegister } from "../models/user-register";
 import { ApiService } from "./api.service";
 import { TokenObject } from "../models/token-object";
 import { IdObject } from "../models/id-object";
-import { API_USER_LOGIN, API_USER_REGISTER } from "../utils/api";
+import { API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER } from "../utils/api";
 import { UserLogin } from "../models/user-login";
 
 @Injectable({
@@ -17,7 +17,9 @@ export class AuthService {
     return localStorage.getItem("token") || "";
   }
 
-  public constructor(private apiService: ApiService) {}
+  public constructor(private apiService: ApiService) {
+    this.auth().then();
+  }
 
   public async login(user: UserLogin): Promise<boolean> {
     const data = await this.apiService.post<TokenObject>(API_USER_LOGIN, user);
@@ -47,8 +49,8 @@ export class AuthService {
   }
 
   private async auth(): Promise<boolean> {
-    const data = await this.apiService.post<IdObject>("", {
-      toke: AuthService.token,
+    const data = await this.apiService.post<IdObject>(API_USER_AUTH, {
+      token: AuthService.token,
     });
 
     await this.saveCache(AuthService.token, !!data, data?.id ?? null);
