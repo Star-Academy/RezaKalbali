@@ -12,7 +12,8 @@ export class ApiService {
   public async post<T>(
     url: string,
     body: any,
-    init: Partial<RequestInit> = {}
+    init: Partial<RequestInit> = {},
+    showError: boolean = true
   ): Promise<T | null> {
     const options: Partial<RequestInit> = {
       ...POST_REQUEST_INIT,
@@ -23,9 +24,13 @@ export class ApiService {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    if (response.status === 200) return data as T;
+    if (response.ok) return data as T;
 
-    this.snackbarService.show((data as ApiError).message);
+    if (showError)
+      this.snackbarService.show(
+        (data as ApiError).message,
+        "hsl (359deg , 1,0)"
+      );
     return null;
   }
 }

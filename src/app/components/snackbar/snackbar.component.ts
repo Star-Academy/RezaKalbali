@@ -25,12 +25,14 @@ export class SnackbarComponent {
 
     this.interval = setInterval(() => {
       this.message = null;
+      this.color = null;
     }, this.INTERVAL_DELAY);
   }
 
   public onClose(): void {
     this.clearIntervalIfExist();
     this.message = null;
+    this.color = null;
   }
 
   public clearIntervalIfExist(): void {

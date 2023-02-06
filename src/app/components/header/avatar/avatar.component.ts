@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from "@angular/core";
+import { AuthService } from "../../../services/auth.service";
 
 @Component({
   selector: "app-avatar",
@@ -7,6 +8,8 @@ import { Component, ElementRef, HostListener, ViewChild } from "@angular/core";
 })
 export class AvatarComponent {
   @ViewChild("avatar") public avatar!: ElementRef<HTMLDivElement>;
+
+  public constructor(private authService: AuthService) {}
 
   public avatarDisplay: "none" | "block" = "none";
 
@@ -22,7 +25,6 @@ export class AvatarComponent {
   }
 
   public onClickLogout(): void {
-    localStorage.removeItem("token");
-    location.reload();
+    this.authService.logOut().then();
   }
 }

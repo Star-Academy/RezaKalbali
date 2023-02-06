@@ -1,6 +1,6 @@
 .snackbar {
-  background-color: var(--color-gray-98);
-  color: var(--color, var(--color--success));
+  background-color: var(--color-background-light);
+  color: var(--color, var(--color-green));
 
   position: fixed;
   inset-block-end: 4rem;
@@ -33,7 +33,7 @@
   }
 
   .message {
-    color: hsl(0deg 0 0);
+    color: var(--color-gray-text);
   }
 
   i {
@@ -48,7 +48,7 @@
     align-self: stretch;
 
     background-color: currentcolor;
-    color: var(--color, var(--color--success));
+    color: var(--color, var(--color-green));
 
     width: 2rem;
   }

@@ -13,12 +13,12 @@ export class AuthService {
   public cachedIsLoggedIn: boolean = false;
   public cachedUserId: number | null = null;
 
-  private static get token(): string {
-    return localStorage.getItem("token") || "";
-  }
-
   public constructor(private apiService: ApiService) {
     this.auth().then();
+  }
+
+  public static get token(): string {
+    return localStorage.getItem("token") || "";
   }
 
   public async login(user: UserLogin): Promise<boolean> {
@@ -30,6 +30,9 @@ export class AuthService {
     return !!data;
   }
 
+  public async logOut(): Promise<void> {
+    await this.saveCache(null, false, null);
+  }
   public async register(user: UserRegister): Promise<boolean> {
     const data = await this.apiService.post<TokenObject>(
       API_USER_REGISTER,
@@ -49,9 +52,14 @@ export class AuthService {
   }
 
   private async auth(): Promise<boolean> {
-    const data = await this.apiService.post<IdObject>(API_USER_AUTH, {
-      token: AuthService.token,
-    });
+    const data = await this.apiService.post<IdObject>(
+      API_USER_AUTH,
+      {
+        token: AuthService.token,
+      },
+      {},
+      false
+    );
 
     await this.saveCache(AuthService.token, !!data, data?.id ?? null);
 
