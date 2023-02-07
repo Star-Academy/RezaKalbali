@@ -40,11 +40,14 @@ article {
     h2 {
       color: var(--color-gray-text);
 
+      direction: ltr;
+
       overflow: hidden;
 
       font-size: 1.8rem;
       font-weight: 600;
 
+      text-align: right;
       text-overflow: ellipsis;
       white-space: nowrap;
       -webkit-line-clamp: 1; /* number of lines to show */
@@ -104,7 +107,7 @@ article {
   img {
     flex-shrink: 0;
 
-    width: 18rem;
+    width: 16rem;
     aspect-ratio: 1 / 1;
   }
 }
@@ -122,7 +125,7 @@ article {
     width: 40rem;
 
     .main-content {
-      max-width: 50%;
+      min-width: 0;
     }
   }
 }

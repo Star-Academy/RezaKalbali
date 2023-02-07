@@ -1,6 +1,10 @@
 <header>
   <div class="logo-side">
-    <i class="fa-solid fa-bars" (click)="isOpenSideMenu = !isOpenSideMenu"></i>
+    <app-side-menu
+      [isOpen]="isOpenSideMenu"
+      (toggleOpen)="handleToggleOpen($event)"
+    ></app-side-menu>
+
     <img src="assets/logos/logo.svg" alt="logo" />
     <app-nav></app-nav>
   </div>
@@ -19,7 +23,3 @@
     </ng-template>
   </div>
 </header>
-<app-side-menu
-  [isOpen]="isOpenSideMenu"
-  (toggleOpen)="handleToggleOpen($event)"
-></app-side-menu>

@@ -25,7 +25,6 @@ export class SnackbarComponent {
 
     this.interval = setInterval(() => {
       this.message = null;
-      this.color = null;
     }, this.INTERVAL_DELAY);
   }
 

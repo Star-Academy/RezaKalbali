@@ -29,7 +29,7 @@ export class ApiService {
     if (showError)
       this.snackbarService.show(
         (data as ApiError).message,
-        "hsl (359deg , 1,0)"
+        "var(--color-error)"
       );
     return null;
   }

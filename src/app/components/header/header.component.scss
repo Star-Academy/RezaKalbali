@@ -19,16 +19,6 @@ header {
 
     padding-block: 2rem;
 
-    i {
-      color: var(--color-gray-text);
-
-      display: block;
-
-      font-size: 3rem;
-
-      cursor: pointer;
-    }
-
     img {
       width: auto;
       height: 4rem;
@@ -65,15 +55,9 @@ header {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 720px) {
   header {
     padding-inline: var(--margin-main-sides);
-  }
-
-  .logo-side {
-    i {
-      display: none !important;
-    }
   }
 
   app-search-box {

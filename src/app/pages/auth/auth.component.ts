@@ -31,11 +31,20 @@ export class AuthComponent {
   }
 
   public async loginHandler(): Promise<void> {
-    const isLoggedIn = await this.authService.login(this.user);
-    if (isLoggedIn) await this.router.navigateByUrl("/");
+    const isLoggedIn = await this.authService.login({
+      username: this.user.username,
+      password: this.user.password,
+    });
+
+    if (isLoggedIn) {
+      await this.router.navigateByUrl("/");
+    }
   }
   public async registerHandler(): Promise<void> {
     const isRegistered = await this.authService.register(this.user);
-    if (isRegistered) this.isLoginMode = false;
+    if (isRegistered)
+      setTimeout(async () => {
+        await this.router.navigateByUrl("/");
+      }, 1000);
   }
 }

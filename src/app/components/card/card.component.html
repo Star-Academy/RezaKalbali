@@ -1,6 +1,6 @@
 <article>
   <div class="main-content">
-    <h2>{{ title }}</h2>
+    <h2 [title]="title">{{ title }}</h2>
     <p>{{ description }}</p>
     <ul class="tags">
       <li class="tag" *ngFor="let tag of tags">
