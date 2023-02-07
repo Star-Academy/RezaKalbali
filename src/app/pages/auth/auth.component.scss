@@ -66,6 +66,10 @@
             border-color: var(--color-primary);
           }
         }
+
+        .info {
+          color: var(--color-error);
+        }
       }
 
       app-button {

@@ -2,7 +2,12 @@
   [class.small]="isSmall"
   (click)="buttonClick.emit()"
   [class.primary]="isPrimary"
+  [type]="type"
+  [disabled]="disabled"
 >
-  <i *ngIf="iconClass" [class]="iconClass"></i>
+  <i *ngIf="iconClass && !disabled" [class]="iconClass"></i>
+
+  <i *ngIf="disabled" class="fa-regular fa-loader"></i>
+
   <span>{{ text }}</span>
 </button>

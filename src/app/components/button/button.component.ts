@@ -11,6 +11,8 @@ export class ButtonComponent {
   @Input() public isSmall: boolean = false;
   @Input() public iconClass: string = "";
   @Input() public isPrimary: boolean = false;
+  @Input() public type: "button" | "submit" = "button";
+  @Input() public disabled: boolean = false;
 
   @Output() public buttonClick: EventEmitter<void> = new EventEmitter();
 }

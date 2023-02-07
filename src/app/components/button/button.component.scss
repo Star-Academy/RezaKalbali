@@ -2,7 +2,7 @@ button {
   background-color: var(--color-gray-text);
 
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: inherit;
   gap: 0.4rem;
 
@@ -26,6 +26,13 @@ button {
   &.primary {
     background-color: var(--color-primary);
     color: var(--color-gray-98);
+  }
+
+  &:disabled {
+    background-color: hsl(0deg 10% 60%);
+    color: var(--color-background);
+
+    border-color: transparent;
   }
 }
 
