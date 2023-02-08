@@ -1,6 +1,6 @@
 .snackbar {
   background-color: var(--color-background-light);
-  color: var(--color, var(--color-green));
+  color: var(--color-green);
 
   position: fixed;
   inset-block-end: 4rem;
@@ -24,6 +24,30 @@
 
   transition-delay: 0.1s;
   transition-duration: 0.4s;
+
+  &.success {
+    --color: hsl(140deg 86% 52%);
+
+    color: var(--color);
+
+    border-color: var(--color);
+  }
+
+  &.info {
+    --color: hsl(211deg 86% 52%);
+
+    color: var(--color);
+
+    border-color: var(--color);
+  }
+
+  &.error {
+    --color: hsl(0deg 90% 52%);
+
+    color: var(--color);
+
+    border-color: var(--color);
+  }
 
   &.active {
     transform: translateX(0);
