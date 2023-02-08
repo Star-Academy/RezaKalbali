@@ -6,6 +6,7 @@ import { IdObject } from "../models/id-object";
 import { API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER } from "../utils/api";
 import { UserLogin } from "../models/user-login";
 import { SnackbarService } from "./snackbar.service";
+import { SnackbarColor } from "../enums/snackbar-color";
 
 @Injectable({
   providedIn: "root",
@@ -31,7 +32,7 @@ export class AuthService {
 
     await this.saveCache(data.token, true, data.id);
     if (!!data) {
-      this.snackbarService.show("خوش آمدید", "var(--color-green)");
+      this.snackbarService.show("خوش آمدید", SnackbarColor.SUCCESS);
     }
 
     return !!data;
@@ -42,7 +43,7 @@ export class AuthService {
 
     this.snackbarService.show(
       "از حساب کاربری خود خارج شدید.",
-      "var(--color-info)"
+      SnackbarColor.INFO
     );
   }
   public async register(user: UserRegister): Promise<boolean> {
@@ -56,7 +57,7 @@ export class AuthService {
     if (!!data) {
       this.snackbarService.show(
         "حساب شما ایجاد شد؛ خوش آمدید.",
-        "var(--color-green)"
+        SnackbarColor.SUCCESS
       );
     }
 

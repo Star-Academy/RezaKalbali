@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { POST_REQUEST_INIT } from "../utils/api";
 import { SnackbarService } from "./snackbar.service";
 import { ApiError } from "../models/api-error";
+import { SnackbarColor } from "../enums/snackbar-color";
 
 @Injectable({
   providedIn: "root",
@@ -29,7 +30,7 @@ export class ApiService {
     if (showError)
       this.snackbarService.show(
         (data as ApiError).message,
-        "var(--color-error)"
+        SnackbarColor.ERROR
       );
     return null;
   }

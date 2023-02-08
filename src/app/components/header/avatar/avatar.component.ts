@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from "@angular/core";
 import { AuthService } from "../../../services/auth.service";
+import { DisplayType } from "../../../enums/display-type";
 
 @Component({
   selector: "app-avatar",
@@ -11,17 +12,20 @@ export class AvatarComponent {
 
   public constructor(private authService: AuthService) {}
 
-  public avatarDisplay: "none" | "block" = "none";
+  public avatarDisplay: DisplayType = DisplayType.NONE;
 
   @HostListener("document:click", ["$event"])
-  public clickOut(event: any): void {
+  public onClickOutSide(event: any): void {
     if (!this.avatar.nativeElement.contains(event.target)) {
-      this.avatarDisplay = "none";
+      this.avatarDisplay = DisplayType.NONE;
     }
   }
 
-  public onClickAvatar(): void {
-    this.avatarDisplay = this.avatarDisplay === "none" ? "block" : "none";
+  public onClickAvatarIcon(): void {
+    this.avatarDisplay =
+      this.avatarDisplay === DisplayType.NONE
+        ? DisplayType.BLOCK
+        : DisplayType.NONE;
   }
 
   public onClickLogout(): void {

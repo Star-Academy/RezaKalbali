@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { ButtonType } from "../../enums/button-type";
 
-// @ts-ignore
 @Component({
   selector: "app-button",
   templateUrl: "./button.component.html",
@@ -11,7 +11,7 @@ export class ButtonComponent {
   @Input() public isSmall: boolean = false;
   @Input() public iconClass: string = "";
   @Input() public isPrimary: boolean = false;
-  @Input() public type: "button" | "submit" = "button";
+  @Input() public type: ButtonType = ButtonType.BUTTON;
   @Input() public disabled: boolean = false;
 
   @Output() public buttonClick: EventEmitter<void> = new EventEmitter();

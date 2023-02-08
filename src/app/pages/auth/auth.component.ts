@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { AuthService } from "../../services/auth.service";
 import { Router } from "@angular/router";
 import { FormBuilder, Validators } from "@angular/forms";
+import { ButtonType } from "../../enums/button-type";
 
 @Component({
   selector: "app-auth",
@@ -9,6 +10,7 @@ import { FormBuilder, Validators } from "@angular/forms";
   styleUrls: ["./auth.component.scss"],
 })
 export class AuthComponent {
+  public ButtonType = ButtonType;
   public isLoginMode: boolean = true;
   public userForm = this.formBuilder.group({
     username: ["", [Validators.required, Validators.pattern]],

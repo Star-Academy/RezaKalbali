@@ -67,7 +67,7 @@
       <app-button
         [isPrimary]="true"
         [text]="isLoginMode ? 'ورود' : 'ثبت نام'"
-        type="submit"
+        [type]="ButtonType.SUBMIT"
         [disabled]="loading"
       ></app-button>
     </div>
