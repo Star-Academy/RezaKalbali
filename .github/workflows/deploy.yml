@@ -21,6 +21,10 @@ jobs:
       - name: Build
         run: npm run build:prod
 
+      - name: 404.html Hack
+        if: success()
+        run: cp dist/RezaKalbali/index.html dist/RezaKalbali/404.html
+
       - name: Upload Build
         if: success()
         uses: actions/upload-artifact@v1
