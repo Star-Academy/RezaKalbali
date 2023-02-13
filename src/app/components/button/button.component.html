@@ -1,9 +1,9 @@
 <button
   [class.small]="isSmall"
-  (click)="buttonClick.emit()"
   [class.primary]="isPrimary"
   [type]="type"
   [disabled]="loading"
+  (click)="buttonClick.emit()"
 >
   <i *ngIf="iconClass && !loading" [class]="iconClass"></i>
 
