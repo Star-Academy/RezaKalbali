@@ -12,7 +12,7 @@ export class ButtonComponent {
   @Input() public iconClass: string = "";
   @Input() public isPrimary: boolean = false;
   @Input() public type: ButtonType = ButtonType.BUTTON;
-  @Input() public disabled: boolean = false;
+  @Input() public loading: boolean = false;
 
   @Output() public buttonClick: EventEmitter<void> = new EventEmitter();
 }

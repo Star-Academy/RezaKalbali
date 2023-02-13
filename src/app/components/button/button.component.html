@@ -3,11 +3,11 @@
   (click)="buttonClick.emit()"
   [class.primary]="isPrimary"
   [type]="type"
-  [disabled]="disabled"
+  [disabled]="loading"
 >
-  <i *ngIf="iconClass && !disabled" [class]="iconClass"></i>
+  <i *ngIf="iconClass && !loading" [class]="iconClass"></i>
 
-  <i *ngIf="disabled" class="fa-regular fa-loader"></i>
+  <i *ngIf="loading" class="fa-regular fa-loader"></i>
 
   <span>{{ text }}</span>
 </button>
