@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { slideList } from "../../../demo-data/slide-list";
-import { Slide } from "../../../models/slide";
+import {Component} from '@angular/core';
+import {slideList} from '../../../demo-data/slide-list';
+import {Slide} from '../../../models/slide';
 
 @Component({
-  selector: "app-slideshow",
-  templateUrl: "./slideshow.component.html",
-  styleUrls: ["./slideshow.component.scss"],
+  selector: 'app-slideshow',
+  templateUrl: './slideshow.component.html',
+  styleUrls: ['./slideshow.component.scss'],
 })
 export class SlideshowComponent {
   public slides: Slide[] = slideList;

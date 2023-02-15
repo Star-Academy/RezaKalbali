@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { SnackbarComponent } from "../components/snackbar/snackbar.component";
-import { SnackbarColor } from "../enums/snackbar-color";
+import {Injectable} from '@angular/core';
+import {SnackbarComponent} from '../components/snackbar/snackbar.component';
+import {SnackbarColor} from '../enums/snackbar-color';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class SnackbarService {
   private snackbarComponent!: SnackbarComponent;

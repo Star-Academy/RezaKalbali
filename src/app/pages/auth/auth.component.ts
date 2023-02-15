@@ -1,40 +1,32 @@
-import { Component } from "@angular/core";
-import { AuthService } from "../../services/auth.service";
-import { Router } from "@angular/router";
-import { FormBuilder, Validators } from "@angular/forms";
-import { ButtonType } from "../../enums/button-type";
+import {Component} from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+import {FormBuilder, Validators} from '@angular/forms';
+import {ButtonType} from '../../enums/button-type';
 
 @Component({
-  selector: "app-auth",
-  templateUrl: "./auth.component.html",
-  styleUrls: ["./auth.component.scss"],
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent {
   public ButtonType = ButtonType;
   public isLoginMode: boolean = true;
   public userForm = this.formBuilder.group({
-    username: ["", [Validators.required, Validators.pattern]],
-    email: ["", [Validators.required, Validators.pattern]],
-    password: ["", [Validators.required, Validators.min, Validators.max]],
-    repeatPassword: ["", [Validators.required, Validators.min, Validators.max]],
+    username: ['', [Validators.required, Validators.pattern]],
+    email: ['', [Validators.required, Validators.pattern]],
+    password: ['', [Validators.required, Validators.min, Validators.max]],
+    repeatPassword: ['', [Validators.required, Validators.min, Validators.max]],
   });
   public loading: boolean = false;
   public isSubmitted: boolean = false;
 
-  public constructor(
-    private router: Router,
-    private authService: AuthService,
-    private formBuilder: FormBuilder
-  ) {}
+  public constructor(private router: Router, private authService: AuthService, private formBuilder: FormBuilder) {}
 
   public async formSubmitHandler(): Promise<void> {
     this.isSubmitted = true;
 
-    if (
-      this.isLoginMode &&
-      this.checkFormInputValidation("username") &&
-      this.checkFormInputValidation("password")
-    ) {
+    if (this.isLoginMode && this.checkFormInputValidation('username') && this.checkFormInputValidation('password')) {
       await this.loginHandler();
     } else if (this.userForm.valid) {
       await this.registerHandler();
@@ -55,7 +47,7 @@ export class AuthComponent {
     this.loading = false;
 
     if (isLoggedIn) {
-      await this.router.navigateByUrl("/");
+      await this.router.navigateByUrl('/');
     }
     console.log(this.userForm);
   }
@@ -65,6 +57,6 @@ export class AuthComponent {
     const isRegistered = await this.authService.register(this.userForm.value);
     this.loading = false;
 
-    if (isRegistered) await this.router.navigateByUrl("/");
+    if (isRegistered) await this.router.navigateByUrl('/');
   }
 }

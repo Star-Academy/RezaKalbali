@@ -1,4 +1,4 @@
-import { GamePay } from "../enums/game-pay";
+import {GamePay} from '../enums/game-pay';
 
 export interface Game {
   id: number;

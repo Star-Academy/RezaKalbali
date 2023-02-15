@@ -1,29 +1,26 @@
-import { Injectable } from "@angular/core";
-import { UserRegister } from "../models/user-register";
-import { ApiService } from "./api.service";
-import { TokenObject } from "../models/token-object";
-import { IdObject } from "../models/id-object";
-import { API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER } from "../utils/api";
-import { UserLogin } from "../models/user-login";
-import { SnackbarService } from "./snackbar.service";
-import { SnackbarColor } from "../enums/snackbar-color";
+import {Injectable} from '@angular/core';
+import {UserRegister} from '../models/user-register';
+import {ApiService} from './api.service';
+import {TokenObject} from '../models/token-object';
+import {IdObject} from '../models/id-object';
+import {API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER} from '../utils/api';
+import {UserLogin} from '../models/user-login';
+import {SnackbarService} from './snackbar.service';
+import {SnackbarColor} from '../enums/snackbar-color';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class AuthService {
   public cachedIsLoggedIn: boolean | null = null;
   public cachedUserId: number | null = null;
 
-  public constructor(
-    private apiService: ApiService,
-    private snackbarService: SnackbarService
-  ) {
+  public constructor(private apiService: ApiService, private snackbarService: SnackbarService) {
     this.auth().then();
   }
 
   public static get token(): string {
-    return localStorage.getItem("token") || "";
+    return localStorage.getItem('token') || '';
   }
 
   public async login(user: UserLogin): Promise<boolean> {
@@ -32,7 +29,7 @@ export class AuthService {
 
     await this.saveCache(data.token, true, data.id);
     if (!!data) {
-      this.snackbarService.show("خوش آمدید", SnackbarColor.SUCCESS);
+      this.snackbarService.show('خوش آمدید', SnackbarColor.SUCCESS);
     }
 
     return !!data;
@@ -41,24 +38,15 @@ export class AuthService {
   public async logOut(): Promise<void> {
     await this.saveCache(null, false, null);
 
-    this.snackbarService.show(
-      "از حساب کاربری خود خارج شدید.",
-      SnackbarColor.INFO
-    );
+    this.snackbarService.show('از حساب کاربری خود خارج شدید.', SnackbarColor.INFO);
   }
   public async register(user: UserRegister): Promise<boolean> {
-    const data = await this.apiService.post<TokenObject>(
-      API_USER_REGISTER,
-      user
-    );
+    const data = await this.apiService.post<TokenObject>(API_USER_REGISTER, user);
     if (!data) return false;
 
     await this.saveCache(data.token, true, data.id);
     if (!!data) {
-      this.snackbarService.show(
-        "حساب شما ایجاد شد؛ خوش آمدید.",
-        SnackbarColor.SUCCESS
-      );
+      this.snackbarService.show('حساب شما ایجاد شد؛ خوش آمدید.', SnackbarColor.SUCCESS);
     }
 
     return !!data;
@@ -84,15 +72,11 @@ export class AuthService {
     return !!data;
   }
 
-  private async saveCache(
-    token: string | null,
-    isLoggedIn: boolean,
-    userId: number | null
-  ): Promise<void> {
+  private async saveCache(token: string | null, isLoggedIn: boolean, userId: number | null): Promise<void> {
     this.cachedIsLoggedIn = isLoggedIn;
 
-    if (!!token) localStorage.setItem("token", token);
-    else localStorage.removeItem("token");
+    if (!!token) localStorage.setItem('token', token);
+    else localStorage.removeItem('token');
 
     this.cachedUserId = userId;
   }

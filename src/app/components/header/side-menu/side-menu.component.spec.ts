@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SideMenuComponent } from "./side-menu.component";
+import {SideMenuComponent} from './side-menu.component';
 
-describe("SideMenuComponent", () => {
+describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
   let fixture: ComponentFixture<SideMenuComponent>;
 
@@ -18,7 +18,7 @@ describe("SideMenuComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

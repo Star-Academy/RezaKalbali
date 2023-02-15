@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss",
-    "stylelint-config-prettier-scss"
-  ],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss"],
   "plugins": ["stylelint-order"],
   "rules": {
     "color-named": "never",
@@ -165,12 +162,7 @@
         "groupName": "list",
         "emptyLineBefore": "always",
         "noEmptyLineBetween": true,
-        "properties": [
-          "list-style",
-          "list-style-image",
-          "list-style-position",
-          "list-style-type"
-        ]
+        "properties": ["list-style", "list-style-image", "list-style-position", "list-style-type"]
       },
       {
         "groupName": "size",
@@ -295,13 +287,7 @@
         "groupName": "outline",
         "emptyLineBefore": "always",
         "noEmptyLineBetween": true,
-        "properties": [
-          "outline",
-          "outline-color",
-          "outline-offset",
-          "outline-style",
-          "outline-width"
-        ]
+        "properties": ["outline", "outline-color", "outline-offset", "outline-style", "outline-width"]
       },
       {
         "groupName": "transform",
@@ -375,21 +361,13 @@
         "groupName": "print",
         "emptyLineBefore": "always",
         "noEmptyLineBetween": true,
-        "properties": [
-          "page-break-after",
-          "page-break-before",
-          "page-break-inside"
-        ]
+        "properties": ["page-break-after", "page-break-before", "page-break-inside"]
       },
       {
         "groupName": "3d",
         "emptyLineBefore": "always",
         "noEmptyLineBetween": true,
-        "properties": [
-          "perspective",
-          "perspective-origin",
-          "backface-visibility"
-        ]
+        "properties": ["perspective", "perspective-origin", "backface-visibility"]
       },
       {
         "groupName": "transition",
