@@ -7,6 +7,7 @@ import { FooterModule } from "../../components/footer/footer.module";
 import { HomeCardComponent } from "./home-card/home-card.component";
 import { CardModule } from "../../components/card/card.module";
 import { SlideshowComponent } from "./slideshow/slideshow.component";
+import { FeaturesComponent } from "./features/features.component";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SlideshowComponent } from "./slideshow/slideshow.component";
     HomeCardComponent,
     HomeCardComponent,
     SlideshowComponent,
+    FeaturesComponent,
   ],
   imports: [CommonModule, HeaderModule, ButtonModule, FooterModule, CardModule],
 })

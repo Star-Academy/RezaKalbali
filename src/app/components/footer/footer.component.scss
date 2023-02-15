@@ -1,145 +1,121 @@
 footer {
-  color: var(--color-gray-text);
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-
-  padding-block: 2rem;
-  padding-inline: 1rem;
-
-  .banner {
-    background-color: var(--color-background-light);
+    color: var(--color-gray-text);
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
+    gap: 1.6rem;
 
-    padding: 2rem;
+    padding-block: 2rem;
+    padding-inline: 1rem;
 
-    border: 0.1rem solid var(--color-border);
-    border-radius: 0.4rem;
+    .main {
+        background-color: var(--color-background-light);
 
-    img {
-      width: auto;
-      height: 7.5rem;
-    }
-
-    p {
-      max-width: 100rem;
-
-      font-size: 1.6rem;
-    }
-  }
-
-  .main {
-    background-color: var(--color-background-light);
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    padding-block-end: 2rem;
-
-    border: 0.1rem solid var(--color-border);
-    border-radius: 0.4rem;
-
-    .top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-
-      padding: 1rem;
-
-      > div {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
 
-        h3 {
-          padding: 1rem;
+        padding-block-end: 2rem;
 
-          font-size: 1.8rem;
-          font-weight: bold;
-        }
+        border: 0.1rem solid var(--color-border);
+        border-radius: var(--border-radius-4);
 
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
 
-          padding: 1rem;
+            padding: 1rem;
 
-          li {
-            font-size: 1.4rem;
+            > div {
+                h3 {
+                    padding: 1rem;
 
-            span {
-              font-weight: bold;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+
+                ul {
+                    display: grid;
+                    gap: 1rem;
+
+                    padding: 1rem;
+
+                    li {
+                        font-size: 1.4rem;
+
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+                }
             }
-          }
+
+            .social-media {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+            }
+
+            .sign-up {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 0.4rem;
+
+                padding: 1rem;
+
+                button {
+                    background-color: var(--color-primary);
+                    color: var(--color-gray-text);
+
+                    gap: 0.4rem;
+
+                    padding-block: 0.6rem;
+                    padding-inline: 1.2rem;
+
+                    border: 1px solid var(--color-primary);
+
+                    font-size: 1.6rem;
+                }
+            }
+
+            .github {
+                padding: 1rem;
+
+                text-align: end;
+
+                img {
+                    width: 3rem;
+                    aspect-ratio: 1 / 1;
+                }
+            }
         }
-      }
 
-      .social {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        .copyright {
+            padding: 1rem;
 
-        ul {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+            font-size: 1.4rem;
+            font-weight: 700;
+
+            text-align: center;
         }
-      }
-
-      .sign-in {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 0.4rem;
-
-        padding: 1rem;
-
-        button {
-          background-color: var(--color-primary);
-          color: var(--color-gray-text);
-
-          gap: 0.4rem;
-
-          padding-block: 0.6rem;
-          padding-inline: 1.2rem;
-
-          border: 1px solid var(--color-primary);
-
-          font-size: 1.6rem;
-        }
-
-        img {
-          width: 3rem;
-          aspect-ratio: 1 / 1;
-        }
-      }
     }
-
-    .copyright {
-      padding: 1rem;
-
-      font-size: 1.4rem;
-      font-weight: bold;
-
-      text-align: center;
-    }
-  }
 }
 
 @media only screen and( min-width:600px) {
-  footer {
-    padding-inline: var(--margin-main-sides);
+    footer {
+        padding-inline: var(--margin-main-sides);
 
-    .banner {
-      flex-direction: row;
+        .banner {
+            flex-direction: row;
+        }
     }
-  }
 }

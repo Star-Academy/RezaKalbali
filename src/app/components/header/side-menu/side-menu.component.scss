@@ -28,7 +28,7 @@
 
     transform: translateX(var(--transform));
 
-    transition-duration: 0.3s;
+    transition-duration: var(--animation-duration-4);
 
     border-inline-end: 0.1rem solid var(--color-border);
 

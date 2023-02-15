@@ -1,12 +1,9 @@
 <div class="avatar" #avatar>
   <div class="icon" (click)="onClickAvatarIcon()">
-    <i
-      class="fa-solid fa-user"
-      [class.active-avatar]="avatarDisplay === 'block'"
-    ></i>
+    <i class="fa-solid fa-user" [class.active]="isAvatarVisible"></i>
   </div>
 
-  <div class="popover" [style.--display]="avatarDisplay">
+  <div class="popover" [style.--display]="isAvatarVisible ? 'block' : 'none'">
     <ul>
       <li><a routerLink="/profile">پروفایل</a></li>
       <li><a href="#">سبد خرید</a></li>

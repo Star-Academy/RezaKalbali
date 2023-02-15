@@ -23,7 +23,7 @@
 
     padding: 1rem;
 
-    border-radius: 0.4rem;
+    border-radius: var(--border-radius-4);
 
     img {
       width: 28rem;
@@ -58,7 +58,7 @@
           padding: 1rem;
 
           border: 0.2rem solid transparent;
-          border-radius: 0.4rem;
+          border-radius: var(--border-radius-4);
 
           outline: none;
 
