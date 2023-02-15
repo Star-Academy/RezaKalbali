@@ -1,14 +1,14 @@
 <button
-    [class.small]="isSmall"
-    [class.primary]="isPrimary"
-    [type]="type"
-    [disabled]="loading"
-    (click)="buttonClick.emit()"
+  [class.small]="isSmall"
+  [class.primary]="isPrimary"
+  [type]="type"
+  [disabled]="loading"
+  (click)="buttonClick.emit()"
 >
-    <ng-container *ngIf="iconClass && !loading; else loader">
-        <i [class]="iconClass"></i>
-    </ng-container>
-    <ng-template #loader><i *ngIf="loading" class="fa-regular fa-loader"></i></ng-template>
+  <ng-container *ngIf="iconClass && !loading; else loader">
+    <i [class]="iconClass"></i>
+  </ng-container>
+  <ng-template #loader><i *ngIf="loading" class="fa-regular fa-loader"></i></ng-template>
 
-    <span>{{ text }}</span>
+  <span>{{ text }}</span>
 </button>

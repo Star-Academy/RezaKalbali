@@ -1,9 +1,6 @@
 <header>
   <div class="logo-side">
-    <app-side-menu
-      [isOpen]="isOpenSideMenu"
-      (toggleOpen)="handleToggleOpen($event)"
-    ></app-side-menu>
+    <app-side-menu [isOpen]="isOpenSideMenu" (toggleOpen)="handleToggleOpen($event)"></app-side-menu>
 
     <img src="../../../assets/logos/squid-game-logo.svg" alt="logo" />
     <app-nav></app-nav>
@@ -14,12 +11,7 @@
       <app-avatar></app-avatar>
     </ng-container>
     <ng-template #loginButton>
-      <button
-        class="login-or-register-btn"
-        (click)="router.navigateByUrl('/auth')"
-      >
-        ورود / ثبت نام
-      </button>
+      <button class="login-or-register-btn" (click)="router.navigateByUrl('/auth')">ورود / ثبت نام</button>
     </ng-template>
   </div>
 </header>

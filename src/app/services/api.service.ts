@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
-import { POST_REQUEST_INIT } from "../utils/api";
-import { SnackbarService } from "./snackbar.service";
-import { ApiError } from "../models/api-error";
-import { SnackbarColor } from "../enums/snackbar-color";
+import {Injectable} from '@angular/core';
+import {POST_REQUEST_INIT} from '../utils/api';
+import {SnackbarService} from './snackbar.service';
+import {ApiError} from '../models/api-error';
+import {SnackbarColor} from '../enums/snackbar-color';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ApiService {
   public constructor(private snackbarService: SnackbarService) {}
@@ -27,11 +27,7 @@ export class ApiService {
 
     if (response.ok) return data as T;
 
-    if (showError)
-      this.snackbarService.show(
-        (data as ApiError).message,
-        SnackbarColor.ERROR
-      );
+    if (showError) this.snackbarService.show((data as ApiError).message, SnackbarColor.ERROR);
     return null;
   }
 }

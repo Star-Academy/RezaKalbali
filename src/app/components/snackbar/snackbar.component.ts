@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { SnackbarService } from "../../services/snackbar.service";
-import { SnackbarColor } from "../../enums/snackbar-color";
+import {Component} from '@angular/core';
+import {SnackbarService} from '../../services/snackbar.service';
+import {SnackbarColor} from '../../enums/snackbar-color';
 
 @Component({
-  selector: "app-snackbar",
-  templateUrl: "./snackbar.component.html",
-  styleUrls: ["./snackbar.component.scss"],
+  selector: 'app-snackbar',
+  templateUrl: './snackbar.component.html',
+  styleUrls: ['./snackbar.component.scss'],
 })
 export class SnackbarComponent {
   private readonly INTERVAL_DELAY = 4_000;
