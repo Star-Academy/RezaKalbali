@@ -1,14 +1,7 @@
 <app-card
-  [img]="game.img"
+  [imageSource]="game.img"
   [title]="game.name"
   [description]="game.description"
-  buttonText="مشاهده"
-  [buttonIconClass]="buttonIconClass"
-  [isFree]="game.pay === GamePayEnum.FREE"
-  [info]="
-    game?.price?.toLocaleString()
-      ? game?.price?.toLocaleString() + ' تومان'
-      : 'رایگان'
-  "
+  [payment]="game?.price ? game?.price?.toLocaleString() + ' تومان' : 'رایگان'"
   [tags]="game.tags"
 ></app-card>

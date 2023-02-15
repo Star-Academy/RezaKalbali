@@ -8,6 +8,10 @@
 
     display: flex;
 
+    aspect-ratio: 3/1;
+
+    border-radius: var(--border-radius-4);
+
     .slide {
       flex: 0 0 100%;
 
@@ -36,7 +40,7 @@
         padding-block: 0.2rem;
         padding-inline: 0.5rem;
 
-        border-radius: 0.4rem;
+        border-radius: var(--border-radius-4);
 
         font-size: 4vw;
 
@@ -104,7 +108,7 @@
           &:hover {
             transform: scale(1.1);
 
-            transition-duration: 0.1s;
+            transition-duration: var(--animation-time-1);
           }
         }
       }

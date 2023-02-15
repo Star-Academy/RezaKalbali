@@ -16,14 +16,14 @@
   padding-inline-end: 1rem;
 
   border: 0.1rem solid currentcolor;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-4);
 
   transform: translateX(50rem);
 
   font-size: 1.6rem;
 
-  transition-delay: 0.1s;
-  transition-duration: 0.4s;
+  transition-delay: var(--animation-time-1);
+  transition-duration: var(--animation-time-4);
 
   &.success {
     --color: hsl(140deg 86% 52%);
@@ -52,8 +52,8 @@
   &.active {
     transform: translateX(0);
 
-    transition-delay: 0.1s;
-    transition-duration: 0.2s;
+    transition-delay: var(--animation-duration-1);
+    transition-duration: var(--animation-time-2);
   }
 
   .message {
