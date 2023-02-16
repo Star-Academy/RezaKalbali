@@ -26,15 +26,11 @@ export class AuthComponent {
   public async formSubmitHandler(): Promise<void> {
     this.isSubmitted = true;
 
-    if (this.isLoginMode && this.checkFormInputValidation('username') && this.checkFormInputValidation('password')) {
+    if (this.isLoginMode) {
       await this.loginHandler();
     } else if (this.userForm.valid) {
       await this.registerHandler();
     }
-  }
-
-  public checkFormInputValidation(name: string): boolean {
-    return this.userForm.controls[name].valid;
   }
 
   public async loginHandler(): Promise<void> {
