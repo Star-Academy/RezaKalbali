@@ -1,11 +1,17 @@
-<header class="header">
-  <div class="header__logo">
-    <img class="logo" src="assets/logos/logo.svg" alt="لوگو" />
-    <app-nav></app-nav>
-  </div>
-  <div class="header__avatar">
-    <app-search-box></app-search-box>
+<header>
+    <div class="logo-side">
+        <app-side-menu [isOpen]="isOpenSideMenu" (toggleOpen)="handleToggleOpen($event)"></app-side-menu>
 
-    <app-avatar></app-avatar>
-  </div>
+        <img src="assets/logos/squid-game-logo.svg" alt="logo" />
+        <app-nav></app-nav>
+    </div>
+    <div class="avatar-side">
+        <app-search-box></app-search-box>
+        <ng-container *ngIf="authService.cachedIsLoggedIn; else loginButton">
+            <app-avatar></app-avatar>
+        </ng-container>
+        <ng-template #loginButton>
+            <button class="login-or-register-btn" (click)="router.navigateByUrl('/auth')">ورود / ثبت نام</button>
+        </ng-template>
+    </div>
 </header>

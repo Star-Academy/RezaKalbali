@@ -1,31 +1,27 @@
-<div
-  class="container"
-  (mouseenter)="onMouseEnter()"
-  (mouseleave)="onMouseLeave()"
->
-  <ul class="slideshow">
-    <li
-      *ngFor="let slide of slides; index as i"
-      class="slide"
-      [style.--active-index]="activeSlide"
-      [class.active]="activeSlide === i"
-    >
-      <img [src]="slide.src" [alt]="slide.alt" />
-      <h2 class="name">{{ slide.alt }}</h2>
-    </li>
-  </ul>
-  <ul class="overlay">
-    <li
-      *ngFor="let _ of slides; index as index"
-      (click)="activeSlideshowHandler(index)"
-    >
-      <i
-        class="fa-circle bullets"
-        [class]="index === activeSlide ? 'fa-solid' : 'fa-regular'"
-        [style.color]="
-          activeSlide === index ? 'var(--color--primary)' : 'white'
-        "
-      ></i>
-    </li>
-  </ul>
+<div class="container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <ul class="slideshow">
+        <li
+            *ngFor="let slide of slides; index as i"
+            class="slide"
+            [style.--active-index]="activeSlide"
+            [class.active]="activeSlide === i"
+        >
+            <img [src]="slide.src" [alt]="slide.alt" />
+        </li>
+    </ul>
+    <div class="overlay">
+        <div class="arrows">
+            <i class="fa-solid fa-chevron-right" (click)="activeSlideshowHandler(activeSlide - 1)"></i>
+            <i class="fa-solid fa-chevron-left" (click)="activeSlideshowHandler(activeSlide + 1)"></i>
+        </div>
+        <ul class="items">
+            <li *ngFor="let _ of slides; index as index" (click)="activeSlideshowHandler(index)">
+                <i
+                    class="fa-circle-dot bullets"
+                    [class]="index === activeSlide ? 'fa-solid' : 'fa-regular'"
+                    [style.color]="activeSlide === index ? 'var(--color-primary)' : 'var(--color-gray-text)'"
+                ></i>
+            </li>
+        </ul>
+    </div>
 </div>

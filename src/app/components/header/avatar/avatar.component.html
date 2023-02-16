@@ -1,14 +1,14 @@
 <div class="avatar" #avatar>
-  <i
-    class="fa-regular fa-user avatar__icon"
-    [class.active-avatar]="avatarDisplay === 'block'"
-    (click)="onClickAvatar()"
-  ></i>
-  <div class="avatar__detail" [style.--display]="avatarDisplay">
-    <ul>
-      <li><a href="#">پروفایل</a></li>
-      <li><a href="#">سبد خرید</a></li>
-      <li><a href="#">کیف پول</a></li>
-    </ul>
-  </div>
+    <div class="icon" (click)="onClickAvatarIcon()">
+        <i class="fa-solid fa-user" [class.active]="isAvatarVisible"></i>
+    </div>
+
+    <div class="popover" [style.--display]="isAvatarVisible ? 'block' : 'none'">
+        <ul>
+            <li><a routerLink="/profile">پروفایل</a></li>
+            <li><a href="#">سبد خرید</a></li>
+            <li><a href="#">کیف پول</a></li>
+            <li class="logout" (click)="onClickLogout()">خروج از حساب کاربری</li>
+        </ul>
+    </div>
 </div>

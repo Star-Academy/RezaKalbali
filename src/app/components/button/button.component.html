@@ -1,4 +1,14 @@
-<button [class.small]="isSmall" (click)="buttonClick.emit()">
-  <i *ngIf="iconClass" [class]="iconClass"></i>
-  <span>{{ text }}</span>
+<button
+    [class.small]="isSmall"
+    [class.primary]="isPrimary"
+    [type]="type"
+    [disabled]="loading"
+    (click)="buttonClick.emit()"
+>
+    <ng-container *ngIf="iconClass && !loading; else loader">
+        <i [class]="iconClass"></i>
+    </ng-container>
+    <ng-template #loader><i *ngIf="loading" class="fa-regular fa-loader"></i></ng-template>
+
+    <span>{{ text }}</span>
 </button>

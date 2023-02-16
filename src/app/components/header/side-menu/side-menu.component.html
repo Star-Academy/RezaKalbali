@@ -1,0 +1,8 @@
+<div #sidebar class="container">
+    <i class="fa-solid fa-bars" (click)="toggleOpen.emit(true)"></i>
+    <div class="side-menu" [style.--transform]="isOpen ? '0%' : '100%'">
+        <i class="fa-solid fa-bars" (click)="toggleOpen.emit(false)"></i>
+
+        <app-nav [vertical]="true"></app-nav>
+    </div>
+</div>

@@ -1,42 +1,70 @@
-.header {
-  background-color: hsl(0deg 0 0);
+header {
+    background-color: var(--color-background);
 
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 2;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-
-  padding-inline: 4rem;
-
-  font-size: 1.6rem;
-
-  border-block-end: 1px solid var(--color--primary);
-
-  &__logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.4rem;
+    gap: 1rem;
 
-    height: 6.4rem;
+    height: 9rem;
 
-    .logo {
-      width: auto;
-      height: 100%;
+    padding-inline: 1rem;
+
+    .logo-side {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        height: 100%;
+
+        padding-block: 2rem;
+
+        img {
+            width: auto;
+            height: 4rem;
+        }
     }
-  }
 
-  &__avatar {
-    position: relative;
+    .avatar-side {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
 
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
+        height: 100%;
 
-    user-select: none;
-  }
+        .login-or-register-btn {
+            background-color: transparent;
+            color: var(--color-gray-text);
+
+            font-size: 1.4rem;
+
+            cursor: pointer;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    app-search-box {
+        display: none;
+    }
+
+    app-nav {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    header {
+        padding-inline: var(--margin-main-sides);
+    }
+
+    app-search-box {
+        display: block !important;
+    }
+
+    app-nav {
+        display: block !important;
+    }
 }

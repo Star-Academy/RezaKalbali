@@ -2,7 +2,7 @@
 
 ## وب سایت فروش بازی
 
-![Squid Game](src/assets/logos/logo-black-bg.svg)
+![Squid Game](src/assets/logos/squid-game-logo-black-bg.svg)
 
 [دموی پروژه](https://star-academy.github.io/RezaKalbali/)
 
@@ -25,5 +25,5 @@ https://star-academy.github.io/RezaKalbali/
 
 ### ارتباط با توسعه دهنده
 
-- [تلگرام](https://t.me/rezakalbali)
-- [لینکدین](https://www.linkedin.com/in/rezakalbali/)
+-   [تلگرام](https://t.me/rezakalbali)
+-   [لینکدین](https://www.linkedin.com/in/rezakalbali/)

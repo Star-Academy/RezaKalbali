@@ -1,4 +1,4 @@
 export interface Slide {
-  src: string;
-  alt: string;
+    src: string;
+    alt: string;
 }

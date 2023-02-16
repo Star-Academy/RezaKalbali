@@ -1,0 +1,61 @@
+.container {
+    > i {
+        color: var(--color-gray-text);
+
+        display: block;
+
+        font-size: 3rem;
+
+        cursor: pointer;
+    }
+
+    .side-menu {
+        --transform: none;
+        background-color: var(--color-background-light);
+
+        position: fixed;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 20rem;
+        height: 100vh;
+
+        padding: 1rem;
+
+        transform: translateX(var(--transform));
+
+        transition-duration: var(--animation-duration-4);
+
+        border-inline-end: 0.1rem solid var(--color-border);
+
+        i {
+            color: var(--color-gray-text);
+
+            padding-block-start: 2rem;
+
+            font-size: 3rem;
+
+            cursor: pointer;
+        }
+
+        app-nav {
+            display: block;
+
+            height: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 720px) {
+        .side-menu {
+            display: none;
+        }
+
+        i {
+            display: none !important;
+        }
+    }
+}

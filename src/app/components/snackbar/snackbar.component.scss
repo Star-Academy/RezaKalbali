@@ -1,0 +1,77 @@
+.snackbar {
+    background-color: var(--color-background-light);
+    color: var(--color-green);
+
+    position: fixed;
+    inset-block-end: 4rem;
+    inset-inline-start: 4rem;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    min-width: 20rem;
+    height: 4rem;
+
+    padding-inline-end: 1rem;
+
+    border: 0.1rem solid currentcolor;
+    border-radius: var(--border-radius-4);
+
+    transform: translateX(50rem);
+
+    font-size: 1.6rem;
+
+    transition-delay: var(--animation-time-1);
+    transition-duration: var(--animation-time-4);
+
+    &.success {
+        --color: hsl(140deg 86% 52%);
+
+        color: var(--color);
+
+        border-color: var(--color);
+    }
+
+    &.info {
+        --color: hsl(211deg 86% 52%);
+
+        color: var(--color);
+
+        border-color: var(--color);
+    }
+
+    &.error {
+        --color: hsl(0deg 90% 52%);
+
+        color: var(--color);
+
+        border-color: var(--color);
+    }
+
+    &.active {
+        transform: translateX(0);
+
+        transition-delay: var(--animation-duration-1);
+        transition-duration: var(--animation-time-2);
+    }
+
+    .message {
+        color: var(--color-gray-text);
+    }
+
+    i {
+        margin-inline-start: auto;
+
+        cursor: pointer;
+    }
+
+    .line {
+        align-self: stretch;
+
+        background-color: currentcolor;
+        color: var(--color, var(--color-green));
+
+        width: 2rem;
+    }
+}

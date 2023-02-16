@@ -1,23 +1,30 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
-  selector: 'app-avatar',
-  templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.scss'],
+    selector: 'app-avatar',
+    templateUrl: './avatar.component.html',
+    styleUrls: ['./avatar.component.scss'],
 })
 export class AvatarComponent {
-  @ViewChild('avatar') public avatar!: ElementRef<HTMLDivElement>;
+    @ViewChild('avatar') public avatar!: ElementRef<HTMLDivElement>;
 
-  public avatarDisplay: 'none' | 'block' = 'none';
+    public constructor(private authService: AuthService) {}
 
-  @HostListener('document:click', ['$event'])
-  public clickOut(event: any): void {
-    if (!this.avatar.nativeElement.contains(event.target)) {
-      this.avatarDisplay = 'none';
+    public isAvatarVisible: boolean = false;
+
+    @HostListener('document:click', ['$event'])
+    public onClickOutSide(clickEvent: MouseEvent): void {
+        if (!this.avatar.nativeElement.contains(clickEvent.target as Node)) {
+            this.isAvatarVisible = false;
+        }
     }
-  }
 
-  public onClickAvatar(): void {
-    this.avatarDisplay = this.avatarDisplay === 'none' ? 'block' : 'none';
-  }
+    public onClickAvatarIcon(): void {
+        this.isAvatarVisible = !this.isAvatarVisible;
+    }
+
+    public async onClickLogout(): Promise<void> {
+        await this.authService.logOut();
+    }
 }
