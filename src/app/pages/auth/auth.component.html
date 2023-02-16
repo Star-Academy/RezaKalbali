@@ -8,14 +8,15 @@
                 <span
                     class="info"
                     *ngIf="isSubmitted && !isLoginMode && userForm.controls.username.status === 'INVALID'"
-                    >مقدار وارد شده نا معتبر است
+                >
+                    مقدار وارد شده نا معتبر است
                 </span>
             </label>
             <label *ngIf="!isLoginMode">
                 <span> ایمیل: </span>
                 <input type="email" name="email" formControlName="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" />
-                <span class="info" *ngIf="isSubmitted && userForm.controls.email.status === 'INVALID'"
-                    >مقدار وارد شده نا معتبر است
+                <span class="info" *ngIf="isSubmitted && userForm.controls.email.status === 'INVALID'">
+                    مقدار وارد شده نا معتبر است
                 </span>
             </label>
             <label>
@@ -24,7 +25,8 @@
                 <span
                     class="info"
                     *ngIf="isSubmitted && !isLoginMode && userForm.controls.password.status === 'INVALID'"
-                    >مقدار وارد شده نا معتبر است
+                >
+                    مقدار وارد شده نا معتبر است
                 </span>
             </label>
             <label *ngIf="!isLoginMode">
@@ -43,7 +45,8 @@
                         (userForm.controls.repeatPassword.status === 'INVALID' ||
                             userForm.value.password !== userForm.value.repeatPassword)
                     "
-                    >مقدار وارد شده نا معتبر است
+                >
+                    مقدار وارد شده نا معتبر است
                 </span>
             </label>
             <app-button
