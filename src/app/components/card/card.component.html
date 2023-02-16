@@ -1,5 +1,7 @@
 <div class="container">
     <div class="card">
+        <img [src]="imageSource" [alt]="title" />
+
         <main class="main-content">
             <h2 [title]="title">{{ title }}</h2>
             <p>{{ description }}</p>
@@ -10,7 +12,5 @@
             </ul>
             <span class="info"> {{ payment }} </span>
         </main>
-
-        <img [src]="imageSource" [alt]="title" />
     </div>
 </div>
