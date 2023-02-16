@@ -5,6 +5,12 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    max-width: 1600px;
+
+    margin-inline: auto;
+}
+
 *,
 *::before,
 *::after {
