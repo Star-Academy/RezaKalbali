@@ -10,7 +10,7 @@ import {SlideshowComponent} from './slideshow/slideshow.component';
 import {FeaturesComponent} from './features/features.component';
 
 @NgModule({
-  declarations: [HomeComponent, HomeCardComponent, HomeCardComponent, SlideshowComponent, FeaturesComponent],
-  imports: [CommonModule, HeaderModule, ButtonModule, FooterModule, CardModule],
+    declarations: [HomeComponent, HomeCardComponent, HomeCardComponent, SlideshowComponent, FeaturesComponent],
+    imports: [CommonModule, HeaderModule, ButtonModule, FooterModule, CardModule],
 })
 export class HomeModule {}

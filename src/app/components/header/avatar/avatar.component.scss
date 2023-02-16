@@ -1,97 +1,97 @@
 .avatar {
-  background-color: var(--color-gray-text);
-
-  position: relative;
-
-  display: block;
-
-  width: 5rem;
-  height: 5rem;
-
-  border: 0.1rem solid var(--color-background-light);
-  border-radius: 50%;
-
-  .icon {
-    display: grid;
-    place-content: center;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    &:hover {
-      text-shadow: 0 0 0.5rem var(--color-dark-25);
-
-      i {
-        color: var(--color-primary-lighter);
-      }
-    }
-
-    i {
-      color: var(--color-background-lighter);
-
-      border-radius: 50%;
-
-      font-size: 3rem;
-
-      text-align: center;
-
-      &.active {
-        color: var(--color-primary);
-      }
-    }
-  }
-
-  .popover {
-    --display: none;
     background-color: var(--color-gray-text);
 
-    position: absolute;
-    inset-block-start: 110%;
-    inset-inline-end: 0.3rem;
-    z-index: 1;
+    position: relative;
 
-    display: var(--display);
+    display: block;
 
-    border-radius: var(--border-radius-4);
+    width: 5rem;
+    height: 5rem;
 
-    ul {
-      background-color: var(--color-gray-98);
-      box-shadow: 0 0 1rem var(--color-dark-25);
+    border: 0.1rem solid var(--color-background-light);
+    border-radius: 50%;
 
-      isolation: isolate;
+    .icon {
+        display: grid;
+        place-content: center;
 
-      width: 20rem;
+        width: 100%;
+        height: 100%;
 
-      padding: 0.2rem;
+        border-radius: 50%;
 
-      border-radius: var(--border-radius-4);
+        cursor: pointer;
 
-      font-size: 1.6rem;
+        &:hover {
+            text-shadow: 0 0 0.5rem var(--color-dark-25);
 
-      li {
-        padding: 0.6rem;
+            i {
+                color: var(--color-primary-lighter);
+            }
+        }
+
+        i {
+            color: var(--color-background-lighter);
+
+            border-radius: 50%;
+
+            font-size: 3rem;
+
+            text-align: center;
+
+            &.active {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    .popover {
+        --display: none;
+        background-color: var(--color-gray-text);
+
+        position: absolute;
+        inset-block-start: 110%;
+        inset-inline-end: 0.3rem;
+        z-index: 1;
+
+        display: var(--display);
 
         border-radius: var(--border-radius-4);
 
-        &:hover {
-          background-color: var(--color-primary);
-          color: var(--color-gray-text);
+        ul {
+            background-color: var(--color-gray-98);
+            box-shadow: 0 0 1rem var(--color-dark-25);
+
+            isolation: isolate;
+
+            width: 20rem;
+
+            padding: 0.2rem;
+
+            border-radius: var(--border-radius-4);
+
+            font-size: 1.6rem;
+
+            li {
+                padding: 0.6rem;
+
+                border-radius: var(--border-radius-4);
+
+                &:hover {
+                    background-color: var(--color-primary);
+                    color: var(--color-gray-text);
+                }
+
+                a {
+                    color: inherit;
+
+                    display: block;
+                }
+            }
+
+            .logout {
+                cursor: pointer;
+            }
         }
-
-        a {
-          color: inherit;
-
-          display: block;
-        }
-      }
-
-      .logout {
-        cursor: pointer;
-      }
     }
-  }
 }

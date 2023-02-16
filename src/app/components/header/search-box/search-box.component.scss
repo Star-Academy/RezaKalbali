@@ -1,12 +1,12 @@
 input {
-  padding: 0.8rem;
+    padding: 0.8rem;
 
-  border: 2px solid var(--color-gray-10);
-  border-radius: var(--border-radius-4);
+    border: 2px solid var(--color-gray-10);
+    border-radius: var(--border-radius-4);
 
-  outline: none;
+    outline: none;
 
-  &:focus {
-    border-color: var(--color-primary);
-  }
+    &:focus {
+        border-color: var(--color-primary);
+    }
 }

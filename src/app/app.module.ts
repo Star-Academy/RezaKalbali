@@ -10,8 +10,8 @@ import {AuthModule} from './pages/auth/auth.module';
 import {ProfileModule} from './pages/profile/profile.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomeModule, NotFoundModule, SnackbarModule, AuthModule, ProfileModule],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [BrowserModule, AppRoutingModule, HomeModule, NotFoundModule, SnackbarModule, AuthModule, ProfileModule],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

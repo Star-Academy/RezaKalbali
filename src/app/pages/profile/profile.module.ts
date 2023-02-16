@@ -4,7 +4,7 @@ import {ProfileComponent} from './profile.component';
 import {RouterModule} from '@angular/router';
 
 @NgModule({
-  declarations: [ProfileComponent],
-  imports: [CommonModule, RouterModule],
+    declarations: [ProfileComponent],
+    imports: [CommonModule, RouterModule],
 })
 export class ProfileModule {}

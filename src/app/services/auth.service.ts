@@ -9,75 +9,75 @@ import {SnackbarService} from './snackbar.service';
 import {SnackbarColor} from '../enums/snackbar-color';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class AuthService {
-  public cachedIsLoggedIn: boolean | null = null;
-  public cachedUserId: number | null = null;
+    public cachedIsLoggedIn: boolean | null = null;
+    public cachedUserId: number | null = null;
 
-  public constructor(private apiService: ApiService, private snackbarService: SnackbarService) {
-    this.auth().then();
-  }
-
-  public static get token(): string {
-    return localStorage.getItem('token') || '';
-  }
-
-  public async login(user: UserLogin): Promise<boolean> {
-    const data = await this.apiService.post<TokenObject>(API_USER_LOGIN, user);
-    if (!data) return false;
-
-    await this.saveCache(data.token, true, data.id);
-    if (!!data) {
-      this.snackbarService.show('خوش آمدید', SnackbarColor.SUCCESS);
+    public constructor(private apiService: ApiService, private snackbarService: SnackbarService) {
+        this.auth().then();
     }
 
-    return !!data;
-  }
-
-  public async logOut(): Promise<void> {
-    await this.saveCache(null, false, null);
-
-    this.snackbarService.show('از حساب کاربری خود خارج شدید.', SnackbarColor.INFO);
-  }
-  public async register(user: UserRegister): Promise<boolean> {
-    const data = await this.apiService.post<TokenObject>(API_USER_REGISTER, user);
-    if (!data) return false;
-
-    await this.saveCache(data.token, true, data.id);
-    if (!!data) {
-      this.snackbarService.show('حساب شما ایجاد شد؛ خوش آمدید.', SnackbarColor.SUCCESS);
+    public static get token(): string {
+        return localStorage.getItem('token') || '';
     }
 
-    return !!data;
-  }
+    public async login(user: UserLogin): Promise<boolean> {
+        const data = await this.apiService.post<TokenObject>(API_USER_LOGIN, user);
+        if (!data) return false;
 
-  public async isLoggedIn(): Promise<boolean> {
-    if (this.cachedIsLoggedIn === null) return await this.auth();
-    return this.cachedIsLoggedIn;
-  }
+        await this.saveCache(data.token, true, data.id);
+        if (!!data) {
+            this.snackbarService.show('خوش آمدید', SnackbarColor.SUCCESS);
+        }
 
-  private async auth(): Promise<boolean> {
-    const data = await this.apiService.post<IdObject>(
-      API_USER_AUTH,
-      {
-        token: AuthService.token,
-      },
-      {},
-      false
-    );
+        return !!data;
+    }
 
-    await this.saveCache(AuthService.token, !!data, data?.id ?? null);
+    public async logOut(): Promise<void> {
+        await this.saveCache(null, false, null);
 
-    return !!data;
-  }
+        this.snackbarService.show('از حساب کاربری خود خارج شدید.', SnackbarColor.INFO);
+    }
+    public async register(user: UserRegister): Promise<boolean> {
+        const data = await this.apiService.post<TokenObject>(API_USER_REGISTER, user);
+        if (!data) return false;
 
-  private async saveCache(token: string | null, isLoggedIn: boolean, userId: number | null): Promise<void> {
-    this.cachedIsLoggedIn = isLoggedIn;
+        await this.saveCache(data.token, true, data.id);
+        if (!!data) {
+            this.snackbarService.show('حساب شما ایجاد شد؛ خوش آمدید.', SnackbarColor.SUCCESS);
+        }
 
-    if (!!token) localStorage.setItem('token', token);
-    else localStorage.removeItem('token');
+        return !!data;
+    }
 
-    this.cachedUserId = userId;
-  }
+    public async isLoggedIn(): Promise<boolean> {
+        if (this.cachedIsLoggedIn === null) return await this.auth();
+        return this.cachedIsLoggedIn;
+    }
+
+    private async auth(): Promise<boolean> {
+        const data = await this.apiService.post<IdObject>(
+            API_USER_AUTH,
+            {
+                token: AuthService.token,
+            },
+            {},
+            false
+        );
+
+        await this.saveCache(AuthService.token, !!data, data?.id ?? null);
+
+        return !!data;
+    }
+
+    private async saveCache(token: string | null, isLoggedIn: boolean, userId: number | null): Promise<void> {
+        this.cachedIsLoggedIn = isLoggedIn;
+
+        if (!!token) localStorage.setItem('token', token);
+        else localStorage.removeItem('token');
+
+        this.cachedUserId = userId;
+    }
 }

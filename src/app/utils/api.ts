@@ -5,6 +5,6 @@ export const API_USER_LOGIN = BASE_URL + 'user/login';
 export const API_USER_AUTH = BASE_URL + 'user/auth';
 
 export const POST_REQUEST_INIT: Partial<RequestInit> = {
-  method: 'post',
-  headers: {'Content-type': 'application/json'},
+    method: 'post',
+    headers: {'Content-type': 'application/json'},
 };

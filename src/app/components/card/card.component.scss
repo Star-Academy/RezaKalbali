@@ -1,120 +1,120 @@
 .container {
-  container-type: inline-size;
+    container-type: inline-size;
 
-  .card {
-    background-color: var(--color-background-light);
-
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 1rem;
-
-    padding: 1rem;
-
-    border: 0.1rem solid var(--color-border);
-    border-radius: var(--border-radius-4);
-
-    transition-duration: var(--animation-time-2);
-
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--color-background-lighter);
-
-      border-color: transparent;
-
-      transform: translateY(-0.2rem);
-
-      transition-duration: var(--animation-time-4);
-    }
-
-    .main-content {
-      flex-grow: 1;
-
-      display: flex;
-      flex-direction: column;
-
-      max-width: 100%;
-
-      padding-inline: 1rem;
-
-      h2 {
-        color: var(--color-gray-text);
-
-        direction: ltr;
-
-        overflow: hidden;
-
-        font-size: 1.8rem;
-        font-weight: bold;
-
-        text-align: right;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        -webkit-line-clamp: 1;
-        line-clamp: 1;
-        -webkit-box-orient: vertical;
-      }
-
-      p {
-        color: var(--color-gray-text-darker);
-
-        overflow: hidden;
-
-        display: -webkit-box;
-
-        font-size: 1.4rem;
-
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-      }
-
-      .tags {
-        direction: ltr;
+    .card {
+        background-color: var(--color-background-light);
 
         display: flex;
-        gap: 0.6rem;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
 
-        padding-block-start: 1.5rem;
+        padding: 1rem;
 
-        .tag {
-          background-color: var(--color-background);
-          color: var(--color-gray-text);
+        border: 0.1rem solid var(--color-border);
+        border-radius: var(--border-radius-4);
 
-          display: grid;
-          place-content: center;
+        transition-duration: var(--animation-time-2);
 
-          height: 2rem;
+        cursor: pointer;
 
-          padding-block-end: 0.2rem;
-          padding: 0.4rem;
+        &:hover {
+            background-color: var(--color-background-lighter);
 
-          line-height: 0.5;
+            border-color: transparent;
+
+            transform: translateY(-0.2rem);
+
+            transition-duration: var(--animation-time-4);
         }
-      }
 
-      .info {
-        color: var(--color-green);
+        .main-content {
+            flex-grow: 1;
 
-        padding-block-start: 1.5rem;
+            display: flex;
+            flex-direction: column;
 
-        font-size: 1.4rem;
-      }
+            max-width: 100%;
+
+            padding-inline: 1rem;
+
+            h2 {
+                color: var(--color-gray-text);
+
+                direction: ltr;
+
+                overflow: hidden;
+
+                font-size: 1.8rem;
+                font-weight: bold;
+
+                text-align: right;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            p {
+                color: var(--color-gray-text-darker);
+
+                overflow: hidden;
+
+                display: -webkit-box;
+
+                font-size: 1.4rem;
+
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            .tags {
+                direction: ltr;
+
+                display: flex;
+                gap: 0.6rem;
+
+                padding-block-start: 1.5rem;
+
+                .tag {
+                    background-color: var(--color-background);
+                    color: var(--color-gray-text);
+
+                    display: grid;
+                    place-content: center;
+
+                    height: 2rem;
+
+                    padding-block-end: 0.2rem;
+                    padding: 0.4rem;
+
+                    line-height: 0.5;
+                }
+            }
+
+            .info {
+                color: var(--color-green);
+
+                padding-block-start: 1.5rem;
+
+                font-size: 1.4rem;
+            }
+        }
+
+        img {
+            flex-shrink: 0;
+
+            width: 16rem;
+            aspect-ratio: 1 / 1;
+        }
     }
 
-    img {
-      flex-shrink: 0;
-
-      width: 16rem;
-      aspect-ratio: 1 / 1;
+    @container (width > 300px) {
+        .card {
+            flex-direction: row !important;
+        }
     }
-  }
-
-  @container (width > 300px) {
-    .card {
-      flex-direction: row !important;
-    }
-  }
 }

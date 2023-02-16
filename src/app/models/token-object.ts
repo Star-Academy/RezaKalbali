@@ -1,4 +1,4 @@
 export interface TokenObject {
-  token: string;
-  id: number;
+    token: string;
+    id: number;
 }

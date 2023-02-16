@@ -1,4 +1,4 @@
 export interface ApiError {
-  message: string;
-  trace: string;
+    message: string;
+    trace: string;
 }

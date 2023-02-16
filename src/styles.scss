@@ -1,49 +1,49 @@
 html {
-  background-color: var(--color-background);
+    background-color: var(--color-background);
 
-  font-family: Vazirmatn, sans-serif;
-  font-size: 62.5%;
+    font-family: Vazirmatn, sans-serif;
+    font-size: 62.5%;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
-  --color-primary: hsl(334deg 83% 51%);
-  --color-primary-lighter: hsl(334deg 83% 70%);
+    --color-primary: hsl(334deg 83% 51%);
+    --color-primary-lighter: hsl(334deg 83% 70%);
 
-  --color-background: hsl(313deg 3% 3%);
-  --color-background-light: hsl(313deg 0% 10%);
-  --color-background-lighter: hsl(313deg 0% 14%);
+    --color-background: hsl(313deg 3% 3%);
+    --color-background-light: hsl(313deg 0% 10%);
+    --color-background-lighter: hsl(313deg 0% 14%);
 
-  --color-gray-text: hsl(0deg 0% 96%);
-  --color-gray-text-darker: hsl(0deg 0% 79%);
+    --color-gray-text: hsl(0deg 0% 96%);
+    --color-gray-text-darker: hsl(0deg 0% 79%);
 
-  --color-gray-25: hsla(313deg 2% 50% /25%);
-  --color-dark-25: hsla(313deg 2% 2% /33%);
+    --color-gray-25: hsla(313deg 2% 50% /25%);
+    --color-dark-25: hsla(313deg 2% 2% /33%);
 
-  --color-green: hsl(140deg 86% 52%);
-  --color-success: hsl(140deg 86% 52%);
-  --color-info: hsl(211deg 86% 52%);
-  --color-error: hsl(0deg 90% 52%);
+    --color-green: hsl(140deg 86% 52%);
+    --color-success: hsl(140deg 86% 52%);
+    --color-info: hsl(211deg 86% 52%);
+    --color-error: hsl(0deg 90% 52%);
 
-  --color-border: hsl(0deg 0% 5%);
-  --color-button-disabled: hsl(0deg 10% 60%);
+    --color-border: hsl(0deg 0% 5%);
+    --color-button-disabled: hsl(0deg 10% 60%);
 
-  --border-radius-2: 0.2rem;
-  --border-radius-4: 0.4rem;
+    --border-radius-2: 0.2rem;
+    --border-radius-4: 0.4rem;
 
-  --margin-main-sides: 4rem;
+    --margin-main-sides: 4rem;
 
-  --animation-time-1: 0.1s;
-  --animation-time-2: 0.2s;
-  --animation-time-4: 0.4s;
+    --animation-time-1: 0.1s;
+    --animation-time-2: 0.2s;
+    --animation-time-4: 0.4s;
 }
 
 input,
@@ -57,14 +57,14 @@ datalist,
 output,
 option,
 optgroup {
-  font-family: inherit;
+    font-family: inherit;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
