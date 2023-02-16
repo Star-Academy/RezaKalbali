@@ -7,14 +7,14 @@ import {AuthGuard} from './guards/auth.guard';
 import {ProfileComponent} from './pages/profile/profile.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', component: HomeComponent},
-  {path: 'auth', component: AuthComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-  {path: '**', component: NotFoundComponent},
+    {path: '', pathMatch: 'full', component: HomeComponent},
+    {path: 'auth', component: AuthComponent, canActivate: [AuthGuard]},
+    {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+    {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
 export class AppRoutingModule {}

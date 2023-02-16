@@ -5,29 +5,29 @@ import {ApiError} from '../models/api-error';
 import {SnackbarColor} from '../enums/snackbar-color';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class ApiService {
-  public constructor(private snackbarService: SnackbarService) {}
+    public constructor(private snackbarService: SnackbarService) {}
 
-  public async post<T>(
-    url: string,
-    body: any,
-    init: Partial<RequestInit> = {},
-    showError: boolean = true
-  ): Promise<T | null> {
-    const options: Partial<RequestInit> = {
-      ...POST_REQUEST_INIT,
-      body: JSON.stringify(body),
-      ...init,
-    };
+    public async post<T>(
+        url: string,
+        body: any,
+        init: Partial<RequestInit> = {},
+        showError: boolean = true
+    ): Promise<T | null> {
+        const options: Partial<RequestInit> = {
+            ...POST_REQUEST_INIT,
+            body: JSON.stringify(body),
+            ...init,
+        };
 
-    const response = await fetch(url, options);
-    const data = await response.json();
+        const response = await fetch(url, options);
+        const data = await response.json();
 
-    if (response.ok) return data as T;
+        if (response.ok) return data as T;
 
-    if (showError) this.snackbarService.show((data as ApiError).message, SnackbarColor.ERROR);
-    return null;
-  }
+        if (showError) this.snackbarService.show((data as ApiError).message, SnackbarColor.ERROR);
+        return null;
+    }
 }

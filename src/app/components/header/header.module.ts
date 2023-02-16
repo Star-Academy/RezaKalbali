@@ -8,8 +8,8 @@ import {SideMenuComponent} from './side-menu/side-menu.component';
 import {RouterModule} from '@angular/router';
 
 @NgModule({
-  declarations: [HeaderComponent, NavComponent, SearchBoxComponent, AvatarComponent, SideMenuComponent],
-  exports: [HeaderComponent],
-  imports: [CommonModule, RouterModule],
+    declarations: [HeaderComponent, NavComponent, SearchBoxComponent, AvatarComponent, SideMenuComponent],
+    exports: [HeaderComponent],
+    imports: [CommonModule, RouterModule],
 })
 export class HeaderModule {}

@@ -25,5 +25,5 @@ https://star-academy.github.io/RezaKalbali/
 
 ### ارتباط با توسعه دهنده
 
-- [تلگرام](https://t.me/rezakalbali)
-- [لینکدین](https://www.linkedin.com/in/rezakalbali/)
+-   [تلگرام](https://t.me/rezakalbali)
+-   [لینکدین](https://www.linkedin.com/in/rezakalbali/)

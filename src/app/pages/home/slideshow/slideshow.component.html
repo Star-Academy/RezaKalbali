@@ -1,27 +1,27 @@
 <div class="container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-  <ul class="slideshow">
-    <li
-      *ngFor="let slide of slides; index as i"
-      class="slide"
-      [style.--active-index]="activeSlide"
-      [class.active]="activeSlide === i"
-    >
-      <img [src]="slide.src" [alt]="slide.alt" />
-    </li>
-  </ul>
-  <div class="overlay">
-    <div class="arrows">
-      <i class="fa-solid fa-chevron-right" (click)="activeSlideshowHandler(activeSlide - 1)"></i>
-      <i class="fa-solid fa-chevron-left" (click)="activeSlideshowHandler(activeSlide + 1)"></i>
-    </div>
-    <ul class="items">
-      <li *ngFor="let _ of slides; index as index" (click)="activeSlideshowHandler(index)">
-        <i
-          class="fa-circle-dot bullets"
-          [class]="index === activeSlide ? 'fa-solid' : 'fa-regular'"
-          [style.color]="activeSlide === index ? 'var(--color-primary)' : 'var(--color-gray-text)'"
-        ></i>
-      </li>
+    <ul class="slideshow">
+        <li
+            *ngFor="let slide of slides; index as i"
+            class="slide"
+            [style.--active-index]="activeSlide"
+            [class.active]="activeSlide === i"
+        >
+            <img [src]="slide.src" [alt]="slide.alt" />
+        </li>
     </ul>
-  </div>
+    <div class="overlay">
+        <div class="arrows">
+            <i class="fa-solid fa-chevron-right" (click)="activeSlideshowHandler(activeSlide - 1)"></i>
+            <i class="fa-solid fa-chevron-left" (click)="activeSlideshowHandler(activeSlide + 1)"></i>
+        </div>
+        <ul class="items">
+            <li *ngFor="let _ of slides; index as index" (click)="activeSlideshowHandler(index)">
+                <i
+                    class="fa-circle-dot bullets"
+                    [class]="index === activeSlide ? 'fa-solid' : 'fa-regular'"
+                    [style.color]="activeSlide === index ? 'var(--color-primary)' : 'var(--color-gray-text)'"
+                ></i>
+            </li>
+        </ul>
+    </div>
 </div>

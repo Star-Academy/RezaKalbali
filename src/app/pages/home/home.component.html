@@ -1,65 +1,65 @@
 <app-header></app-header>
 <main>
-  <app-slideshow></app-slideshow>
+    <app-slideshow></app-slideshow>
 
-  <div class="banner">
-    <h2>به‌روزترین وب‌سایت بازی در ایران</h2>
-    <img src="assets/images/top-banner.png" alt="games character" />
-  </div>
-
-  <section class="card-container">
-    <div class="top">
-      <h2 class="heading">عناوین محبوب</h2>
-      <a class="more-link" href="#">
-        <span>مشاهده همه</span>
-        <i class="fa-regular fa-chevron-left"></i>
-      </a>
+    <div class="banner">
+        <h2>به‌روزترین وب‌سایت بازی در ایران</h2>
+        <img src="assets/images/top-banner.png" alt="games character" />
     </div>
 
-    <div class="cards">
-      <app-home-card *ngFor="let game of games" [game]="game"></app-home-card>
-    </div>
-  </section>
+    <section class="card-container">
+        <div class="top">
+            <h2 class="heading">عناوین محبوب</h2>
+            <a class="more-link" href="#">
+                <span>مشاهده همه</span>
+                <i class="fa-regular fa-chevron-left"></i>
+            </a>
+        </div>
 
-  <section class="card-container">
-    <div class="top">
-      <h2 class="heading">پیشنهاد ویژه</h2>
+        <div class="cards">
+            <app-home-card *ngFor="let game of games" [game]="game"></app-home-card>
+        </div>
+    </section>
 
-      <a class="more-link" href="#">
-        <span>مشاهده همه</span>
-        <i class="fa-regular fa-chevron-left"></i>
-      </a>
-    </div>
+    <section class="card-container">
+        <div class="top">
+            <h2 class="heading">پیشنهاد ویژه</h2>
 
-    <div class="cards">
-      <ng-container *ngFor="let game of games">
-        <app-home-card *ngIf="game.pay === GamePayEnum.PAY" [game]="game"></app-home-card>
-      </ng-container>
-      <ng-container *ngFor="let game of games">
-        <app-home-card *ngIf="game.pay === GamePayEnum.PAY" [game]="game"></app-home-card>
-      </ng-container>
-    </div>
-  </section>
+            <a class="more-link" href="#">
+                <span>مشاهده همه</span>
+                <i class="fa-regular fa-chevron-left"></i>
+            </a>
+        </div>
 
-  <section class="card-container">
-    <div class="top">
-      <h2 class="heading">پیشنهاد ویژه</h2>
+        <div class="cards">
+            <ng-container *ngFor="let game of games">
+                <app-home-card *ngIf="game.pay === GamePayEnum.PAY" [game]="game"></app-home-card>
+            </ng-container>
+            <ng-container *ngFor="let game of games">
+                <app-home-card *ngIf="game.pay === GamePayEnum.PAY" [game]="game"></app-home-card>
+            </ng-container>
+        </div>
+    </section>
 
-      <a class="more-link" href="#">
-        <span>مشاهده همه</span>
-        <i class="fa-regular fa-chevron-left"></i>
-      </a>
-    </div>
+    <section class="card-container">
+        <div class="top">
+            <h2 class="heading">پیشنهاد ویژه</h2>
 
-    <div class="cards">
-      <ng-container *ngFor="let game of games">
-        <app-home-card *ngIf="game.pay === GamePayEnum.FREE" [game]="game"></app-home-card>
-      </ng-container>
-      <ng-container *ngFor="let game of games">
-        <app-home-card *ngIf="game.pay === GamePayEnum.FREE" [game]="game"></app-home-card>
-      </ng-container>
-    </div>
-  </section>
-  <app-features></app-features>
+            <a class="more-link" href="#">
+                <span>مشاهده همه</span>
+                <i class="fa-regular fa-chevron-left"></i>
+            </a>
+        </div>
+
+        <div class="cards">
+            <ng-container *ngFor="let game of games">
+                <app-home-card *ngIf="game.pay === GamePayEnum.FREE" [game]="game"></app-home-card>
+            </ng-container>
+            <ng-container *ngFor="let game of games">
+                <app-home-card *ngIf="game.pay === GamePayEnum.FREE" [game]="game"></app-home-card>
+            </ng-container>
+        </div>
+    </section>
+    <app-features></app-features>
 </main>
 <app-footer></app-footer>

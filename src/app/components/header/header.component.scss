@@ -1,70 +1,70 @@
 header {
-  background-color: var(--color-background);
+    background-color: var(--color-background);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-
-  height: 9rem;
-
-  padding-inline: 1rem;
-
-  .logo-side {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    justify-content: space-between;
+    gap: 1rem;
 
-    height: 100%;
+    height: 9rem;
 
-    padding-block: 2rem;
+    padding-inline: 1rem;
 
-    img {
-      width: auto;
-      height: 4rem;
+    .logo-side {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        height: 100%;
+
+        padding-block: 2rem;
+
+        img {
+            width: auto;
+            height: 4rem;
+        }
     }
-  }
 
-  .avatar-side {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+    .avatar-side {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
 
-    height: 100%;
+        height: 100%;
 
-    .login-or-register-btn {
-      background-color: transparent;
-      color: var(--color-gray-text);
+        .login-or-register-btn {
+            background-color: transparent;
+            color: var(--color-gray-text);
 
-      font-size: 1.4rem;
+            font-size: 1.4rem;
 
-      cursor: pointer;
+            cursor: pointer;
 
-      &:hover {
-        color: var(--color-primary);
-      }
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
     }
-  }
 
-  app-search-box {
-    display: none;
-  }
+    app-search-box {
+        display: none;
+    }
 
-  app-nav {
-    display: none;
-  }
+    app-nav {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 720px) {
-  header {
-    padding-inline: var(--margin-main-sides);
-  }
+    header {
+        padding-inline: var(--margin-main-sides);
+    }
 
-  app-search-box {
-    display: block !important;
-  }
+    app-search-box {
+        display: block !important;
+    }
 
-  app-nav {
-    display: block !important;
-  }
+    app-nav {
+        display: block !important;
+    }
 }

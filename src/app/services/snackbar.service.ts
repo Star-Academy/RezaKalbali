@@ -3,16 +3,16 @@ import {SnackbarComponent} from '../components/snackbar/snackbar.component';
 import {SnackbarColor} from '../enums/snackbar-color';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class SnackbarService {
-  private snackbarComponent!: SnackbarComponent;
+    private snackbarComponent!: SnackbarComponent;
 
-  public initComponent(snackbarComponent: SnackbarComponent): void {
-    this.snackbarComponent = snackbarComponent;
-  }
+    public initComponent(snackbarComponent: SnackbarComponent): void {
+        this.snackbarComponent = snackbarComponent;
+    }
 
-  public show(message: string, color?: SnackbarColor): void {
-    this.snackbarComponent.show(message, color);
-  }
+    public show(message: string, color?: SnackbarColor): void {
+        this.snackbarComponent.show(message, color);
+    }
 }
