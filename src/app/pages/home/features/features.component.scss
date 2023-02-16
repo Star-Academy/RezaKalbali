@@ -1,6 +1,4 @@
 section {
-  container: features / inline-size;
-
   background-color: var(--color-background-light);
 
   padding: 1rem;
@@ -13,7 +11,7 @@ section {
     padding-block: 2rem;
 
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 700;
 
     text-align: center;
   }

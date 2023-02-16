@@ -13,6 +13,7 @@
 
   form {
     background-color: var(--color-background-light);
+    color: var(--color-gray-text);
 
     display: flex;
     flex-direction: column;
@@ -46,8 +47,6 @@
         max-width: 30rem;
 
         span {
-          color: var(--color-gray-text);
-
           font-size: 1.4rem;
         }
 
@@ -73,8 +72,6 @@
       }
 
       app-button {
-        color: var(--color-gray-text);
-
         justify-content: center;
 
         width: 100%;
@@ -85,12 +82,10 @@
     }
 
     .footer {
-      color: var(--color-gray-text);
-
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
 
       font-size: 1.4rem;
 

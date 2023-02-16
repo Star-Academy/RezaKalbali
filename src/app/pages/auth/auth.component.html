@@ -1,27 +1,27 @@
 <div class="container">
-  <form (ngSubmit)="formSubmitHandler()" [formGroup]="userForm">
-    <img src="../../../assets/logos/squid-game-logo.svg" alt="squid game logo" />
+  <form [formGroup]="userForm" (ngSubmit)="formSubmitHandler()">
+    <img src="assets/logos/squid-game-logo.svg" alt="squid game logo" />
     <div>
       <label>
         <span> نام کاربری: </span>
         <input type="text" name="username" formControlName="username" pattern="[a-zA-Z][a-zA-Z0-9-_]{3,32}" />
-        <span class="info" *ngIf="isSubmitted && userForm.controls.username.status === 'INVALID'"
-          >مقدار وارد شده نا معتبر است</span
-        >
+        <span class="info" *ngIf="isSubmitted && !isLoginMode && userForm.controls.username.status === 'INVALID'"
+          >مقدار وارد شده نا معتبر است
+        </span>
       </label>
       <label *ngIf="!isLoginMode">
         <span> ایمیل: </span>
         <input type="email" name="email" formControlName="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" />
         <span class="info" *ngIf="isSubmitted && userForm.controls.email.status === 'INVALID'"
-          >مقدار وارد شده نا معتبر است</span
-        >
+          >مقدار وارد شده نا معتبر است
+        </span>
       </label>
       <label>
         <span> کلمه عبور: </span>
         <input type="password" name="password" formControlName="password" minlength="8" maxlength="32" />
-        <span class="info" *ngIf="isSubmitted && userForm.controls.password.status === 'INVALID'"
-          >مقدار وارد شده نا معتبر است</span
-        >
+        <span class="info" *ngIf="isSubmitted && !isLoginMode && userForm.controls.password.status === 'INVALID'"
+          >مقدار وارد شده نا معتبر است
+        </span>
       </label>
       <label *ngIf="!isLoginMode">
         <span> تکرار کلمه عبور: </span>
@@ -33,8 +33,8 @@
             (userForm.controls.repeatPassword.status === 'INVALID' ||
               userForm.value.password !== userForm.value.repeatPassword)
           "
-          >مقدار وارد شده نا معتبر است</span
-        >
+          >مقدار وارد شده نا معتبر است
+        </span>
       </label>
       <app-button
         [isPrimary]="true"
