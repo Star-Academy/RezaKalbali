@@ -2,7 +2,6 @@ import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing'
 
 import {SnackbarComponent} from './snackbar.component';
 import {SnackbarColor} from '../../enums/snackbar-color';
-import {Component} from '@angular/core';
 
 describe('SnackbarComponent', () => {
     let component: SnackbarComponent;
