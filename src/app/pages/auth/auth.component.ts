@@ -45,7 +45,6 @@ export class AuthComponent {
         if (isLoggedIn) {
             await this.router.navigateByUrl('/');
         }
-        console.log(this.userForm);
     }
 
     public async registerHandler(): Promise<void> {
