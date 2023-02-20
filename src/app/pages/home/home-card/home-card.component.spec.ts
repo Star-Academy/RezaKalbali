@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {HomeCardComponent} from './home-card.component';
+import {gameList} from '../../../demo-data/game-list';
 
 describe('HomeCardComponent', () => {
     let component: HomeCardComponent;
@@ -15,6 +16,7 @@ describe('HomeCardComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(HomeCardComponent);
         component = fixture.componentInstance;
+        component.game = gameList[0];
         fixture.detectChanges();
     });
 

@@ -8,7 +8,7 @@ import {SnackbarColor} from '../../enums/snackbar-color';
     styleUrls: ['./snackbar.component.scss'],
 })
 export class SnackbarComponent {
-    private readonly INTERVAL_DELAY = 4_000;
+    public readonly INTERVAL_DELAY = 4_000;
 
     public interval: null | number = null;
     public message: string | null = null;
@@ -19,25 +19,25 @@ export class SnackbarComponent {
     }
 
     public show(message: string, color?: SnackbarColor): void {
-        this.clearIntervalIfExist();
+        this.clearTimeoutIfExist();
 
         this.message = message;
         this.color = color || null;
 
-        this.interval = setInterval(() => {
+        this.interval = setTimeout(() => {
             this.message = null;
         }, this.INTERVAL_DELAY);
     }
 
     public onClose(): void {
-        this.clearIntervalIfExist();
+        this.clearTimeoutIfExist();
         this.message = null;
         this.color = null;
     }
 
-    public clearIntervalIfExist(): void {
+    public clearTimeoutIfExist(): void {
         if (this.interval) {
-            clearInterval(this.interval);
+            clearTimeout(this.interval);
             this.interval = null;
         }
     }
