@@ -2,7 +2,10 @@
 <main>
     <aside>
         <h2>فیلترها</h2>
-        <app-switch title="فقط بازی های رایگان" (onChange)="handleSwitchesOnChange('only_free', $event)"></app-switch>
+        <app-switch
+            title="فقط بازی های رایگان"
+            (changeState)="handleSwitchesOnChange('only_free', $event)"
+        ></app-switch>
         <app-collapsible-selection-list
             title="ژانر‌ها"
             [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
