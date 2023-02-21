@@ -1,16 +1,20 @@
 main {
+    color: var(--color-gray-text);
+
     display: grid;
-    grid-template-areas: "filter cards cards cards";
+    grid-template-columns: 1fr 4fr;
 
     min-height: 40rem;
 
     padding: var(--margin-main-sides);
 
     aside {
-        grid-area: filter;
+        align-self: start;
 
         background-color: var(--color-background-light);
-        color: var(--color-gray-text);
+
+        position: sticky;
+        inset-block-start: 2rem;
 
         padding: 2rem;
 
@@ -24,6 +28,82 @@ main {
     }
 
     section {
-        grid-area: cards;
+        padding-inline: 2rem;
+
+        font-size: 1.2rem;
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            padding-block-end: 2rem;
+
+            ul {
+                display: flex;
+                gap: 1rem;
+
+                li {
+                    button {
+                        background-color: inherit;
+                        color: inherit;
+
+                        margin: 0;
+                        padding: 0;
+
+                        border: none;
+
+                        cursor: pointer;
+
+                        &:hover {
+                            color: var(--color-primary-lighter);
+
+                            transform: translateY(-0.1rem);
+
+                            transition-duration: var(--animation-time-1);
+                        }
+                    }
+
+                    &.active {
+                        color: var(--color-primary);
+
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .total-result {
+                margin-inline-start: auto;
+            }
+        }
+
+        main {
+            overflow: hidden;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+
+            padding: 0;
+
+            app-home-card {
+                transform: translateX(-120%);
+
+                animation-delay: var(--animation-time-2);
+                animation-duration: var(--animation-time-4);
+                animation-fill-mode: forwards;
+                animation-name: from-left;
+            }
+        }
+    }
+}
+
+@keyframes from-left {
+    0% {
+        transform: translateX(-120%);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }

@@ -10,7 +10,7 @@ import {AuthService} from '../../services/auth.service';
 export class HeaderComponent {
     public isOpenSideMenu: boolean = false;
 
-    public constructor(public router: Router, public authService: AuthService) {}
+    public constructor(private router: Router, public authService: AuthService) {}
 
     public async onClickLogInButton(): Promise<void> {
         await this.router.navigateByUrl('/auth');

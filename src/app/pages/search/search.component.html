@@ -3,10 +3,28 @@
     <aside>
         <h2>فیلترها</h2>
         <app-switch title="فقط بازی های رایگان" (onChange)="handleSwitchesOnChange('only_free', $event)"></app-switch>
+        <app-collapsible-selection-list
+            title="ژانر‌ها"
+            [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
+        ></app-collapsible-selection-list>
     </aside>
     <section>
-        <header></header>
-        <main class="cards"></main>
+        <header>
+            <i class="fa-regular fa-arrow-down-wide-short"></i>
+            <span> مرتب سازی: </span>
+
+            <ul>
+                <li class="active"><button>محبوب‌ترین</button></li>
+                <li><button>جدیدترین</button></li>
+                <li><button>ارزانترین</button></li>
+                <li><button>گرانترین</button></li>
+            </ul>
+
+            <span class="total-result">{{ games.length }} بازی</span>
+        </header>
+        <main class="cards">
+            <app-home-card *ngFor="let game of games" [game]="game"> </app-home-card>
+        </main>
     </section>
 </main>
 <app-footer></app-footer>

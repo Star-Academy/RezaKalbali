@@ -1,0 +1,17 @@
+<div>
+    <div class="header" (click)="isCollapsed = !isCollapsed">
+        {{ title }}
+        <i class="fa-regular fa-chevron-left" [class.down]="!isCollapsed"></i>
+    </div>
+
+    <div [style.display]="isCollapsed ? 'none' : 'block'" class="content">
+        <ul>
+            <li *ngFor="let selectItem of selectList">
+                <label>
+                    <input type="checkbox" />
+                    {{ selectItem }}
+                </label>
+            </li>
+        </ul>
+    </div>
+</div>
