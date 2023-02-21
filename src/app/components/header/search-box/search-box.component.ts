@@ -12,6 +12,9 @@ export class SearchBoxComponent {
     constructor(private router: Router) {}
 
     public async searchSubmitHandler(): Promise<void> {
-        await this.router.navigate(['/search'], {queryParams: {search_term: this.searchTerm, order: 'popular'}});
+        await this.router.navigate(['/search'], {
+            queryParams: {search_term: this.searchTerm, order: 'popular'},
+            queryParamsHandling: 'merge',
+        });
     }
 }

@@ -8,10 +8,20 @@ import {NotFoundModule} from './pages/not-found/not-found.module';
 import {SnackbarModule} from './components/snackbar/snackbar.module';
 import {AuthModule} from './pages/auth/auth.module';
 import {ProfileModule} from './pages/profile/profile.module';
+import {SearchModule} from './pages/search/search.module';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, HomeModule, NotFoundModule, SnackbarModule, AuthModule, ProfileModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HomeModule,
+        NotFoundModule,
+        SnackbarModule,
+        AuthModule,
+        ProfileModule,
+        SearchModule,
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

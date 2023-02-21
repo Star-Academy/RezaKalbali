@@ -1,0 +1,29 @@
+main {
+    display: grid;
+    grid-template-areas: "filter cards cards cards";
+
+    min-height: 40rem;
+
+    padding: var(--margin-main-sides);
+
+    aside {
+        grid-area: filter;
+
+        background-color: var(--color-background-light);
+        color: var(--color-gray-text);
+
+        padding: 2rem;
+
+        border-radius: var(--border-radius-4);
+
+        font-size: 1.4rem;
+
+        h3 {
+            font-size: 1.6rem;
+        }
+    }
+
+    section {
+        grid-area: cards;
+    }
+}
