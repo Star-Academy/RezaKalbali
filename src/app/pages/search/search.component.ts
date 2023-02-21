@@ -10,7 +10,8 @@ import {gameList} from '../../demo-data/game-list';
 })
 export class SearchComponent {
     public games: Game[] = gameList;
-    constructor(private router: Router, private route: ActivatedRoute) {
+
+    public constructor(private router: Router, private route: ActivatedRoute) {
         route.queryParams.subscribe((params) => console.log(params.only_free));
     }
 

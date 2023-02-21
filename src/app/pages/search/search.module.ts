@@ -6,7 +6,7 @@ import {FooterModule} from '../../components/footer/footer.module';
 import {SwitchComponent} from './components/switch/switch.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HomeModule} from '../home/home.module';
-import { CollapsibleSelectionListComponent } from './components/collapsible-selection-list/collapsible-selection-list.component';
+import {CollapsibleSelectionListComponent} from './components/collapsible-selection-list/collapsible-selection-list.component';
 
 @NgModule({
     declarations: [SearchComponent, SwitchComponent, CollapsibleSelectionListComponent],

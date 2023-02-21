@@ -6,9 +6,9 @@ import {Component, Input} from '@angular/core';
     styleUrls: ['./collapsible-selection-list.component.scss'],
 })
 export class CollapsibleSelectionListComponent {
-    @Input() title: string = 'عنوان لیست';
+    @Input() public title: string = 'عنوان لیست';
 
-    @Input() selectList: string[] = [];
+    @Input() public selectList: string[] = [];
 
     public isCollapsed: boolean = false;
 }

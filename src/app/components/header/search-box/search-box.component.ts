@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 export class SearchBoxComponent {
     public searchTerm: string = '';
 
-    constructor(private router: Router) {}
+    public constructor(private router: Router) {}
 
     public async searchSubmitHandler(): Promise<void> {
         await this.router.navigate(['/search'], {
