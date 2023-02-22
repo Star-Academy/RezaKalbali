@@ -23,10 +23,10 @@
                 <li><button>گرانترین</button></li>
             </ul>
 
-            <span class="total-result">{{ games.length }} بازی</span>
+            <span class="total-result">{{ gameService.games.length }} بازی</span>
         </header>
         <main class="cards">
-            <app-home-card *ngFor="let game of games" [game]="game"> </app-home-card>
+            <app-home-card *ngFor="let game of gameService.games" [game]="game"> </app-home-card>
         </main>
     </section>
 </main>

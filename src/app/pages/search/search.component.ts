@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Game} from '../../models/game';
-import {gameList} from '../../demo-data/game-list';
+
+import {GameService} from '../../services/game.service';
 
 @Component({
     selector: 'app-search',
@@ -9,9 +9,7 @@ import {gameList} from '../../demo-data/game-list';
     styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-    public games: Game[] = gameList;
-
-    public constructor(private router: Router, private route: ActivatedRoute) {
+    public constructor(private router: Router, private route: ActivatedRoute, public gameService: GameService) {
         route.queryParams.subscribe((params) => console.log(params.only_free));
     }
 
