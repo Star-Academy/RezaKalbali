@@ -11,7 +11,7 @@ export class FakeFetchService {
         return new Promise((resolve) => setTimeout(resolve, randomDelay));
     }
 
-    constructor(private fakeServerService: FakeServerService) {}
+    public constructor(private fakeServerService: FakeServerService) {}
 
     public async get<T>(url: string, requestInit: RequestInit): Promise<T> {
         const req: RequestInit = {

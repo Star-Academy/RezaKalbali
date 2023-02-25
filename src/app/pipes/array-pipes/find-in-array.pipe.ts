@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
     name: 'findInArray',
 })
 export class FindInArrayPipe implements PipeTransform {
-    transform(value: any, array: any[]): boolean {
+    public transform(value: any, array: any[]): boolean {
         return !!array.find((item) => item === value);
     }
 }
