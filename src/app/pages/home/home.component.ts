@@ -10,5 +10,8 @@ import {GameService} from '../../services/game.service';
 export class HomeComponent {
     public GamePayEnum = GamePay;
 
-    public constructor(public gameService: GameService) {}
+    public constructor(public gameService: GameService) {
+        gameService.getSlides().then();
+        gameService.getGames().then();
+    }
 }

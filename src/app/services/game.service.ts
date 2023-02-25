@@ -4,6 +4,7 @@ import {FakeFetchService} from './fake-fetch.service';
 import {ActivatedRoute} from '@angular/router';
 import {GameSearchParams} from '../models/game-search-params';
 import {Slide} from '../models/slide';
+import {SpinnerService} from './spinner.service';
 
 @Injectable({
     providedIn: 'root',
@@ -13,26 +14,38 @@ export class GameService {
     public slideShows: Slide[] = [];
     public searchedGames: Game[] = [];
 
-    public constructor(private fakeFetchService: FakeFetchService, private route: ActivatedRoute) {
-        this.getGames().then();
-        this.getSlides().then();
+    public constructor(
+        private fakeFetchService: FakeFetchService,
+        private route: ActivatedRoute,
+        private spinnerService: SpinnerService
+    ) {
         this.subscribeSearchParams().then();
     }
 
-    public async search(searchParams: GameSearchParams): Promise<void> {
+    public async search(gameSearchParams: GameSearchParams): Promise<void> {
+        const spinner = this.spinnerService.addSpinner();
+
         const searchedGames = await this.fakeFetchService.get<Game[]>('/search', {
-            body: JSON.stringify(searchParams),
+            body: JSON.stringify(gameSearchParams),
         });
 
         this.searchedGames = [...searchedGames];
+
+        this.spinnerService.clearSpinner(spinner);
     }
 
-    private async getGames(): Promise<void> {
+    public async getGames(): Promise<void> {
+        const spinner = this.spinnerService.addSpinner();
+
         this.games = await this.fakeFetchService.get<Game[]>('/games', {});
+        this.spinnerService.clearSpinner(spinner);
     }
 
-    private async getSlides(): Promise<void> {
+    public async getSlides(): Promise<void> {
+        const spinner = this.spinnerService.addSpinner();
+
         this.slideShows = await this.fakeFetchService.get<Slide[]>('/slides', {});
+        this.spinnerService.clearSpinner(spinner);
     }
 
     private async subscribeSearchParams(): Promise<void> {

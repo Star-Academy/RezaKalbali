@@ -1,0 +1,40 @@
+.mask-container {
+    background-color: var(--color-dark-25);
+
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+
+    display: none;
+    align-content: center;
+
+    &.active {
+        display: grid;
+    }
+
+    i {
+        color: var(--color-gray-text);
+
+        font-size: 3rem;
+
+        text-align: center;
+
+        animation-duration: var(--animation-time-8);
+        animation-iteration-count: infinite;
+        animation-name: spin;
+    }
+}
+
+html {
+    overflow: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

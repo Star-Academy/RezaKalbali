@@ -44,7 +44,7 @@ export class FakeServerService {
                 return game.title.toLowerCase().match(`.*${searchParams.search_term?.toLowerCase()}.*` || '.*.*');
             });
         }
-        console.log(games);
+        if (games.length > 50) games.length = 50;
         if (request) resolve(games);
         else reject();
     }
@@ -59,7 +59,6 @@ export class FakeServerService {
 
     private getSlides(request: RequestInit, resolve: Function, reject: Function): void {
         const slides = [...slideList];
-        shuffle(slides);
         if (request) resolve(slides);
         else reject();
     }

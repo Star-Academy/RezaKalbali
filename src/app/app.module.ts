@@ -9,6 +9,7 @@ import {SnackbarModule} from './components/snackbar/snackbar.module';
 import {AuthModule} from './pages/auth/auth.module';
 import {ProfileModule} from './pages/profile/profile.module';
 import {SearchModule} from './pages/search/search.module';
+import {SpinnerModule} from './components/spinner/spinner.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -21,6 +22,7 @@ import {SearchModule} from './pages/search/search.module';
         AuthModule,
         ProfileModule,
         SearchModule,
+        SpinnerModule,
     ],
     bootstrap: [AppComponent],
 })
