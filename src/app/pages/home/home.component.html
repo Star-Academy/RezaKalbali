@@ -17,7 +17,7 @@
         </div>
 
         <div class="cards">
-            <app-home-card *ngFor="let game of games" [game]="game"></app-home-card>
+            <app-home-card *ngFor="let game of gameService.games" [game]="game"></app-home-card>
         </div>
     </section>
 
@@ -32,10 +32,7 @@
         </div>
 
         <div class="cards">
-            <ng-container *ngFor="let game of games">
-                <app-home-card *ngIf="game.pay === GamePayEnum.PAY" [game]="game"></app-home-card>
-            </ng-container>
-            <ng-container *ngFor="let game of games">
+            <ng-container *ngFor="let game of gameService.games">
                 <app-home-card *ngIf="game.pay === GamePayEnum.PAY" [game]="game"></app-home-card>
             </ng-container>
         </div>
@@ -43,7 +40,7 @@
 
     <section class="card-container">
         <div class="top">
-            <h2 class="heading">پیشنهاد ویژه</h2>
+            <h2 class="heading">پرفروش‌ترین‌ها</h2>
 
             <a class="more-link" href="#">
                 <span>مشاهده همه</span>
@@ -52,11 +49,8 @@
         </div>
 
         <div class="cards">
-            <ng-container *ngFor="let game of games">
-                <app-home-card *ngIf="game.pay === GamePayEnum.FREE" [game]="game"></app-home-card>
-            </ng-container>
-            <ng-container *ngFor="let game of games">
-                <app-home-card *ngIf="game.pay === GamePayEnum.FREE" [game]="game"></app-home-card>
+            <ng-container *ngFor="let game of gameService.games">
+                <app-home-card [game]="game"></app-home-card>
             </ng-container>
         </div>
     </section>

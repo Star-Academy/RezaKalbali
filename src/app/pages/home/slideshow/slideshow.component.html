@@ -1,7 +1,7 @@
 <div class="container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <ul class="slideshow">
         <li
-            *ngFor="let slide of slides; index as i"
+            *ngFor="let slide of gameService.slideShows; index as i"
             class="slide"
             [style.--active-index]="activeSlide"
             [class.active]="activeSlide === i"
@@ -15,7 +15,7 @@
             <i class="fa-solid fa-chevron-left" (click)="activeSlideshowHandler(activeSlide + 1)"></i>
         </div>
         <ul class="items">
-            <li *ngFor="let _ of slides; index as index" (click)="activeSlideshowHandler(index)">
+            <li *ngFor="let _ of gameService.slideShows; index as index" (click)="activeSlideshowHandler(index)">
                 <i
                     class="fa-circle-dot bullets"
                     [class]="index === activeSlide ? 'fa-solid' : 'fa-regular'"
