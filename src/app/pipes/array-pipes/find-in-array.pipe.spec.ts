@@ -1,8 +1,8 @@
-import { FindInArrayPipe } from './find-in-array.pipe';
+import {FindInArrayPipe} from './find-in-array.pipe';
 
 describe('FindInArrayPipe', () => {
-  it('create an instance', () => {
-    const pipe = new FindInArrayPipe();
-    expect(pipe).toBeTruthy();
-  });
+    it('create an instance', () => {
+        const pipe = new FindInArrayPipe();
+        expect(pipe).toBeTruthy();
+    });
 });

@@ -14,7 +14,7 @@ export class SwitchComponent {
 
     public checkbox = new FormControl();
 
-    constructor(public gameService: GameService) {}
+    public constructor(public gameService: GameService) {}
 
     public handleChange(valueChangeEvent: Event): void {
         this.changeState.emit((valueChangeEvent.target as HTMLInputElement).checked);

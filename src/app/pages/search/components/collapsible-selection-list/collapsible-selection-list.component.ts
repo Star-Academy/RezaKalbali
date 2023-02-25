@@ -13,13 +13,13 @@ export class CollapsibleSelectionListComponent {
 
     @Output() public changeActive: EventEmitter<string> = new EventEmitter();
 
-    constructor(gameService: GameService) {
+    public constructor(gameService: GameService) {
         this.selectedItems = gameService.gameSearchParams.genre?.split(',') ?? [];
     }
 
     public isCollapsed: boolean = false;
 
-    public handleChange(value: string) {
+    public handleChange(value: string): void {
         if (this.selectedItems.find((selected) => selected === value)) {
             this.selectedItems = this.selectedItems.filter((selected) => selected !== value);
         } else {

@@ -9,15 +9,15 @@ import {SpinnerService} from '../../services/spinner.service';
 export class SpinnerComponent {
     public isActive: boolean = false;
 
-    constructor(spinnerService: SpinnerService) {
+    public constructor(spinnerService: SpinnerService) {
         spinnerService.initializeComponent(this);
     }
 
-    public show() {
+    public show(): void {
         this.isActive = true;
     }
 
-    public hide() {
+    public hide(): void {
         this.isActive = false;
     }
 }

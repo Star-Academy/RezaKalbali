@@ -8,7 +8,7 @@ export class SpinnerService {
     private spinnerComponent!: SpinnerComponent;
     private spinners: Symbol[] = [];
 
-    public initializeComponent(spinnerComponent: SpinnerComponent) {
+    public initializeComponent(spinnerComponent: SpinnerComponent): void {
         this.spinnerComponent = spinnerComponent;
 
         setInterval(() => {
