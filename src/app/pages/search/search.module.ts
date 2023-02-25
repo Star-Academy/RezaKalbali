@@ -7,9 +7,10 @@ import {SwitchComponent} from './components/switch/switch.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HomeModule} from '../home/home.module';
 import {CollapsibleSelectionListComponent} from './components/collapsible-selection-list/collapsible-selection-list.component';
+import {ArrayPipesModule} from '../../pipes/array-pipes/array-pipes.module';
 
 @NgModule({
     declarations: [SearchComponent, SwitchComponent, CollapsibleSelectionListComponent],
-    imports: [CommonModule, HeaderModule, FooterModule, FormsModule, ReactiveFormsModule, HomeModule],
+    imports: [CommonModule, HeaderModule, FooterModule, FormsModule, ReactiveFormsModule, HomeModule, ArrayPipesModule],
 })
 export class SearchModule {}

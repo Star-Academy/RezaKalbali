@@ -2,13 +2,11 @@
 <main>
     <aside>
         <h2>فیلترها</h2>
-        <app-switch
-            title="فقط بازی های رایگان"
-            (changeState)="handleSwitchesOnChange('only_free', $event)"
-        ></app-switch>
+        <app-switch title="فقط بازی های رایگان" (changeState)="handleSearchChange('only_free', $event)"></app-switch>
         <app-collapsible-selection-list
             title="ژانر‌ها"
             [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
+            (changeActive)="handleSearchChange('genre', $event)"
         ></app-collapsible-selection-list>
     </aside>
     <section>
@@ -17,10 +15,22 @@
             <span> مرتب سازی: </span>
 
             <ul>
-                <li class="active"><button>محبوب‌ترین</button></li>
-                <li><button>جدیدترین</button></li>
-                <li><button>ارزانترین</button></li>
-                <li><button>گرانترین</button></li>
+                <li
+                    class="active"
+                    [class.active]="gameService.gameSearchParams.order === 'popular'"
+                    (click)="handleSearchChange('order', 'popular')"
+                >
+                    <button>محبوب‌ترین</button>
+                </li>
+                <li [class.active]="gameService.gameSearchParams.order === 'newest'">
+                    <button (click)="handleSearchChange('order', 'newest')">جدیدترین</button>
+                </li>
+                <li [class.active]="gameService.gameSearchParams.order === 'cheapest'">
+                    <button (click)="handleSearchChange('order', 'cheapest')">ارزانترین</button>
+                </li>
+                <li [class.active]="gameService.gameSearchParams.order === 'expensive'">
+                    <button (click)="handleSearchChange('order', 'expensive')">گرانترین</button>
+                </li>
             </ul>
 
             <span class="total-result">{{ gameService.searchedGames.length }} بازی</span>

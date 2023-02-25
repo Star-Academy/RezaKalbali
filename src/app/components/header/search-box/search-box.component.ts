@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {GameService} from '../../../services/game.service';
 
 @Component({
     selector: 'app-search-box',
@@ -9,7 +10,9 @@ import {Router} from '@angular/router';
 export class SearchBoxComponent {
     public searchTerm: string = '';
 
-    public constructor(private router: Router) {}
+    public constructor(private router: Router, public gameService: GameService) {
+        this.searchTerm = gameService.gameSearchParams.search_term || '';
+    }
 
     public async searchSubmitHandler(): Promise<void> {
         await this.router.navigate(['/search'], {

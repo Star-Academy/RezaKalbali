@@ -10,7 +10,7 @@ import {GameService} from '../../services/game.service';
 export class SearchComponent {
     public constructor(private router: Router, public gameService: GameService) {}
 
-    public async handleSwitchesOnChange(paramName: string, value: boolean): Promise<void> {
+    public async handleSearchChange(paramName: string, value: boolean | string): Promise<void> {
         await this.router.navigate(['/search'], {queryParams: {[paramName]: value}, queryParamsHandling: 'merge'});
     }
 }

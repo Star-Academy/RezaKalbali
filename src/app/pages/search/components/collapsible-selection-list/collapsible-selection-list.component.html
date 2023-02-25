@@ -8,7 +8,11 @@
         <ul>
             <li *ngFor="let selectItem of selectList">
                 <label>
-                    <input type="checkbox" />
+                    <input
+                        type="checkbox"
+                        [checked]="selectItem | findInArray : selectedItems"
+                        (change)="handleChange(selectItem)"
+                    />
                     {{ selectItem }}
                 </label>
             </li>

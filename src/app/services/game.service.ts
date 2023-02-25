@@ -13,6 +13,11 @@ export class GameService {
     public games: Game[] = [];
     public slideShows: Slide[] = [];
     public searchedGames: Game[] = [];
+    public gameSearchParams: GameSearchParams = {
+        only_free: 'false',
+        search_term: '',
+        order: 'popular',
+    };
 
     public constructor(
         private fakeFetchService: FakeFetchService,
@@ -49,12 +54,9 @@ export class GameService {
     }
 
     private async subscribeSearchParams(): Promise<void> {
-        this.route.queryParams.subscribe(({search_term, order, only_free}: GameSearchParams) => {
-            this.search({
-                only_free,
-                order,
-                search_term,
-            });
+        this.route.queryParams.subscribe((gameSearchParams: GameSearchParams) => {
+            this.search(gameSearchParams);
+            this.gameSearchParams = gameSearchParams;
         });
     }
 }

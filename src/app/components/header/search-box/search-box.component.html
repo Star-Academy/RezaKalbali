@@ -1,9 +1,9 @@
 <form (submit)="searchSubmitHandler()">
     <input
-        (search)="searchSubmitHandler()"
         type="search"
         placeholder="جستجو ..."
         name="searchTerm"
+        (search)="searchSubmitHandler()"
         [(ngModel)]="searchTerm"
     />
 </form>
