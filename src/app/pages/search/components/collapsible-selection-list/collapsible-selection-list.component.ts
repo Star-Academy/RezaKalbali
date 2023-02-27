@@ -15,14 +15,14 @@ export class CollapsibleSelectionListComponent implements OnInit {
 
     @Output() public changeActive: EventEmitter<string> = new EventEmitter();
 
+    public isCollapsed: boolean = false;
+
     public constructor(private gameService: GameService) {}
 
     ngOnInit() {
         if (this.searchParamKey)
             this.selectedItems = this.gameService.gameSearchParams[this.searchParamKey]?.split(',') ?? [];
     }
-
-    public isCollapsed: boolean = false;
 
     public handleChange(changeValue: string): void {
         if (this.selectedItems.find((selected) => selected === changeValue)) {
