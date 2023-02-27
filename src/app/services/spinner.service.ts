@@ -10,10 +10,6 @@ export class SpinnerService {
 
     public initializeComponent(spinnerComponent: SpinnerComponent): void {
         this.spinnerComponent = spinnerComponent;
-
-        setInterval(() => {
-            console.log(this.spinners);
-        }, 1000);
     }
 
     public addSpinner(): Symbol {

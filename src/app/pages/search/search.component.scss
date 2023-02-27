@@ -2,25 +2,34 @@ main {
     color: var(--color-gray-text);
 
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 24rem 4fr;
 
     min-height: 40rem;
 
     padding: var(--margin-main-sides);
 
     aside {
+        --stick-from-top: 2rem;
+
         align-self: start;
 
         background-color: var(--color-background-light);
 
         position: sticky;
-        inset-block-start: 2rem;
+        inset-block-start: var(--stick-from-top);
+        overflow-x: auto;
+
+        max-block-size: calc(100vh - (var(--stick-from-top) * 2));
 
         padding: 2rem;
 
         border-radius: var(--border-radius-4);
 
         font-size: 1.4rem;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         h3 {
             font-size: 1.6rem;

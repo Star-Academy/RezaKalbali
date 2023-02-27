@@ -22,6 +22,10 @@ div {
     }
 
     .content {
+        overflow-x: auto;
+
+        max-block-size: 20rem;
+
         padding: 1rem;
 
         ul {

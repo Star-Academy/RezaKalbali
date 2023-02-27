@@ -39,11 +39,53 @@ export class FakeServerService {
                 return game.pay === GamePay.FREE;
             });
         }
+
         if (searchParams.search_term) {
             games = games.filter((game) => {
                 return game.title.toLowerCase().match(`.*${searchParams.search_term?.toLowerCase()}.*` || '.*.*');
             });
         }
+
+        if (searchParams.order) {
+            if (searchParams.order === 'cheapest')
+                games = games.sort((gameA, gameB) => {
+                    return (gameA?.price || 0) - (gameB.price || 0);
+                });
+            else if (searchParams.order === 'expensive')
+                games = games.sort((gameA, gameB) => {
+                    return (gameB.price || 0) - (gameA?.price || 0);
+                });
+            else if (searchParams.order === 'newest')
+                games = games.sort((gameA, gameB) => {
+                    return new Date(gameB.release_date).getTime() - new Date(gameA.release_date).getTime();
+                });
+            else shuffle(games);
+        }
+
+        if (searchParams.genre) {
+            const genres = searchParams.genre.split(',');
+
+            games = games.filter((game) => {
+                return genres.includes(game.genre);
+            });
+        }
+
+        if (searchParams.platform) {
+            const platforms = searchParams.platform.split(',');
+
+            games = games.filter((game) => {
+                return platforms.includes(game.platform);
+            });
+        }
+
+        if (searchParams.developer) {
+            const developers = searchParams.developer.split(',');
+
+            games = games.filter((game) => {
+                return developers.includes(game.developer);
+            });
+        }
+
         if (games.length > 50) games.length = 50;
         if (request) resolve(games);
         else reject();
@@ -52,7 +94,7 @@ export class FakeServerService {
     private getGames(request: RequestInit, resolve: Function, reject: Function): void {
         const games = [...gameList];
         shuffle(games);
-        games.length = 50;
+        games.length = 6;
         if (request) resolve(games);
         else reject();
     }

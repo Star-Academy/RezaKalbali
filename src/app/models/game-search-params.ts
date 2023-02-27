@@ -3,4 +3,6 @@ export interface GameSearchParams {
     order?: string;
     only_free?: string;
     genre?: string;
+    platform?: string;
+    developer?: string;
 }

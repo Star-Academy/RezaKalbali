@@ -4,9 +4,19 @@
         <h2>فیلترها</h2>
         <app-switch title="فقط بازی های رایگان" (changeState)="handleSearchChange('only_free', $event)"></app-switch>
         <app-collapsible-selection-list
-            title="ژانر‌ها"
+            title="ژانر‌"
             [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
             (changeActive)="handleSearchChange('genre', $event)"
+        ></app-collapsible-selection-list>
+        <app-collapsible-selection-list
+            title="پلتفورم"
+            [selectList]="['PC (Windows)', 'Web Browser']"
+            (changeActive)="handleSearchChange('platform', $event)"
+        ></app-collapsible-selection-list>
+        <app-collapsible-selection-list
+            title="توسعه‌دهنده"
+            [selectList]="['Doobic Studios', 'Yager Development', 'MercurySteam', 'Tencent Games']"
+            (changeActive)="handleSearchChange('developer', $event)"
         ></app-collapsible-selection-list>
     </aside>
     <section>
