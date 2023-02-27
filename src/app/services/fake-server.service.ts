@@ -59,7 +59,6 @@ export class FakeServerService {
                 games = games.sort((gameA, gameB) => {
                     return new Date(gameB.release_date).getTime() - new Date(gameA.release_date).getTime();
                 });
-            else shuffle(games);
         }
 
         if (searchParams.genre) {
