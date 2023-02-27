@@ -6,15 +6,18 @@
         <app-collapsible-selection-list
             title="ژانر‌"
             [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
+            searchParamKey="genre"
             (changeActive)="handleSearchChange('genre', $event)"
         ></app-collapsible-selection-list>
         <app-collapsible-selection-list
             title="پلتفورم"
+            searchParamKey="platform"
             [selectList]="['PC (Windows)', 'Web Browser']"
             (changeActive)="handleSearchChange('platform', $event)"
         ></app-collapsible-selection-list>
         <app-collapsible-selection-list
             title="توسعه‌دهنده"
+            searchParamKey="developer"
             [selectList]="['Doobic Studios', 'Yager Development', 'MercurySteam', 'Tencent Games']"
             (changeActive)="handleSearchChange('developer', $event)"
         ></app-collapsible-selection-list>

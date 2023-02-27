@@ -6,7 +6,7 @@
 
     <div [style.display]="isCollapsed ? 'none' : 'block'" class="content">
         <ul>
-            <li *ngFor="let selectItem of selectList">
+            <li *ngFor="let selectItem of selectList" [title]="selectItem">
                 <label>
                     <input
                         type="checkbox"
