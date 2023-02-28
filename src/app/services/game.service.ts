@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Game} from '../models/game';
 import {FakeFetchService} from './fake-fetch.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {GameSearchParams} from '../models/game-search-params';
 import {Slide} from '../models/slide';
 import {SpinnerService} from './spinner.service';
+import {GameSearchResponse} from '../models/game-search-response';
 
 @Injectable({
     providedIn: 'root',
@@ -18,11 +19,14 @@ export class GameService {
         search_term: '',
         order: 'popular',
     };
+    public pageCount: number = 1;
+    public resultCount: number = 0;
 
     public constructor(
         private fakeFetchService: FakeFetchService,
         private route: ActivatedRoute,
-        private spinnerService: SpinnerService
+        private spinnerService: SpinnerService,
+        private router: Router
     ) {
         this.subscribeSearchParams().then();
     }
@@ -30,11 +34,13 @@ export class GameService {
     public async search(gameSearchParams: GameSearchParams): Promise<void> {
         const spinner = this.spinnerService.addSpinner();
 
-        const searchedGames = await this.fakeFetchService.get<Game[]>('/search', {
+        const searchData = await this.fakeFetchService.get<GameSearchResponse>('/search', {
             body: JSON.stringify(gameSearchParams),
         });
 
-        this.searchedGames = [...searchedGames];
+        this.searchedGames = searchData.games;
+        this.pageCount = searchData.pageCount;
+        this.resultCount = searchData.resultCount;
 
         this.spinnerService.clearSpinner(spinner);
     }
@@ -53,10 +59,16 @@ export class GameService {
         this.spinnerService.clearSpinner(spinner);
     }
 
+    public async handleSearchGame(paramName: keyof GameSearchParams, value: boolean | string): Promise<void> {
+        const queryParams: GameSearchParams = {[paramName]: value};
+        if (paramName !== 'page') queryParams.page = 1;
+        await this.router.navigate(['/search'], {queryParams, queryParamsHandling: 'merge'});
+    }
+
     private async subscribeSearchParams(): Promise<void> {
         this.route.queryParams.subscribe((gameSearchParams: GameSearchParams) => {
             this.search(gameSearchParams);
-            this.gameSearchParams = gameSearchParams;
+            this.gameSearchParams = {...gameSearchParams, page: parseInt(gameSearchParams.page + '')};
         });
     }
 }

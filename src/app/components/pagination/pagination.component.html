@@ -1,0 +1,14 @@
+<ul>
+    <li [class.disabled]="activePage === 1" (click)="changeActivePage.emit('1')">اولین</li>
+    <ng-container *ngFor="let pageNumber of Array(pageCount); let index = index">
+        <li
+            *ngIf="index + 1 <= activePage + 4 && index + 1 >= activePage - 4"
+            [class.active]="activePage === index + 1"
+            (click)="changeActivePage.emit((index + 1).toString())"
+        >
+            {{ index + 1 }}
+        </li>
+    </ng-container>
+
+    <li [class.disabled]="activePage === pageCount" (click)="changeActivePage.emit(pageCount + '')">آخرین</li>
+</ul>

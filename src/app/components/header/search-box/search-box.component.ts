@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {GameService} from '../../../services/game.service';
+import {GameSearchParams} from '../../../models/game-search-params';
 
 @Component({
     selector: 'app-search-box',
@@ -15,8 +16,14 @@ export class SearchBoxComponent {
     }
 
     public async searchSubmitHandler(): Promise<void> {
+        const queryParams: GameSearchParams = {search_term: this.searchTerm, page: 1};
+
+        if (!this.gameService.gameSearchParams.order) {
+            queryParams.order = 'popular';
+        }
+
         await this.router.navigate(['/search'], {
-            queryParams: {search_term: this.searchTerm, order: 'popular'},
+            queryParams,
             queryParamsHandling: 'merge',
         });
     }

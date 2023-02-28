@@ -1,0 +1,42 @@
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    inline-size: 100%;
+
+    font-size: 1.4rem;
+
+    > li {
+        background-color: var(--color-background-lighter);
+
+        padding: 0.5rem 1rem;
+
+        border: 0.1rem solid transparent;
+        border-radius: var(--border-radius-2);
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-dark-25);
+            color: var(--color-primary);
+
+            border-color: var(--color-primary);
+        }
+
+        &.active {
+            background-color: var(--color-primary);
+            color: unset;
+        }
+
+        &.disabled {
+            background-color: var(--color-background);
+            color: var(--color-gray-25);
+
+            border-color: var(--color-border);
+
+            cursor: unset;
+            user-select: none;
+        }
+    }
+}

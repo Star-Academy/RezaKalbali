@@ -2,24 +2,28 @@
 <main>
     <aside>
         <h2>فیلترها</h2>
-        <app-switch title="فقط بازی های رایگان" (changeState)="handleSearchChange('only_free', $event)"></app-switch>
+        <app-switch
+            title="فقط بازی های رایگان"
+            (changeState)="gameService.handleSearchGame('only_free', $event)"
+        ></app-switch>
+
         <app-collapsible-selection-list
             title="ژانر‌"
             [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
             searchParamKey="genre"
-            (changeActive)="handleSearchChange('genre', $event)"
+            (changeActive)="gameService.handleSearchGame('genre', $event)"
         ></app-collapsible-selection-list>
         <app-collapsible-selection-list
             title="پلتفورم"
             searchParamKey="platform"
             [selectList]="['PC (Windows)', 'Web Browser']"
-            (changeActive)="handleSearchChange('platform', $event)"
+            (changeActive)="gameService.handleSearchGame('platform', $event)"
         ></app-collapsible-selection-list>
         <app-collapsible-selection-list
             title="توسعه‌دهنده"
             searchParamKey="developer"
             [selectList]="['Doobic Studios', 'Yager Development', 'MercurySteam', 'Tencent Games']"
-            (changeActive)="handleSearchChange('developer', $event)"
+            (changeActive)="gameService.handleSearchGame('developer', $event)"
         ></app-collapsible-selection-list>
     </aside>
     <section>
@@ -31,26 +35,35 @@
                 <li
                     class="active"
                     [class.active]="gameService.gameSearchParams.order === 'popular'"
-                    (click)="handleSearchChange('order', 'popular')"
+                    (click)="gameService.handleSearchGame('order', 'popular')"
                 >
                     <button>محبوب‌ترین</button>
                 </li>
                 <li [class.active]="gameService.gameSearchParams.order === 'newest'">
-                    <button (click)="handleSearchChange('order', 'newest')">جدیدترین</button>
+                    <button (click)="gameService.handleSearchGame('order', 'newest')">جدیدترین</button>
                 </li>
                 <li [class.active]="gameService.gameSearchParams.order === 'cheapest'">
-                    <button (click)="handleSearchChange('order', 'cheapest')">ارزانترین</button>
+                    <button (click)="gameService.handleSearchGame('order', 'cheapest')">ارزانترین</button>
                 </li>
                 <li [class.active]="gameService.gameSearchParams.order === 'expensive'">
-                    <button (click)="handleSearchChange('order', 'expensive')">گرانترین</button>
+                    <button (click)="gameService.handleSearchGame('order', 'expensive')">گرانترین</button>
                 </li>
             </ul>
 
             <span class="total-result">{{ gameService.searchedGames.length }} بازی</span>
         </header>
+
         <main class="cards">
             <app-home-card *ngFor="let game of gameService.searchedGames" [game]="game"> </app-home-card>
         </main>
+
+        <footer>
+            <app-pagination
+                [pageCount]="gameService.pageCount"
+                [activePage]="gameService.gameSearchParams.page ?? 1"
+                (changeActivePage)="gameService.handleSearchGame('page', $event)"
+            ></app-pagination>
+        </footer>
     </section>
 </main>
 <app-footer></app-footer>

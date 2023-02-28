@@ -5,4 +5,5 @@ export interface GameSearchParams {
     genre?: string;
     platform?: string;
     developer?: string;
+    page?: number;
 }

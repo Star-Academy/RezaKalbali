@@ -4,6 +4,7 @@ import {shuffle} from '../utils/array';
 import {slideList} from '../demo-data/slide-list';
 import {GameSearchParams} from '../models/game-search-params';
 import {GamePay} from '../enums/game-pay';
+import {Game} from '../models/game';
 
 @Injectable({
     providedIn: 'root',
@@ -33,6 +34,7 @@ export class FakeServerService {
     private search(request: RequestInit, resolve: Function, reject: Function): void {
         const searchParams = this.getBodyFromRequest<GameSearchParams>(request);
         let games = [...gameList];
+        const gamePerPage = 10;
 
         if (searchParams.only_free === 'true') {
             games = games.filter((game) => {
@@ -85,9 +87,23 @@ export class FakeServerService {
             });
         }
 
-        if (games.length > 50) games.length = 50;
-        if (request) resolve(games);
+        const resultCount = games.length;
+        const pageCount = Math.ceil(resultCount / gamePerPage);
+
+        if (searchParams.page && pageCount > 1) {
+            games = this.sliceGamesForPages(gamePerPage, searchParams.page, games);
+        } else if (games.length > gamePerPage) {
+            games.length = gamePerPage;
+        }
+
+        if (request) resolve({games, resultCount, pageCount});
         else reject();
+    }
+
+    private sliceGamesForPages(gamePerPage: number, searchParamsPage: number, games: Game[]): Game[] {
+        const start = gamePerPage * searchParamsPage - gamePerPage;
+        const end = gamePerPage * searchParamsPage;
+        return games.slice(start, end);
     }
 
     private getGames(request: RequestInit, resolve: Function, reject: Function): void {
