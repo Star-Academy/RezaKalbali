@@ -11,5 +11,5 @@ export class PaginationComponent {
 
     public Array = Array;
 
-    @Output() public changeActivePage: EventEmitter<string> = new EventEmitter();
+    @Output() public changeActivePage: EventEmitter<number> = new EventEmitter();
 }

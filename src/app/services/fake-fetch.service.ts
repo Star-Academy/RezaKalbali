@@ -6,7 +6,7 @@ import {FakeServerService} from './fake-server.service';
 })
 export class FakeFetchService {
     private delay(): Promise<void> {
-        const randomDelay = Math.trunc(Math.random() * 500);
+        const randomDelay = Math.trunc(Math.random() * 2000);
 
         return new Promise((resolve) => setTimeout(resolve, randomDelay));
     }

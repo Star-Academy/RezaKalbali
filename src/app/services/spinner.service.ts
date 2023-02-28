@@ -7,6 +7,7 @@ import {SpinnerComponent} from '../components/spinner/spinner.component';
 export class SpinnerService {
     private spinnerComponent!: SpinnerComponent;
     private spinners: Symbol[] = [];
+    public state: boolean = false;
 
     public initializeComponent(spinnerComponent: SpinnerComponent): void {
         this.spinnerComponent = spinnerComponent;
@@ -18,6 +19,7 @@ export class SpinnerService {
 
         if (!this.spinnerComponent.isActive) {
             this.spinnerComponent.show();
+            this.state = true;
         }
 
         return symbol;
@@ -28,6 +30,7 @@ export class SpinnerService {
 
         if (this.spinners.length === 0) {
             this.spinnerComponent.hide();
+            this.state = false;
         }
     }
 }

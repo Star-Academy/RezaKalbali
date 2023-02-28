@@ -59,7 +59,7 @@ export class GameService {
         this.spinnerService.clearSpinner(spinner);
     }
 
-    public async handleSearchGame(paramName: keyof GameSearchParams, value: boolean | string): Promise<void> {
+    public async handleSearchGame(paramName: keyof GameSearchParams, value: boolean | string | number): Promise<void> {
         const queryParams: GameSearchParams = {[paramName]: value};
         if (paramName !== 'page') queryParams.page = 1;
         await this.router.navigate(['/search'], {queryParams, queryParamsHandling: 'merge'});

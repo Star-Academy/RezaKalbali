@@ -113,11 +113,79 @@
             aspect-ratio: 1 / 1;
             object-fit: cover;
         }
+
+        &.skeleton {
+            .main-content {
+                > * {
+                    color: var(--color-background-light);
+
+                    position: relative;
+
+                    &::after {
+                        content: "";
+
+                        background-image: var(--linear-gradient-skeleton);
+                        background-repeat: no-repeat;
+                        background-size: 400% 100%;
+
+                        position: absolute;
+                        inset: 0.2rem 0;
+
+                        animation-duration: 1.4s;
+                        animation-iteration-count: infinite;
+                        animation-name: loading;
+                        animation-timing-function: ease;
+                    }
+                }
+
+                h2 {
+                    position: relative;
+
+                    &::after {
+                        inset-inline-start: 8rem;
+                    }
+                }
+            }
+
+            .image-container {
+                position: relative;
+
+                img {
+                    opacity: 0;
+                }
+
+                &::after {
+                    content: "";
+
+                    background-image: var(--linear-gradient-skeleton);
+                    background-repeat: no-repeat;
+                    background-size: 200% 100%;
+
+                    position: absolute;
+                    inset: 0.2rem 0;
+
+                    animation-duration: 1.4s;
+                    animation-iteration-count: infinite;
+                    animation-name: loading;
+                    animation-timing-function: ease;
+                }
+            }
+        }
     }
 
     @container (width > 300px) {
-        .card {
-            flex-direction: row-reverse !important;
+        .card.card.card {
+            flex-direction: row-reverse;
         }
+    }
+}
+
+@keyframes loading {
+    from {
+        background-position: 0 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
     }
 }

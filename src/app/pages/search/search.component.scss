@@ -94,15 +94,6 @@ main {
             gap: 1rem;
 
             padding: 0;
-
-            app-home-card {
-                transform: translateX(-120%);
-
-                animation-delay: var(--animation-time-2);
-                animation-duration: var(--animation-time-4);
-                animation-fill-mode: forwards;
-                animation-name: from-left;
-            }
         }
 
         footer {

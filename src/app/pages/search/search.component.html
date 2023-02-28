@@ -50,18 +50,23 @@
                 </li>
             </ul>
 
-            <span class="total-result">{{ gameService.searchedGames.length }} بازی</span>
+            <span class="total-result">{{ gameService.resultCount }} بازی</span>
         </header>
 
         <main class="cards">
-            <app-home-card *ngFor="let game of gameService.searchedGames" [game]="game"> </app-home-card>
+            <app-home-card
+                *ngFor="let game of gameService.searchedGames"
+                [skeletonIsActive]="spinnerService.state"
+                [game]="game"
+            >
+            </app-home-card>
         </main>
 
         <footer>
             <app-pagination
                 [pageCount]="gameService.pageCount"
                 [activePage]="gameService.gameSearchParams.page ?? 1"
-                (changeActivePage)="gameService.handleSearchGame('page', $event)"
+                (changeActivePage)="handlePageChange($event)"
             ></app-pagination>
         </footer>
     </section>
