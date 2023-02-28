@@ -177,7 +177,7 @@
         }
     }
 
-    @container (width > 300px) {
+    @container (width > 400px) {
         .card.card.card {
             flex-direction: row-reverse;
         }
