@@ -9,7 +9,7 @@ export class PaginationComponent {
     @Input() public pageCount: number = 1;
     @Input() public activePage: number = 1;
 
-    public Array = Array;
-
     @Output() public changeActivePage: EventEmitter<number> = new EventEmitter();
+
+    public Array = Array;
 }

@@ -10,7 +10,7 @@ import {SpinnerService} from '../../services/spinner.service';
 export class SearchComponent {
     public constructor(public gameService: GameService, public spinnerService: SpinnerService) {}
 
-    public async handlePageChange(pageNumber: number) {
+    public async handlePageChange(pageNumber: number): Promise<void> {
         window.scrollTo({top: 0, behavior: 'smooth'});
         await this.gameService.handleSearchGame('page', pageNumber);
     }

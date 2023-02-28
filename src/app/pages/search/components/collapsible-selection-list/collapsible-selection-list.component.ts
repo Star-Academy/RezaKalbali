@@ -19,7 +19,7 @@ export class CollapsibleSelectionListComponent implements OnInit {
 
     public constructor(private gameService: GameService) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         if (this.searchParamKey && typeof this.gameService.gameSearchParams[this.searchParamKey] === 'string')
             this.selectedItems = (this.gameService.gameSearchParams[this.searchParamKey] as string).split(',') ?? [];
     }
