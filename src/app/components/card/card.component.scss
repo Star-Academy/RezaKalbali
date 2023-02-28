@@ -131,6 +131,8 @@
                         position: absolute;
                         inset: 0.2rem 0;
 
+                        border-radius: var(--border-radius-2);
+
                         animation-duration: 1.4s;
                         animation-iteration-count: infinite;
                         animation-name: loading;
@@ -163,6 +165,8 @@
 
                     position: absolute;
                     inset: 0.2rem 0;
+
+                    border-radius: var(--border-radius-2);
 
                     animation-duration: 1.4s;
                     animation-iteration-count: infinite;

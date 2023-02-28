@@ -4,26 +4,26 @@
         <h2>فیلترها</h2>
         <app-switch
             title="فقط بازی های رایگان"
-            (changeState)="gameService.handleSearchGame('only_free', $event)"
+            (changeState)="gameService.handleGameSearch({only_free: $event.toString()})"
         ></app-switch>
 
         <app-collapsible-selection-list
             title="ژانر‌"
             [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
             searchParamKey="genre"
-            (changeActive)="gameService.handleSearchGame('genre', $event)"
+            (changeActive)="gameService.handleGameSearch({genre: $event})"
         ></app-collapsible-selection-list>
         <app-collapsible-selection-list
             title="پلتفورم"
             searchParamKey="platform"
             [selectList]="['PC (Windows)', 'Web Browser']"
-            (changeActive)="gameService.handleSearchGame('platform', $event)"
+            (changeActive)="gameService.handleGameSearch({platform: $event})"
         ></app-collapsible-selection-list>
         <app-collapsible-selection-list
             title="توسعه‌دهنده"
             searchParamKey="developer"
             [selectList]="['Doobic Studios', 'Yager Development', 'MercurySteam', 'Tencent Games']"
-            (changeActive)="gameService.handleSearchGame('developer', $event)"
+            (changeActive)="gameService.handleGameSearch({developer: $event})"
         ></app-collapsible-selection-list>
     </aside>
     <section>
@@ -35,18 +35,18 @@
                 <li
                     class="active"
                     [class.active]="gameService.gameSearchParams.order === 'popular'"
-                    (click)="gameService.handleSearchGame('order', 'popular')"
+                    (click)="gameService.handleGameSearch({order: 'popular'})"
                 >
                     <button>محبوب‌ترین</button>
                 </li>
                 <li [class.active]="gameService.gameSearchParams.order === 'newest'">
-                    <button (click)="gameService.handleSearchGame('order', 'newest')">جدیدترین</button>
+                    <button (click)="gameService.handleGameSearch({order: 'newest'})">جدیدترین</button>
                 </li>
                 <li [class.active]="gameService.gameSearchParams.order === 'cheapest'">
-                    <button (click)="gameService.handleSearchGame('order', 'cheapest')">ارزانترین</button>
+                    <button (click)="gameService.handleGameSearch({order: 'cheapest'})">ارزانترین</button>
                 </li>
                 <li [class.active]="gameService.gameSearchParams.order === 'expensive'">
-                    <button (click)="gameService.handleSearchGame('order', 'expensive')">گرانترین</button>
+                    <button (click)="gameService.handleGameSearch({order: 'expensive'})">گرانترین</button>
                 </li>
             </ul>
 

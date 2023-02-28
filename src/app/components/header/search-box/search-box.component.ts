@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
 import {GameService} from '../../../services/game.service';
 import {GameSearchParams} from '../../../models/game-search-params';
 
@@ -11,7 +10,7 @@ import {GameSearchParams} from '../../../models/game-search-params';
 export class SearchBoxComponent {
     public searchTerm: string = '';
 
-    public constructor(private router: Router, public gameService: GameService) {
+    public constructor(public gameService: GameService) {
         this.searchTerm = gameService.gameSearchParams.search_term || '';
     }
 
@@ -22,9 +21,6 @@ export class SearchBoxComponent {
             queryParams.order = 'popular';
         }
 
-        await this.router.navigate(['/search'], {
-            queryParams,
-            queryParamsHandling: 'merge',
-        });
+        await this.gameService.handleGameSearch(queryParams);
     }
 }
