@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<main>
+    <aside>
+        <h2>فیلترها</h2>
+        <app-switch
+            title="فقط بازی های رایگان"
+            (changeState)="gameService.handleGameSearch({onlyFree: $event.toString()})"
+        ></app-switch>
+
+        <app-collapsible-selection-list
+            title="ژانر‌"
+            [selectList]="['معمایی', 'استراتژیک', 'اکشن']"
+            searchParamKey="genre"
+            (changeActive)="gameService.handleGameSearch({genre: $event})"
+        ></app-collapsible-selection-list>
+        <app-collapsible-selection-list
+            title="پلتفورم"
+            searchParamKey="platform"
+            [selectList]="['PC (Windows)', 'Web Browser']"
+            (changeActive)="gameService.handleGameSearch({platform: $event})"
+        ></app-collapsible-selection-list>
+        <app-collapsible-selection-list
+            title="توسعه‌دهنده"
+            searchParamKey="developer"
+            [selectList]="['Doobic Studios', 'Yager Development', 'MercurySteam', 'Tencent Games']"
+            (changeActive)="gameService.handleGameSearch({developer: $event})"
+        ></app-collapsible-selection-list>
+    </aside>
+
+    <section>
+        <header>
+            <i class="fa-regular fa-arrow-down-wide-short"></i>
+            <span> مرتب سازی: </span>
+
+            <ul>
+                <li
+                    class="active"
+                    [class.active]="gameService.gameSearchParams.order === 'popular'"
+                    (click)="gameService.handleGameSearch({order: 'popular'})"
+                >
+                    <button>محبوب‌ترین</button>
+                </li>
+                <li [class.active]="gameService.gameSearchParams.order === 'newest'">
+                    <button (click)="gameService.handleGameSearch({order: 'newest'})">جدیدترین</button>
+                </li>
+                <li [class.active]="gameService.gameSearchParams.order === 'cheapest'">
+                    <button (click)="gameService.handleGameSearch({order: 'cheapest'})">ارزانترین</button>
+                </li>
+                <li [class.active]="gameService.gameSearchParams.order === 'expensive'">
+                    <button (click)="gameService.handleGameSearch({order: 'expensive'})">گرانترین</button>
+                </li>
+            </ul>
+
+            <span class="total-result">{{ gameService.resultCount }} بازی</span>
+        </header>
+
+        <main class="cards">
+            <app-home-card
+                *ngFor="let game of gameService.searchedGames"
+                [isSkeletonActive]="spinnerService.state"
+                [game]="game"
+            >
+            </app-home-card>
+        </main>
+
+        <footer>
+            <app-pagination
+                [pageCount]="gameService.pageCount"
+                [activePage]="gameService.gameSearchParams.page ?? 1"
+                (changeActivePage)="handlePageChange($event)"
+            ></app-pagination>
+        </footer>
+    </section>
+</main>
+
+<app-footer></app-footer>

@@ -1,3 +1,10 @@
-<div>
-    <input type="search" placeholder="جستجو ..." />
-</div>
+<form (submit)="searchSubmitHandler()">
+    <input
+        autofocus
+        type="search"
+        placeholder="جستجو ..."
+        name="searchTerm"
+        (search)="searchSubmitHandler()"
+        [(ngModel)]="searchTerm"
+    />
+</form>

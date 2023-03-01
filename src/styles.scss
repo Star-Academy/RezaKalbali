@@ -32,7 +32,12 @@ body {
     --color-gray-text-darker: hsl(0deg 0% 79%);
 
     --color-gray-25: hsla(313deg 2% 50% /25%);
-    --color-dark-25: hsla(313deg 2% 2% /33%);
+    --color-gray-35: hsla(313deg 2% 50% /35%);
+    --color-gray-45: hsla(313deg 2% 50% /45%);
+    --color-gray-55: hsla(313deg 2% 50% /55%);
+    --color-gray-65: hsla(313deg 2% 50% /65%);
+
+    --color-dark-25: hsla(313deg 2% 2% /25%);
 
     --color-green: hsl(140deg 86% 52%);
     --color-success: hsl(140deg 86% 52%);
@@ -50,6 +55,14 @@ body {
     --animation-time-1: 0.1s;
     --animation-time-2: 0.2s;
     --animation-time-4: 0.4s;
+    --animation-time-8: 0.8s;
+
+    --linear-gradient-skeleton: linear-gradient(
+        -90deg,
+        var(--color-gray-25),
+        var(--color-gray-45),
+        var(--color-gray-65)
+    );
 }
 
 input,

@@ -1,0 +1,93 @@
+div {
+    padding-block: 1rem;
+
+    .header {
+        display: flex;
+        align-items: center;
+
+        font-size: 1.6rem;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        i {
+            margin-inline-start: auto;
+
+            transition-duration: var(--animation-time-2);
+
+            &.down {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    .content {
+        overflow-x: auto;
+
+        max-block-size: 20rem;
+
+        padding: 1rem;
+
+        ul {
+            li {
+                padding-block: 1rem;
+
+                border-bottom: 0.1rem solid var(--color-gray-25);
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    cursor: pointer;
+
+                    input {
+                        position: relative;
+
+                        block-size: 1.5rem;
+                        inline-size: 1.5rem;
+
+                        appearance: none;
+
+                        &::before {
+                            content: "";
+
+                            position: absolute;
+                            inset: 0;
+
+                            block-size: 1.5rem;
+                            inline-size: 1.5rem;
+
+                            border: 0.2rem solid var(--color-gray-text-darker);
+                            border-radius: var(--border-radius-2);
+                        }
+
+                        &:checked {
+                            &::before {
+                                background-color: var(--color-primary);
+
+                                border-color: var(--color-primary);
+                            }
+
+                            &::after {
+                                content: "\f00c";
+
+                                color: var(--color-gray-text);
+
+                                position: absolute;
+                                inset: 0;
+                                inset-inline-start: 0.2rem;
+
+                                font-family: FontAwesome, sans-serif;
+                                font-style: normal;
+                                font-weight: normal;
+
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

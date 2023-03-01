@@ -8,6 +8,7 @@ import {Game} from '../../../models/game';
 export class HomeCardComponent implements OnChanges {
     @Input() public game!: Game;
     @Input() public buttonIconClass!: string;
+    @Input() public isSkeletonActive: boolean = false;
 
     public customPrice?: string;
 

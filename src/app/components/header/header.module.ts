@@ -6,10 +6,11 @@ import {SearchBoxComponent} from './search-box/search-box.component';
 import {AvatarComponent} from './avatar/avatar.component';
 import {SideMenuComponent} from './side-menu/side-menu.component';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [HeaderComponent, NavComponent, SearchBoxComponent, AvatarComponent, SideMenuComponent],
     exports: [HeaderComponent],
-    imports: [CommonModule, RouterModule],
+    imports: [CommonModule, RouterModule, FormsModule],
 })
 export class HeaderModule {}

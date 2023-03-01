@@ -1,4 +1,6 @@
 div {
+    color: var(--color-gray-text);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,6 +33,10 @@ div {
             align-self: center;
 
             cursor: pointer;
+
+            &:hover {
+                color: var(--color-gray-text);
+            }
         }
     }
 }

@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {slideList} from '../../../demo-data/slide-list';
-import {Slide} from '../../../models/slide';
+import {GameService} from '../../../services/game.service';
 
 @Component({
     selector: 'app-slideshow',
@@ -8,29 +7,28 @@ import {Slide} from '../../../models/slide';
     styleUrls: ['./slideshow.component.scss'],
 })
 export class SlideshowComponent {
-    public slides: Slide[] = slideList;
     public activeSlide: number = 0;
     public interval!: number;
 
-    public constructor() {
+    public constructor(public gameService: GameService) {
         this.interval = setInterval(() => {
-            if (this.activeSlide === this.slides.length - 1) this.activeSlide = 0;
+            if (this.activeSlide === this.gameService.slideShows.length - 1) this.activeSlide = 0;
             else this.activeSlide++;
         }, 3500);
     }
     public activeSlideshowHandler(index: number): void {
         clearInterval(this.interval);
 
-        if (index > this.slides.length - 1) {
+        if (index > this.gameService.slideShows.length - 1) {
             this.activeSlide = 0;
         } else if (index < 0) {
-            this.activeSlide = this.slides.length - 1;
+            this.activeSlide = this.gameService.slideShows.length - 1;
         } else {
             this.activeSlide = index;
         }
 
         this.interval = setInterval(() => {
-            if (this.activeSlide === this.slides.length - 1) this.activeSlide = 0;
+            if (this.activeSlide === this.gameService.slideShows.length - 1) this.activeSlide = 0;
             else this.activeSlide++;
         }, 3500);
     }
@@ -40,7 +38,7 @@ export class SlideshowComponent {
     public onMouseLeave(): void {
         clearInterval(this.interval);
         this.interval = setInterval(() => {
-            if (this.activeSlide === this.slides.length - 1) this.activeSlide = 0;
+            if (this.activeSlide === this.gameService.slideShows.length - 1) this.activeSlide = 0;
             else this.activeSlide++;
         }, 3500);
     }

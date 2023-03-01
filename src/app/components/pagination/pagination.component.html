@@ -1,0 +1,22 @@
+<ul>
+    <li>
+        <button [disabled]="activePage === 1" (click)="changeActivePage.emit(1)">اولین</button>
+    </li>
+    <li>
+        <button [disabled]="activePage === 1" (click)="changeActivePage.emit(activePage - 1)">قبلی</button>
+    </li>
+    <ng-container *ngFor="let pageNumber of Array(pageCount); let index = index">
+        <li *ngIf="index | calculatePaginationItemVisibility : activePage : 3">
+            <button [class.active]="activePage === index + 1" (click)="changeActivePage.emit(index + 1)">
+                {{ index + 1 }}
+            </button>
+        </li>
+    </ng-container>
+
+    <li>
+        <button [disabled]="activePage === pageCount" (click)="changeActivePage.emit(activePage + 1)">بعدی</button>
+    </li>
+    <li>
+        <button [disabled]="activePage === pageCount" (click)="changeActivePage.emit(pageCount)">آخرین</button>
+    </li>
+</ul>

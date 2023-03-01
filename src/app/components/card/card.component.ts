@@ -11,4 +11,5 @@ export class CardComponent {
     @Input() public description?: string;
     @Input() public payment: string = '';
     @Input() public tags: string[] = [];
+    @Input() public skeletonIsActive: boolean = false;
 }

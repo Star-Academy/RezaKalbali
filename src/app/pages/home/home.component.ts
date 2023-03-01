@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {Game} from '../../models/game';
 import {GamePay} from '../../enums/game-pay';
-import {gameList} from '../../demo-data/game-list';
+import {GameService} from '../../services/game.service';
 
 @Component({
     selector: 'app-home',
@@ -10,5 +9,9 @@ import {gameList} from '../../demo-data/game-list';
 })
 export class HomeComponent {
     public GamePayEnum = GamePay;
-    public games: Game[] = gameList;
+
+    public constructor(public gameService: GameService) {
+        gameService.getSlides().then();
+        gameService.getGames().then();
+    }
 }

@@ -12,5 +12,6 @@ import {FeaturesComponent} from './features/features.component';
 @NgModule({
     declarations: [HomeComponent, HomeCardComponent, HomeCardComponent, SlideshowComponent, FeaturesComponent],
     imports: [CommonModule, HeaderModule, ButtonModule, FooterModule, CardModule],
+    exports: [HomeCardComponent],
 })
 export class HomeModule {}
