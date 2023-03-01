@@ -36,15 +36,15 @@ export class FakeServerService {
         let games = [...gameList];
         const gamePerPage = 10;
 
-        if (searchParams.only_free === 'true') {
+        if (searchParams.onlyFree === 'true') {
             games = games.filter((game) => {
                 return game.pay === GamePay.FREE;
             });
         }
 
-        if (searchParams.search_term) {
+        if (searchParams.searchTerm) {
             games = games.filter((game) => {
-                return game.title.toLowerCase().match(`.*${searchParams.search_term?.toLowerCase()}.*` || '.*.*');
+                return game.title.toLowerCase().match(`.*${searchParams.searchTerm?.toLowerCase()}.*` || '.*.*');
             });
         }
 
@@ -59,7 +59,7 @@ export class FakeServerService {
                 });
             else if (searchParams.order === 'newest')
                 games = games.sort((gameA, gameB) => {
-                    return new Date(gameB.release_date).getTime() - new Date(gameA.release_date).getTime();
+                    return new Date(gameB.releaseDate).getTime() - new Date(gameA.releaseDate).getTime();
                 });
         }
 

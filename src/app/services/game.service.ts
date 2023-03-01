@@ -15,8 +15,8 @@ export class GameService {
     public slideShows: Slide[] = [];
     public searchedGames: Game[] = [];
     public gameSearchParams: GameSearchParams = {
-        only_free: 'false',
-        search_term: '',
+        onlyFree: 'false',
+        searchTerm: '',
         order: 'popular',
     };
     public pageCount: number = 1;

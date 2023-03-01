@@ -1,7 +1,7 @@
 export interface GameSearchParams {
-    search_term?: string;
+    searchTerm?: string;
     order?: string;
-    only_free?: string;
+    onlyFree?: string;
     genre?: string;
     platform?: string;
     developer?: string;

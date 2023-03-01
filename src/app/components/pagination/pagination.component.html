@@ -6,7 +6,7 @@
         <button [disabled]="activePage === 1" (click)="changeActivePage.emit(activePage - 1)">قبلی</button>
     </li>
     <ng-container *ngFor="let pageNumber of Array(pageCount); let index = index">
-        <li *ngIf="index + 1 <= activePage + 4 && index + 1 >= activePage - 4">
+        <li *ngIf="index | calculatePaginationItemVisibility : activePage : 3">
             <button [class.active]="activePage === index + 1" (click)="changeActivePage.emit(index + 1)">
                 {{ index + 1 }}
             </button>

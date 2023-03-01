@@ -4,5 +4,5 @@
     [description]="game.description"
     [payment]="game?.price ? game?.price?.toLocaleString() + ' تومان' : 'رایگان'"
     [tags]="game.tags"
-    [skeletonIsActive]="skeletonIsActive"
+    [skeletonIsActive]="isSkeletonActive"
 ></app-card>

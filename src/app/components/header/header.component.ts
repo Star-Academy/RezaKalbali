@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
@@ -10,11 +9,7 @@ import {AuthService} from '../../services/auth.service';
 export class HeaderComponent {
     public isOpenSideMenu: boolean = false;
 
-    public constructor(private router: Router, public authService: AuthService) {}
-
-    public async onClickLogInButton(): Promise<void> {
-        await this.router.navigateByUrl('/auth');
-    }
+    public constructor(public authService: AuthService) {}
 
     public handleToggleOpen(state: boolean): void {
         this.isOpenSideMenu = state;

@@ -10,9 +10,9 @@ export interface Game {
     price?: number;
     description: string;
     tags: string[];
-    game_url: string;
+    gameUrl: string;
     publisher: string;
     developer: string;
-    release_date: string;
-    freetogame_profile_url: string;
+    releaseDate: string;
+    freeToGameProfileUrl: string;
 }

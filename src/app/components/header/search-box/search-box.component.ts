@@ -8,18 +8,19 @@ import {GameSearchParams} from '../../../models/game-search-params';
     styleUrls: ['./search-box.component.scss'],
 })
 export class SearchBoxComponent {
+    private readonly POPULAR = 'popular';
     public searchTerm: string = '';
 
-    public constructor(public gameService: GameService) {
-        this.searchTerm = gameService.gameSearchParams.search_term || '';
+    public constructor(private gameService: GameService) {
+        this.searchTerm = gameService.gameSearchParams.searchTerm || '';
     }
 
     public async searchSubmitHandler(): Promise<void> {
-        const queryParams: GameSearchParams = {search_term: this.searchTerm, page: 1};
-
-        if (!this.gameService.gameSearchParams.order) {
-            queryParams.order = 'popular';
-        }
+        const queryParams: GameSearchParams = {
+            searchTerm: this.searchTerm,
+            page: 1,
+            order: this.gameService.gameSearchParams.order ?? this.POPULAR,
+        };
 
         await this.gameService.handleGameSearch(queryParams);
     }

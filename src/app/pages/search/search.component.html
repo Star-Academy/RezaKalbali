@@ -5,7 +5,7 @@
         <h2>فیلترها</h2>
         <app-switch
             title="فقط بازی های رایگان"
-            (changeState)="gameService.handleGameSearch({only_free: $event.toString()})"
+            (changeState)="gameService.handleGameSearch({onlyFree: $event.toString()})"
         ></app-switch>
 
         <app-collapsible-selection-list
@@ -58,7 +58,7 @@
         <main class="cards">
             <app-home-card
                 *ngFor="let game of gameService.searchedGames"
-                [skeletonIsActive]="spinnerService.state"
+                [isSkeletonActive]="spinnerService.state"
                 [game]="game"
             >
             </app-home-card>

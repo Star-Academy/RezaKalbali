@@ -5,7 +5,7 @@
         type="checkbox"
         ngDefaultControl
         [formControl]="checkbox"
-        [ngModel]="gameService.gameSearchParams.only_free === 'true'"
+        [ngModel]="gameService.gameSearchParams.onlyFree === 'true'"
         (change)="handleChange($event)"
     />
 </label>
